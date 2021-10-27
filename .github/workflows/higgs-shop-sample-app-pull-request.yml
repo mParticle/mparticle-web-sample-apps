@@ -1,0 +1,39 @@
+name: Higgs Shop Sample App Pull Request
+
+on:
+    pull_request:
+
+defaults:
+    run:
+        working-directory: core-sdk-samples/higgs-shop-sample-app
+
+jobs:
+    build-and-test:
+        name: Build, Lint, and Test
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: NPM install ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Run NPM CI
+              run: npm ci
+
+            - name: Lint with ESLint
+              run: npm run lint
+
+            - name: Lint with Prettier
+              run: npm run prettier
+
+            - name: Build Files
+              run: npm run build
+
+            - name: Run tests
+              run: npm run test
