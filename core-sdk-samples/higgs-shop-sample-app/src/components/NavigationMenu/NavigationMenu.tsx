@@ -52,6 +52,7 @@ const NavigationMenu: React.FC = () => {
             },
         },
         topnavList: { display: 'flex' },
+        topnavLinkIcon: { ml: 0, mr: 2 },
         homeLink: {},
         mobileResponsive: {
             flexGrow: 1,
@@ -176,6 +177,7 @@ const NavigationMenu: React.FC = () => {
             to='/account'
             sx={classes.link}
             label='Account'
+            iconLeft={<PersonIcon sx={classes.topnavLinkIcon} />}
             key='Account'
         />,
 
@@ -185,6 +187,7 @@ const NavigationMenu: React.FC = () => {
             to='/cart'
             sx={classes.link}
             label='Cart'
+            iconLeft={<ShoppingCartIcon sx={classes.topnavLinkIcon} />}
             key='Cart'
         />,
     ];
