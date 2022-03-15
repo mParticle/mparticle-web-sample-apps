@@ -19,6 +19,7 @@ interface UserDetailsStore {
 const UserDetails = createContext({} as UserDetailsStore);
 
 // Helper function to generate a fake UUID
+// UUID Generator inspired by: https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid
 function generateUUID() {
     let d = new Date().getTime();
     let d2 =
