@@ -11,3 +11,6 @@ export type OrderPhaseTypes =
     | ORDER_PHASES.IN_PROGRESS
     | ORDER_PHASES.REVIEW
     | ORDER_PHASES.COMPLETE;
+
+export const APIkeyModalMessage =
+    "You have started the app without an API key in the config. There is information this app's README.md about how to add your API key.";
