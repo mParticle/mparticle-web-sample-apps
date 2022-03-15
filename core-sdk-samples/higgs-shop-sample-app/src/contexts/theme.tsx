@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles';
+import '@fontsource/lato';
 
-const fontFamily = 'Roboto, Arial, sans-serif';
+const fontFamily = 'Lato, Arial, sans-serif';
 
 const theme = createTheme({
     palette: {
