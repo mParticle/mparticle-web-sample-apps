@@ -27,7 +27,7 @@ const App = () => {
 
         // This callback will be called when mParticle successfully initializes
         // and will return any known User Identities from mParticle.
-        // You can then syncronize this user data with any services that are
+        // You can then synchronize this user data with any services that are
         // unique to your application.
         // identityCallback: (result) => {
         //     if (result.getUser()) {
