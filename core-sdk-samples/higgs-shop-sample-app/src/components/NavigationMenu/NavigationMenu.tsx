@@ -148,7 +148,7 @@ const NavigationMenu: React.FC = () => {
     // internally so that they stay DRY and handle optional callbacks.
     const topNavDesktopItems: ReactElement[] = [
         // Space for missing About Us section
-        <Box sx={{ width: '220px' }} />,
+        <Box key='spacer' sx={{ width: '220px' }} />,
 
         <NavigationMenuItem
             testId='desktop-nav-shop-button'

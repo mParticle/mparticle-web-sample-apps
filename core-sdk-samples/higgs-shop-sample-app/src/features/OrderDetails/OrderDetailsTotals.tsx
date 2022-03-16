@@ -17,10 +17,9 @@ const OrderDetailsTotalRow: React.FC<{
     return (
         <Grid
             item
-            xs={12}
             sx={{
                 backgroundColor: accent ? '#333333' : '',
-                py: 0,
+                pt: 1,
                 px: 2,
             }}
         >
@@ -54,7 +53,7 @@ const OrderDetailsTotals: React.FC<OrderDetailsTotalsProps> = ({
     grandTotal,
 }) => {
     return (
-        <>
+        <Grid container columns={1} alignItems='center' justifyContent='center'>
             <OrderDetailsTotalRow label='Subtotal' amount={subTotal} />
             {salesTax && (
                 <OrderDetailsTotalRow label='Sales Tax' amount={salesTax} />
@@ -71,7 +70,7 @@ const OrderDetailsTotals: React.FC<OrderDetailsTotalsProps> = ({
                     accent
                 />
             )}
-        </>
+        </Grid>
     );
 };
 

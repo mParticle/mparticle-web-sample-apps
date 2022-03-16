@@ -72,10 +72,7 @@ const OrderDetailsCard: React.FC<OrderDetailsCardProps> = ({
                     sx={{
                         display: 'flex',
                         justifyContent: 'space-between',
-                        flexDirection: {
-                            xs: 'row',
-                            sm: 'column',
-                        },
+                        flexDirection: 'column',
                     }}
                 >
                     <Typography variant='body2'>Qty: {quantity}</Typography>
