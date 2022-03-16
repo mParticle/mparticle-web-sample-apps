@@ -9,6 +9,7 @@ describe('mParticle Web Sample App', () => {
             expect(mParticle.init).toHaveBeenCalledWith('test_key', {
                 isDevelopmentMode: true,
                 logLevel: 'verbose',
+                identityCallback: expect.any(Function),
             });
         });
     });

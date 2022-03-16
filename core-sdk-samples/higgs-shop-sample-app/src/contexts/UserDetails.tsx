@@ -18,11 +18,6 @@ interface UserDetailsStore {
 // use type assertion for initial empty state
 const UserDetails = createContext({} as UserDetailsStore);
 
-// Helper function to generate a fake UUID
-function generateID() {
-    return `${(Math.random() * 16) / 100}`.replace('.', '');
-}
-
 export function useUserDetails() {
     const context = useContext(UserDetails);
 
@@ -42,12 +37,12 @@ const UserDetailsProvider: React.FC = ({ children }) => {
     const value = useMemo(() => {
         const login = (username: string) => {
             // In a real-world application, the user record would be pulled
-            // from a database. In our Sample App, we are simply appending
-            // an email address to the user ID.
+            // from a database. In our Sample App, we are simply hard-coding
+            // user details for demonstration purposes
             const myUser: User = {
                 username,
-                email: `${username}@email.com`,
-                customerid: generateID(),
+                email: 'higgs@mparticle.com',
+                customerid: 'higgs123',
             };
 
             setUser(myUser);

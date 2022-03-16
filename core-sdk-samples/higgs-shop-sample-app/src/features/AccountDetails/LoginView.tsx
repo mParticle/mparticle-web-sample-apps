@@ -13,17 +13,15 @@ interface LoginViewProps {
     loginAction(userId: string): void;
 }
 const LoginView: React.FC<LoginViewProps> = ({ loginAction }) => {
-    const [userId, setUserId] = useState('MyHiggsId');
+    // Hardcoding user ID for demonstration purposes
+
+    const userId = 'MyHiggsId';
+
     return (
         <>
             <Grid item>
                 <FormControl>
-                    <TextField
-                        id='userId'
-                        label='User Id'
-                        value={userId}
-                        onChange={(e) => setUserId(e.target.value)}
-                    />
+                    <TextField id='userId' label='User Id' value={userId} />
                 </FormControl>
             </Grid>
             <Grid item>

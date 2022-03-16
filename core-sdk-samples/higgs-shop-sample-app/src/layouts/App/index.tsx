@@ -29,14 +29,21 @@ const App = () => {
         // and will return any known User Identities from mParticle.
         // You can then synchronize this user data with any services that are
         // unique to your application.
-        // identityCallback: (result) => {
-        //     if (result.getUser()) {
-        //         // User has been identified
-        //         // proceed with any custom logic that requires a valid, identified user
-        //     } else {
-        //         // the IDSync call failed
-        //     }
-        // },
+        identityCallback: (result) => {
+            if (result.getUser()) {
+                // User has been identified
+                // proceed with any custom logic that requires a valid, identified user
+
+                const user = result.getUser();
+                const identities = user.getUserIdentities();
+
+                // We are simply logging the User Identities object as an example of the
+                // contents
+                console.log('User Identities', identities);
+            } else {
+                // the IDSync call failed
+            }
+        },
     };
 
     // this should be defined in .env the
