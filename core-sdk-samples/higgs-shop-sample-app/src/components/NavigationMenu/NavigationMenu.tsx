@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import MenuIcon from '@mui/icons-material/Menu';
-// import InfoIcon from '@mui/icons-material/Info';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import mParticle from '@mparticle/web-sdk';
@@ -190,19 +189,18 @@ const NavigationMenu: React.FC = () => {
             key='Account'
         />,
 
-        // TODO: Replace with icon button
-        <NavigationMenuItem
-            testId='desktop-nav-cart-button'
+        <IconButton
+            aria-label='Cart'
+            data-testid='desktop-nav-cart-button'
             component={Link}
             to='/cart'
             sx={classes.link}
-            iconLeft={
-                <Badge badgeContent={numberOfProducts} color='primary'>
-                    <ShoppingCartIcon sx={classes.topnavLinkIcon} />
-                </Badge>
-            }
             key='Cart'
-        />,
+        >
+            <Badge badgeContent={numberOfProducts} color='primary'>
+                <ShoppingCartIcon sx={classes.topnavLinkIcon} />
+            </Badge>
+        </IconButton>,
     ];
 
     const drawerMenuItems: ReactElement[] = [
