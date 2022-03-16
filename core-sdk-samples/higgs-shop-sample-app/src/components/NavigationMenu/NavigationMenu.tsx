@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
     AppBar,
     Box,
+    Badge,
     Container,
     Toolbar,
     CssBaseline,
@@ -15,7 +16,7 @@ import {
 } from '@mui/material';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import MenuIcon from '@mui/icons-material/Menu';
-import InfoIcon from '@mui/icons-material/Info';
+// import InfoIcon from '@mui/icons-material/Info';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import mParticle from '@mparticle/web-sdk';
@@ -23,8 +24,10 @@ import NavigationMenuItem from './NavigationMenuItem';
 import NavigationMenuDrawer from './NavigationMenuDrawer';
 import HiggsmartLogo from '../HiggsLogo/HiggsmartLogo';
 import theme from '../../contexts/theme';
+import { useOrderDetails } from '../../contexts/OrderDetails';
 
 const NavigationMenu: React.FC = () => {
+    const { numberOfProducts } = useOrderDetails();
     const classes: SxProps<Theme> = {
         appBar: {},
         drawer: {},
@@ -52,7 +55,7 @@ const NavigationMenu: React.FC = () => {
             },
         },
         topnavList: { display: 'flex' },
-        topnavLinkIcon: { ml: 0, mr: 2 },
+        topnavLinkIcon: {},
         homeLink: {},
         mobileResponsive: {
             flexGrow: 1,
@@ -135,13 +138,18 @@ const NavigationMenu: React.FC = () => {
             to='/cart'
             onClick={() => trackNavClick('Cart Icon')}
         >
-            <ShoppingCartIcon />
+            <Badge badgeContent={numberOfProducts} color='primary'>
+                <ShoppingCartIcon />
+            </Badge>
         </IconButton>,
     ];
 
     // The following desktop navigation items use mParticle.logEvent
     // internally so that they stay DRY and handle optional callbacks.
     const topNavDesktopItems: ReactElement[] = [
+        // Space for missing About Us section
+        <Box sx={{ width: '220px' }} />,
+
         <NavigationMenuItem
             testId='desktop-nav-shop-button'
             component={Link}
@@ -151,14 +159,15 @@ const NavigationMenu: React.FC = () => {
             key='Shop'
         />,
 
-        <NavigationMenuItem
-            testId='desktop-nav-about-button'
-            component={Link}
-            to='/about'
-            sx={classes.link}
-            label='About'
-            key='About'
-        />,
+        // Hide until About us content is available
+        // <NavigationMenuItem
+        //     testId='desktop-nav-about-button'
+        //     component={Link}
+        //     to='/about'
+        //     sx={classes.link}
+        //     label='About'
+        //     key='About'
+        // />,
 
         <MenuItem
             data-testid='desktop-nav-home-button'
@@ -181,13 +190,17 @@ const NavigationMenu: React.FC = () => {
             key='Account'
         />,
 
+        // TODO: Replace with icon button
         <NavigationMenuItem
             testId='desktop-nav-cart-button'
             component={Link}
             to='/cart'
             sx={classes.link}
-            label='Cart'
-            iconLeft={<ShoppingCartIcon sx={classes.topnavLinkIcon} />}
+            iconLeft={
+                <Badge badgeContent={numberOfProducts} color='primary'>
+                    <ShoppingCartIcon sx={classes.topnavLinkIcon} />
+                </Badge>
+            }
             key='Cart'
         />,
     ];
@@ -204,16 +217,17 @@ const NavigationMenu: React.FC = () => {
             iconLeft={<CheckroomIcon sx={classes.drawerLinkIcon} />}
         />,
 
-        <NavigationMenuItem
-            testId='drawer-nav-about-button'
-            key='about'
-            component={Link}
-            to='/about'
-            sx={classes.drawerLink}
-            clickCallback={closeDrawer}
-            label='About'
-            iconLeft={<InfoIcon sx={classes.drawerLinkIcon} />}
-        />,
+        // Hide until About us content is available
+        // <NavigationMenuItem
+        //     testId='drawer-nav-about-button'
+        //     key='about'
+        //     component={Link}
+        //     to='/about'
+        //     sx={classes.drawerLink}
+        //     clickCallback={closeDrawer}
+        //     label='About'
+        //     iconLeft={<InfoIcon sx={classes.drawerLinkIcon} />}
+        // />,
 
         <NavigationMenuItem
             testId='drawer-nav-account-button'
@@ -233,7 +247,11 @@ const NavigationMenu: React.FC = () => {
             to='/cart'
             sx={classes.drawerLink}
             clickCallback={closeDrawer}
-            iconLeft={<ShoppingCartIcon sx={classes.drawerLinkIcon} />}
+            iconLeft={
+                <Badge badgeContent={numberOfProducts} color='primary'>
+                    <ShoppingCartIcon sx={classes.drawerLinkIcon} />
+                </Badge>
+            }
             label='Cart'
         />,
     ];

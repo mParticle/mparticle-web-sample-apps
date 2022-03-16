@@ -54,7 +54,8 @@ const StartShoppingModal: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    p: 3,
+                    py: 6,
+                    px: 3,
                     background:
                         'linear-gradient(180deg, #2C38A7 0%, #04071E 100%);',
                 }}

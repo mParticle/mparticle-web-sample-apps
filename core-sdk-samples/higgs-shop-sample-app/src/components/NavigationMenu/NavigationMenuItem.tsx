@@ -14,7 +14,8 @@ interface NavigationMenuItemProps {
     component: typeof Link;
     to: string;
     sx: SxProps<Theme>;
-    label: string;
+    // TODO: Maybe use icon button instead of making optional?
+    label?: string;
     clickCallback?: () => void;
     iconLeft?: ReactElement<SvgIconTypeMap>;
 }
@@ -65,6 +66,7 @@ const NavigationMenuItem: React.FC<NavigationMenuItemProps> = ({
 };
 
 NavigationMenuItem.defaultProps = {
+    label: undefined,
     iconLeft: undefined,
     clickCallback: undefined,
 };

@@ -19,6 +19,7 @@ const theme = createTheme({
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: 15,
+            textTransform: 'none',
         },
         h3: {
             color: '#FFFFFF',
