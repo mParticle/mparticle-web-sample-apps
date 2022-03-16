@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import mParticle from '@mparticle/web-sdk';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
+import { Button } from '@mui/material';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { ShopPage } from '../../pages/ShopPage';
 import { AboutPage } from '../../pages/AboutPage';
@@ -14,8 +15,12 @@ import { StartShoppingModal } from '../../components/StartShoppingModal';
 import OrderDetailsProvider from '../../contexts/OrderDetails';
 import UserDetailsProvider from '../../contexts/UserDetails';
 import { AccountPage } from '../../pages/AccountPage';
+import { MessageModal } from '../../components/MessageModal';
+import { APIkeyModalMessage } from '../../constants';
 
 const App = () => {
+    const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
+
     const mParticleConfig: mParticle.MPConfiguration = {
         isDevelopmentMode: true,
         // logLevel can be 'verbose', 'warning', or 'none' (the default is 'warning').
@@ -53,9 +58,10 @@ const App = () => {
         if (apiKey) {
             mParticle.init(apiKey, mParticleConfig);
         } else {
+            setApiKeyModalOpen(true);
             console.error('Please add your mParticle API Key');
         }
-    });
+    }, []);
 
     return (
         <div className='App'>
@@ -63,7 +69,30 @@ const App = () => {
                 <UserDetailsProvider>
                     <OrderDetailsProvider>
                         <BrowserRouter>
-                            <StartShoppingModal />
+                            {/* Hide Shopping dialog if api key warning is visible */}
+                            {!apiKeyModalOpen && <StartShoppingModal />}
+                            <MessageModal
+                                message={APIkeyModalMessage}
+                                open={apiKeyModalOpen}
+                                buttonAction={
+                                    <>
+                                        <Button
+                                            variant='contained'
+                                            target='_new'
+                                            href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
+                                        >
+                                            Go to Readme
+                                        </Button>
+                                        <Button
+                                            variant='contained'
+                                            target='_new'
+                                            href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
+                                        >
+                                            Go to Docs
+                                        </Button>
+                                    </>
+                                }
+                            />
                             <NavigationMenu />
                             <Routes>
                                 <Route path='/' element={<ShopPage />} />
