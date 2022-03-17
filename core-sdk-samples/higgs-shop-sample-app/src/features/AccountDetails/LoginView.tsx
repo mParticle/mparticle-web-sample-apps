@@ -14,12 +14,16 @@ interface LoginViewProps {
 }
 const LoginView: React.FC<LoginViewProps> = ({ loginAction }) => {
     // Hardcoding user ID for demonstration purposes
-
     const userId = 'MyHiggsId';
 
     return (
         <>
-            <Grid item>
+            <Grid
+                item
+                sx={{
+                    mb: 2,
+                }}
+            >
                 <FormControl>
                     <TextField id='userId' label='User Id' value={userId} />
                 </FormControl>

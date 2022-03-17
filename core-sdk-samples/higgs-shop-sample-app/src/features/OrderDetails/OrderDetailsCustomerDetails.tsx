@@ -23,33 +23,17 @@ const OrderDetailsCustomerDetails: React.FC = () => {
                         id='streetAddress'
                         label='Street Address'
                         value='1234 Normal Lane'
-                        disabled
                     />
                 </FormControl>
                 <FormControl fullWidth sx={{ my: 2 }}>
-                    <TextField
-                        id='city'
-                        label='City'
-                        value='Higgsville'
-                        disabled
-                    />
+                    <TextField id='city' label='City' value='Higgsville' />
                 </FormControl>
                 <Box sx={{ my: 2 }}>
                     <FormControl sx={{ mr: 1 }}>
-                        <TextField
-                            id='state'
-                            label='State'
-                            value='NY'
-                            disabled
-                        />
+                        <TextField id='state' label='State' value='NY' />
                     </FormControl>
                     <FormControl sx={{ ml: 1 }}>
-                        <TextField
-                            id='zip'
-                            label='Zip'
-                            value='10010'
-                            disabled
-                        />
+                        <TextField id='zip' label='Zip' value='10010' />
                     </FormControl>
                 </Box>
             </Grid>
@@ -72,7 +56,6 @@ const OrderDetailsCustomerDetails: React.FC = () => {
                         id='cardNumber'
                         label='Credit Card Number'
                         value='0000-0000-0000'
-                        disabled
                     />
                 </FormControl>
                 <Box sx={{ my: 2 }}>
@@ -81,11 +64,10 @@ const OrderDetailsCustomerDetails: React.FC = () => {
                             id='expiration'
                             label='Expiration'
                             value='3/23'
-                            disabled
                         />
                     </FormControl>
                     <FormControl sx={{ ml: 1 }}>
-                        <TextField id='cvc' label='CVC' value='227' disabled />
+                        <TextField id='cvc' label='CVC' value='227' />
                     </FormControl>
                 </Box>
             </Grid>

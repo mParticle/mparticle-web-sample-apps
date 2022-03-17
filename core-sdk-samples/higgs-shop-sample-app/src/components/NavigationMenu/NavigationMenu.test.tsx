@@ -11,9 +11,10 @@ describe('Navigation Menu', () => {
             screen.getByTestId('desktop-nav-shop-button'),
         ).toBeInTheDocument();
 
+        // Temporarily hidden. We want this to be checked once it has been added back
         expect(
-            screen.getByTestId('desktop-nav-about-button'),
-        ).toBeInTheDocument();
+            screen.queryByTestId('desktop-nav-about-button'),
+        ).not.toBeInTheDocument();
 
         expect(
             screen.getByTestId('desktop-nav-home-button'),
@@ -66,8 +67,12 @@ describe('Navigation Menu', () => {
 
         expect(screen.getByTestId('drawer-menu')).toBeVisible();
         expect(screen.getByTestId('drawer-nav-shop-button')).toBeVisible();
-        expect(screen.getByTestId('drawer-nav-about-button')).toBeVisible();
         expect(screen.getByTestId('drawer-nav-account-button')).toBeVisible();
+
+        // Temporarily hidden. We want this to be checked once it has been added back
+        expect(
+            screen.queryByTestId('drawer-nav-about-button'),
+        ).not.toBeInTheDocument();
         expect(screen.getByTestId('drawer-nav-cart-button')).toBeVisible();
     });
 });

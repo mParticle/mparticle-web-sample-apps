@@ -16,7 +16,12 @@ const AccountDetails: React.FC<AccountDetailsProps> = ({
             <Grid item>
                 <Typography variant='h6'>You are signed in as</Typography>
             </Grid>
-            <Grid item>
+            <Grid
+                item
+                sx={{
+                    mb: 2,
+                }}
+            >
                 <Typography variant='body2'>{username}</Typography>
             </Grid>
             <Grid item>

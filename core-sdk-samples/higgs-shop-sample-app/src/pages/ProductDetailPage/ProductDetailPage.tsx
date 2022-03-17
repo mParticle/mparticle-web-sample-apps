@@ -193,7 +193,7 @@ const ProductDetailPage: React.FC = () => {
                     <Grid item xs={12} sm={6}>
                         <Box sx={classes.desktopResponsive}>
                             <Box>
-                                <Typography variant='h3'>
+                                <Typography variant='h3' align='left'>
                                     {product.label}
                                 </Typography>
                             </Box>
@@ -237,7 +237,7 @@ const ProductDetailPage: React.FC = () => {
                                     />
                                 )}
 
-                                <FormControl fullWidth>
+                                <FormControl sx={{ maxWidth: '120px' }}>
                                     <TextField
                                         id='quantity'
                                         label='Quantity'
