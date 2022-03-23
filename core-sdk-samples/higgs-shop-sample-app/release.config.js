@@ -2,8 +2,7 @@
 module.exports = {
     branches: ['main'],
     tagFormat: 'v${version}',
-    repositoryUrl:
-        'https://github.com/mParticle/mparticle-web-sample-apps-internal',
+    repositoryUrl: 'https://github.com/mParticle/mparticle-web-sample-apps',
     plugins: [
         [
             '@semantic-release/commit-analyzer',
