@@ -23,11 +23,12 @@ By using this sample app, you will quickly learn how to:
 
 3. In the root of this project, rename `.env.sample` to `.env` .
 
-4. Visit your [mParticle Workspace](https://app.mparticle.com/setup/inputs/apps), then navigate to **Setup > Inputs** in the left column to generate a Web API key.
+4. Update the `REACT_APP_MPARTICLE_API_KEY` environment variable with with your mParticle Web API Key.
 
-5. Update the `REACT_APP_MPARTICLE_API_KEY` environment variable with with your mParticle Web API Key
+- If you do not have a Web API key, visit your [mParticle Workspace](https://app.mparticle.com/setup/inputs/apps), then navigate to **Setup > Inputs** in the left column to generate one.
 
-6. Run the project using `npm start`
+
+5. Run the project using `npm start`
 
 This will spawn a development server and open your browser to the HiggsMart sample app.
 
@@ -121,8 +122,10 @@ As a developer, sometimes the best way to learn is to just dig into the code or 
 
 ![mParticle Network Events](./.github/images/event-request.jpg)
 
-## Explore an example an end-to-end data flow with HiggsMart and mParticle
+## Setting up an end-to-end data flow with HiggsMart and mParticle
 mParticle simplifies the process of collecting customer data events from your apps, and forwarding this data to a wide variety of downstream systems for analytics, data processing, and marketing. To illustrate this process, here is an example of a data connection using HiggsMart as an input, and a sample output. 
+
+Note: In this example, we will be using [Webhook.site](https://webhook.site) to simulate data transferring between the HiggsMart and your own services. Webhook.site is not an mParticle service and is only being used as to simulate an end-to-end full data flow to a third party system.
 
 ### Send data to mParticle
 By generating your Web API key and adding it to this project, you have already set up HiggsMart as a Web input [input](https://docs.mparticle.com/guides/getting-started/create-an-input/). This means that your on-site behaviors in the local build of this app will be captured and sent to mParticle as data events. 
