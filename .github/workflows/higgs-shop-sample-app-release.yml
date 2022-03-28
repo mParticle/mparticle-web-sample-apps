@@ -89,3 +89,10 @@ jobs:
                 -p @semantic-release/git@9 \
                 -p @semantic-release/exec@5 \
                 semantic-release
+
+            - name: Archive npm failure logs
+              uses: actions/upload-artifact@v2
+              if: failure()
+              with:
+                name: npm-logs
+                path: ~/.npm/_logs
