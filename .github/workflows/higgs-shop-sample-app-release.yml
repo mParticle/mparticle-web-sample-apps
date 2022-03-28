@@ -72,7 +72,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
               run: |
                 npx \
-                -p lodash \
                 -p semantic-release@17 \
                 -p @semantic-release/changelog@5 \
                 -p @semantic-release/git@9 \
@@ -85,7 +84,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
               run: |
                 npx \
-                -p lodash \
                 -p semantic-release@17 \
                 -p @semantic-release/changelog@5 \
                 -p @semantic-release/git@9 \
