@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 module.exports = {
-    branches: ['main'],
+    branches: ['main', 'ci/test-semantic-release'],
     tagFormat: 'v${version}',
     repositoryUrl: 'https://github.com/mParticle/mparticle-web-sample-apps',
     plugins: [
