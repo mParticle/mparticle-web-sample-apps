@@ -1327,9 +1327,9 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@mparticle/web-sdk@^2.14.2":
-  version "2.14.2"
-  resolved "https://registry.npmjs.org/@mparticle/web-sdk/-/web-sdk-2.14.2.tgz"
+"@mparticle/web-sdk@^2.15.0":
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.15.0.tgz#ef1019f151c7e1ee47365f8ed83a637662f86fb4"
   dependencies:
     "@babel/runtime" "^7.6.0"
     slugify "^1.3.6"
