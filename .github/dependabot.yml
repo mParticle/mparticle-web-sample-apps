@@ -6,10 +6,6 @@ updates:
         interval: daily
         time: "08:00"
         timezone: "America/New_York"
-      target-branch: 'development'
+      target-branch: 'chore/development'
       labels: ['dependabot']
       open-pull-requests-limit: 10
-      ignore:
-          - dependency-name: 'rollup'
-          - dependency-name: 'browserify'
-          - dependency-name: '@babel/runtime'
