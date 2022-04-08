@@ -11,6 +11,7 @@ jobs:
     build-and-test:
         name: Build, Lint, and Test
         runs-on: ${{ matrix.os }}
+        continue-on-error: true  # Prevents parallel job from being cancelled if all fail
         strategy:
             matrix:
                 os: [windows-latest, ubuntu-latest, macos-latest]
