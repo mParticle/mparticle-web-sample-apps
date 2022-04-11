@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
         "@emotion/react": "^11.7.1",
-        "@emotion/styled": "^11.6.0",
+        "@emotion/styled": "^11.8.1",
         "@fontsource/lato": "^4.5.5",
         "@mparticle/web-sdk": "^2.14.2",
         "@mui/icons-material": "^5.5.1",
