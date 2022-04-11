@@ -52,19 +52,18 @@ const AccountPage = () => {
     };
 
     const handleLogout = () => {
-        // As we are logging out, we no longer need to pass any custom
-        // User Identities. However Typescript requires that we pass in
-        // a full Identity object.
-        const identityRequest: mParticle.IdentityApiData = {
-            userIdentities: {},
-        };
-
         const identityCallback: mParticle.IdentityCallback = (result) => {
             if (result.getUser()) {
                 // Handle any necessary post-login actions
             }
         };
-        mParticle.Identity.logout(identityRequest, identityCallback);
+
+        // As we are logging out, we no longer need to pass any custom
+        // User Identities. However, there may be use cases where you want
+        // want to pass in identities.
+        // For more examples:
+        // https://docs.mparticle.com/developers/sdk/web/idsync/#login-and-logout
+        mParticle.Identity.logout({}, identityCallback);
 
         // As an example, we are formally logging the user out seperately from
         // any mParticle logging actions
