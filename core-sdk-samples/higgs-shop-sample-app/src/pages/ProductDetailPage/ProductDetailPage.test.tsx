@@ -88,28 +88,28 @@ describe('Product Page', () => {
             name: /select color/i,
         });
 
-        userEvent.click(colorSelect);
+        await userEvent.click(colorSelect);
 
-        const mustardSelect = await screen.getByRole('option', {
+        const mustardSelect = await screen.findByRole('option', {
             name: /mustard/i,
         });
 
-        userEvent.click(mustardSelect);
+        await userEvent.click(mustardSelect);
 
-        const sizeSelect = screen.getByRole('button', {
+        const sizeSelect = await screen.findByRole('button', {
             name: /select size/i,
         });
 
-        userEvent.click(sizeSelect);
+        await userEvent.click(sizeSelect);
 
-        const xLSelect = await screen.getByRole('option', {
+        const xLSelect = await screen.findByRole('option', {
             name: 'XL',
         });
 
-        userEvent.click(xLSelect);
+        await userEvent.click(xLSelect);
 
         expect(addToCartButton).toBeEnabled();
-        userEvent.click(addToCartButton);
+        await userEvent.click(addToCartButton);
 
         const toastMessage = screen.getByText('Product added to cart');
 
@@ -150,40 +150,38 @@ describe('Product Page', () => {
             pathSignature: '/products/:id',
         });
 
-        const addToCartButton = screen.getByRole('button', {
+        const addToCartButton = await screen.findByRole('button', {
             name: /add to cart/i,
         });
 
-        const colorSelect = screen.getByRole('button', {
+        const colorSelect = await screen.findByRole('button', {
             name: /select color/i,
         });
-        userEvent.click(colorSelect);
+        await userEvent.click(colorSelect);
 
-        const mustardSelect = await screen.getByRole('option', {
+        const mustardSelect = await screen.findByRole('option', {
             name: /mustard/i,
         });
-        userEvent.click(mustardSelect);
+        await userEvent.click(mustardSelect);
 
-        const sizeSelect = screen.getByRole('button', {
+        const sizeSelect = await screen.findByRole('button', {
             name: /select size/i,
         });
-        userEvent.click(sizeSelect);
+        await userEvent.click(sizeSelect);
 
-        const xLSelect = await screen.getByRole('option', {
+        const xLSelect = await screen.findByRole('option', {
             name: 'XL',
         });
-        userEvent.click(xLSelect);
+        await userEvent.click(xLSelect);
 
-        userEvent.click(addToCartButton);
-
-        const quantityTextField = screen.getByRole('textbox', {
+        const quantityTextField = await screen.findByRole('textbox', {
             name: /quantity/i,
         });
 
-        userEvent.clear(quantityTextField);
-        userEvent.type(quantityTextField, '{selectall}3');
+        await userEvent.clear(quantityTextField);
+        await userEvent.type(quantityTextField, '{selectall}3');
 
-        userEvent.click(addToCartButton);
+        await userEvent.click(addToCartButton);
 
         await waitFor(() => {
             expect(mParticle.eCommerce.logProductAction).toHaveBeenCalledWith(
