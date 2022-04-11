@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.1.0...v1.2.0) (2022-04-11)
+
+
+### Features
+
+* update higgs shop to react-scripts v5 ([#59](https://github.com/mParticle/mparticle-web-sample-apps/issues/59)) ([8e3123b](https://github.com/mParticle/mparticle-web-sample-apps/commit/8e3123bbee5e67e65915e2f655b9c1f1fc0cc512))
+
 # [1.1.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.0.0...v1.1.0) (2022-03-29)
 
 
