@@ -1500,10 +1500,10 @@
   "resolved" "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.3.tgz"
   "version" "2.0.3"
 
-"@mparticle/web-sdk@^2.14.2":
-  "integrity" "sha512-gcqs3yc5vmiCPLhQJcwUv9JShhri5TuMUsOUVnGCAD0pIk01vPPt1ysdX9jVDClDUY0E4RSYOHbYm1ZXWxP1Lg=="
-  "resolved" "https://registry.npmjs.org/@mparticle/web-sdk/-/web-sdk-2.14.2.tgz"
-  "version" "2.14.2"
+"@mparticle/web-sdk@^2.15.0":
+  "integrity" "sha512-kHH5mxXQx0OwZHvEmxL+uQQv9LgIiakIw1Kk6sc4Gc8HHEOZosS0GOA9sp5wCZRvAgBVJp0ZX3mgHJFj/bPGOw=="
+  "resolved" "https://registry.npmjs.org/@mparticle/web-sdk/-/web-sdk-2.15.0.tgz"
+  "version" "2.15.0"
   dependencies:
     "@babel/runtime" "^7.6.0"
     "slugify" "^1.3.6"
@@ -2031,10 +2031,10 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
   "version" "1.3.2"
 
-"@types/mparticle__web-sdk@^2.14.0":
-  "integrity" "sha512-BZRWgMGDbVOa8iYRM4tUMoAnjske8+SMJfB0eD8VtBp2mQCbkNUpeOCxogu57UczgScH6UatZONF4UPXhd62PA=="
-  "resolved" "https://registry.npmjs.org/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.14.0.tgz"
-  "version" "2.14.0"
+"@types/mparticle__web-sdk@^2.15.1":
+  "integrity" "sha512-uiIUK+Y3eVknEhG20i33JthyJ++/gXhgtWN/cxwI/dPoCE36SnfKGR7wRiZLb30ZvM1cqQZRne/Nb0Vabtvu1Q=="
+  "resolved" "https://registry.npmjs.org/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.15.1.tgz"
+  "version" "2.15.1"
 
 "@types/node@*", "@types/node@^17.0.23":
   "integrity" "sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw=="
