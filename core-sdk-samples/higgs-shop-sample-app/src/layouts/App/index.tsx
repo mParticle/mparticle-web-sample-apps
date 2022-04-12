@@ -40,11 +40,20 @@ const App = () => {
                 // proceed with any custom logic that requires a valid, identified user
 
                 const user = result.getUser();
-                const identities = user.getUserIdentities();
+                const { userIdentities } = user.getUserIdentities();
 
-                // We are simply logging the User Identities object as an example of the
-                // contents
-                console.log('User Identities', identities);
+                // For demonstration purposes, we are printing out the known values for a user
+                // to the console. An example of a use case for this callback might be to sync
+                // the identity of a user with your own authentication logic
+                Object.keys(userIdentities).forEach((identity) => {
+                    console.log(
+                        'User Identity Value: ',
+                        identity,
+                        userIdentities[
+                            identity as keyof mParticle.UserIdentities
+                        ],
+                    );
+                });
             } else {
                 // the IDSync call failed
             }
