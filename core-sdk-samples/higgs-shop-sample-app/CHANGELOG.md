@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.2.0...v1.3.0) (2022-04-12)
+
+
+### Bug Fixes
+
+* Update Higgs Shop Identity Callback Usage ([#71](https://github.com/mParticle/mparticle-web-sample-apps/issues/71)) ([c2f15ef](https://github.com/mParticle/mparticle-web-sample-apps/commit/c2f15ef2fa8ca89fbb94d077aa6dcac8ca17bd4e))
+* Update Higgs Shop Logout Implementation ([#72](https://github.com/mParticle/mparticle-web-sample-apps/issues/72)) ([547810c](https://github.com/mParticle/mparticle-web-sample-apps/commit/547810ccc08efd0ee14154cca59b95f60f426e67))
+
+
+### Features
+
+* update mParticle version and type def to 2.15.x ([#83](https://github.com/mParticle/mparticle-web-sample-apps/issues/83)) ([0334e33](https://github.com/mParticle/mparticle-web-sample-apps/commit/0334e331c79b10c53e236dadcaa0fe4a92fbb76f))
+
 # [1.2.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.1.0...v1.2.0) (2022-04-11)
 
 
