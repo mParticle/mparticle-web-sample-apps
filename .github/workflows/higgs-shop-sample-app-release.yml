@@ -77,10 +77,14 @@ jobs:
               path: core-sdk-samples/higgs-shop-sample-app/dataplans/
 
           - name: Commit Data Plans to Git
-            uses: EndBug/add-and-commit@v6
+            uses: EndBug/add-and-commit@v9
             with:
               message: Update Higgs Shop Data Plan
               add: core-sdk-samples/higgs-shop-sample-app/dataplans
+              author_name: mparticle-bot
+              author_email: developers@mparticle.com
+              committer_name: mparticle-bot
+              committer_email: developers@mparticle.com
               
 
     create-release-branch:
