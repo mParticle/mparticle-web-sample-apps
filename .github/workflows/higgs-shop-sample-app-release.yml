@@ -35,8 +35,7 @@ jobs:
     fetch-data-plans:
         name: "Fetch Data Plan"
         runs-on: ubuntu-latest
-        # Allow to run for testing
-        # needs: confirm-main-branch
+        needs: confirm-main-branch
         steps:
           - name: Checkout
             uses: actions/checkout@v2
