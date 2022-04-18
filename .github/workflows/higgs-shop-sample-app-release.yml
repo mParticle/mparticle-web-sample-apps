@@ -57,18 +57,6 @@ jobs:
             run: |
               mp planning:data-plan-versions:fetch --dataPlanId=higgs_shop_basic_data_plan --versionNumber=1 --outFile=dataplans/higgs_shop_basic_data_plan_1.json --workspaceId=$WORKSPACE_ID --clientId=$CLIENT_ID --clientSecret=$CLIENT_SECRET
           
-          - name: View directory
-            run: pwd
-            
-          - name: View directory
-            run: ls -altr .
-            
-          - name: View directory
-            run: ls -altr dataplans
-            
-          - name: View Github Workspace
-            run: ls -altr ${{ github.workspace }}
-
           - name: Archive Data Plan Artifacts
             uses: actions/upload-artifact@v3
             with:
