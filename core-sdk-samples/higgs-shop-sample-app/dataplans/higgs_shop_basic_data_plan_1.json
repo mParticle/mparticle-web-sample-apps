@@ -1,0 +1,748 @@
+{
+    "version": 1,
+    "data_plan_id": "higgs_shop_basic_data_plan",
+    "version_description": "",
+    "activated_environment": "development",
+    "created_on": "2022-01-05T21:07:16.183",
+    "created_by": "alexs@mparticle.com",
+    "last_modified_on": "2022-03-24T16:14:40.16",
+    "last_modified_by": "pjenkins@mparticle.com",
+    "version_document": {
+        "data_points": [
+            {
+                "description": "User visited the shop",
+                "match": {
+                    "type": "screen_view",
+                    "criteria": {
+                        "screen_name": "Shop"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "View Higgs Shop Gear",
+                "match": {
+                    "type": "product_impression",
+                    "criteria": {}
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_impressions": {
+                                        "description": "",
+                                        "items": {
+                                            "additionalProperties": false,
+                                            "description": "",
+                                            "properties": {
+                                                "product_impression_list": {
+                                                    "description": "",
+                                                    "type": "string"
+                                                },
+                                                "products": {
+                                                    "description": "",
+                                                    "items": {
+                                                        "additionalProperties": false,
+                                                        "description": "",
+                                                        "properties": {
+                                                            "total_product_amount": {
+                                                                "description": "",
+                                                                "type": "number"
+                                                            },
+                                                            "quantity": {
+                                                                "description": "",
+                                                                "type": "number"
+                                                            },
+                                                            "price": {
+                                                                "description": "",
+                                                                "type": "number"
+                                                            },
+                                                            "position": {
+                                                                "description": "",
+                                                                "type": "number"
+                                                            },
+                                                            "id": {
+                                                                "description": "",
+                                                                "type": "string"
+                                                            },
+                                                            "name": {
+                                                                "description": "",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "required": [],
+                                                        "type": "object"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "required": [],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "Displayed the landing view",
+                "match": {
+                    "type": "screen_view",
+                    "criteria": {
+                        "screen_name": "Landing"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "Clicked on main button on landing view",
+                "match": {
+                    "type": "custom_event",
+                    "criteria": {
+                        "event_name": "Landing Button Click",
+                        "custom_event_type": "other"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "Clicked on background overlay on landing modal screen",
+                "match": {
+                    "type": "custom_event",
+                    "criteria": {
+                        "event_name": "Landing Modal Background Click",
+                        "custom_event_type": "other"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User added product to cart",
+                "match": {
+                    "type": "product_action",
+                    "criteria": {
+                        "action": "add_to_cart"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_action": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "action": {
+                                                "description": "",
+                                                "type": "string"
+                                            },
+                                            "products": {
+                                                "description": "",
+                                                "items": {
+                                                    "additionalProperties": false,
+                                                    "description": "",
+                                                    "properties": {
+                                                        "id": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "name": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "total_product_amount": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "custom_attributes": {
+                                                            "additionalProperties": false,
+                                                            "description": "",
+                                                            "properties": {
+                                                                "size": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                },
+                                                                "color": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [],
+                                                            "type": "object"
+                                                        },
+                                                        "quantity": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "price": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "required": [],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User viewed product detail",
+                "match": {
+                    "type": "product_action",
+                    "criteria": {
+                        "action": "view_detail"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_action": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "action": {
+                                                "description": "",
+                                                "type": "string"
+                                            },
+                                            "products": {
+                                                "description": "",
+                                                "items": {
+                                                    "additionalProperties": true,
+                                                    "description": "",
+                                                    "properties": {
+                                                        "price": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "name": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "price",
+                                                        "name",
+                                                        "id"
+                                                    ],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User clicked Navigation Item",
+                "match": {
+                    "type": "custom_event",
+                    "criteria": {
+                        "event_name": "Navbar Click",
+                        "custom_event_type": "navigation"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "custom_attributes": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "label": {
+                                                "description": "Label of Navigation Element Clicked",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User Identities",
+                "match": {
+                    "type": "user_identities",
+                    "criteria": {}
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "additionalProperties": false,
+                        "properties": {
+                            "email": {
+                                "description": "User identified by email",
+                                "type": "string"
+                            },
+                            "customerid": {
+                                "description": "Customer Unique Identifier",
+                                "type": "string"
+                            },
+                            "ios_idfv": {
+                                "description": "",
+                                "type": "string"
+                            }
+                        },
+                        "required": [],
+                        "type": "object"
+                    }
+                }
+            },
+            {
+                "description": "User visits My Cart Screen",
+                "match": {
+                    "type": "screen_view",
+                    "criteria": {
+                        "screen_name": "View My Cart"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "custom_attributes": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "number_of_products": {
+                                                "description": "Total Number of items in cart",
+                                                "type": "string"
+                                            },
+                                            "total_product_amounts": {
+                                                "description": "Total Value of items in cart",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User removes item from cart",
+                "match": {
+                    "type": "product_action",
+                    "criteria": {
+                        "action": "remove_from_cart"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_action": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "products": {
+                                                "description": "",
+                                                "items": {
+                                                    "additionalProperties": false,
+                                                    "description": "",
+                                                    "properties": {
+                                                        "quantity": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "custom_attributes": {
+                                                            "additionalProperties": false,
+                                                            "description": "",
+                                                            "properties": {
+                                                                "size": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                },
+                                                                "color": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [],
+                                                            "type": "object"
+                                                        },
+                                                        "price": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "total_product_amount": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "name": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "action": {
+                                                "description": "",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User starts checkout process",
+                "match": {
+                    "type": "product_action",
+                    "criteria": {
+                        "action": "checkout"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_action": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "products": {
+                                                "description": "",
+                                                "items": {
+                                                    "additionalProperties": false,
+                                                    "description": "",
+                                                    "properties": {
+                                                        "total_product_amount": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "custom_attributes": {
+                                                            "additionalProperties": false,
+                                                            "description": "",
+                                                            "properties": {
+                                                                "size": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                },
+                                                                "color": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [],
+                                                            "type": "object"
+                                                        },
+                                                        "quantity": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "price": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "name": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "shipping_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "tax_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "total_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "action": {
+                                                "description": "",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User starts checkout process",
+                "match": {
+                    "type": "product_action",
+                    "criteria": {
+                        "action": "purchase"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "product_action": {
+                                        "additionalProperties": false,
+                                        "description": "",
+                                        "properties": {
+                                            "products": {
+                                                "description": "",
+                                                "items": {
+                                                    "additionalProperties": false,
+                                                    "description": "",
+                                                    "properties": {
+                                                        "total_product_amount": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "quantity": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "custom_attributes": {
+                                                            "additionalProperties": false,
+                                                            "description": "",
+                                                            "properties": {
+                                                                "size": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                },
+                                                                "color": {
+                                                                    "description": "",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "required": [],
+                                                            "type": "object"
+                                                        },
+                                                        "price": {
+                                                            "description": "",
+                                                            "type": "number"
+                                                        },
+                                                        "name": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "description": "",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [],
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "shipping_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "transaction_id": {
+                                                "description": "",
+                                                "type": "string"
+                                            },
+                                            "tax_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "total_amount": {
+                                                "description": "",
+                                                "type": "number"
+                                            },
+                                            "action": {
+                                                "description": "",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [],
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User is reviewing the order",
+                "match": {
+                    "type": "screen_view",
+                    "criteria": {
+                        "screen_name": "Checkout"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "User viewed their account",
+                "match": {
+                    "type": "screen_view",
+                    "criteria": {
+                        "screen_name": "My Account"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
