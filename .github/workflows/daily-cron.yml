@@ -2,7 +2,8 @@ name: Daily Cron
 
 # For testing purposes, I'll make this a manual dispatch, but this will become a cron after
 
-on:
+on: [ workflow_dispatch ]
+
   # Run daily at midnight
   # schedule:
   #   - cron: "0 0 * * *"
@@ -13,14 +14,12 @@ on:
 #       MP_DAILY_CRON_BOT:
 #         description: 'token needed for stale action'
 #         required: true
-
-    workflow_dispatch:
   
 jobs:
     fetch-data-plans:
       name: Fetch Data Plan
       # needs: confirm-public-repo-main-branch
-      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@1554834c98585652bb292ebb0872a224c789cee4
+      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@ci/update-sample-apps-data-plan
       with:
         data_plan_id: higgs_shop_basic_data_plan
         data_plan_version: 1
