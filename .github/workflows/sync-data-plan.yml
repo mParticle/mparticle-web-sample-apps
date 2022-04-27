@@ -42,3 +42,29 @@ jobs:
         - name: View Data Plan
           run: cat higgs_shop_basic_data_plan_1.json
           working-directory: core-sdk-samples/higgs-shop-sample-app/dataplans
+
+        - name: Check For Changes
+          id: check-changes
+          run: |
+              if [ `git rev-parse HEAD` = `git rev-parse origin/main` ]; 
+              then   
+                  OUTPUT=false;
+                else 
+                  OUTPUT=true;
+              fi;
+              echo "::set-output name=hasChanges::$OUTPUT"
+              echo "has changes: $OUTPUT"
+
+        - name: Open PR if Data Plan Changed
+          if: ${{steps.check-changes.outputs.hasChanges == 'true'}}
+          uses: actions/github-script@v3
+          with:
+            github-token: ${{secrets.GITHUB_TOKEN}}
+            script: |
+              github.pulls.create({
+                  title: 'chore: update sdk artifacts',
+                  owner: context.repo.owner,
+                  repo: context.payload.repository.name,
+                  head: 'chore/update-data-plan',
+                  base: 'main'
+              }); 
