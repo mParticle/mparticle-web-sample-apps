@@ -24,6 +24,7 @@ jobs:
         data_plan_id: higgs_shop_basic_data_plan
         data_plan_version: 1
         app_relative_path: core-sdk-samples/higgs-shop-sample-app
+      secrets:
         WORKSPACE_ID: ${{ secrets.HIGGS_SHOP_WORKSPACE_ID }}
         CLIENT_ID: ${{ secrets.HIGGS_SHOP_CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.HIGGS_SHOP_CLIENT_SECRET }}
