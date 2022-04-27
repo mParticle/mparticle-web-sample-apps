@@ -19,7 +19,7 @@ jobs:
     fetch-data-plans:
       name: Fetch Data Plan
       # needs: confirm-public-repo-main-branch
-      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@00ae29ab6cf5b112c0841b86fb4b0a76911bf5b6
+      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@9fdb40e3112ae43e86fb0817ba6d306dd013e1e0
       with:
         data_plan_id: higgs_shop_basic_data_plan
         data_plan_version: 1
