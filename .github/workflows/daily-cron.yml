@@ -19,8 +19,11 @@ jobs:
     fetch-data-plans:
       name: Fetch Data Plan
       # needs: confirm-public-repo-main-branch
-      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@ci/update-sample-apps-data-plan
+      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@257927f46f58946efc8f93eccfedf1c630b06f26
       with:
         data_plan_id: higgs_shop_basic_data_plan
         data_plan_version: 1
         app_relative_path: core-sdk-samples/higgs-shop-sample-app
+        WORKSPACE_ID: ${{ secrets.HIGGS_SHOP_WORKSPACE_ID }}
+        CLIENT_ID: ${{ secrets.HIGGS_SHOP_CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.HIGGS_SHOP_CLIENT_SECRET }}
