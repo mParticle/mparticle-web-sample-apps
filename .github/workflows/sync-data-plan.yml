@@ -46,5 +46,6 @@ jobs:
         - name: Open Pull Request
           uses: vsoch/pull-request-action@1.0.19
           env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
             PULL_REQUEST_BRANCH: development
             BRANCH_PREFIX: chore/
