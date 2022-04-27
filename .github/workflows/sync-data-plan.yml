@@ -59,3 +59,5 @@ jobs:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
             PULL_REQUEST_BRANCH: development
             PULL_REQUEST_FROM_BRANCH: chore/data-plan-update-${{ github.run_number }}
+            PULL_REQUEST_TITLE: "chore: update Higgs Shop Data Plan"
+            PULL_REQUEST_DRAFT: "Updating Higgs Shop Data Plan"
