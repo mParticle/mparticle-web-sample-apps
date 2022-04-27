@@ -46,7 +46,7 @@ jobs:
         - name: Check For Changes
           id: check-changes
           run: |
-              if [ `git rev-parse HEAD` = `git rev-parse origin/main` ]; 
+              if [ `git rev-parse HEAD` = `git rev-parse ci/refactor-data-plan-fetch` ]; 
               then   
                   OUTPUT=false;
                 else 
