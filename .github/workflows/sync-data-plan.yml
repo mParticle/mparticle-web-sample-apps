@@ -47,6 +47,7 @@ jobs:
           with:
             commit_message: Update Higgs Shop Data Plan
             branch: chore/data-plan-update-${{ github.run_number }}
+            create_branch: true
             commit_user_name: mparticle-bot
             commit_author_email: developers@mparticle.com
             commit_author: mparticle-bot  
