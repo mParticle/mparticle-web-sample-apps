@@ -12,11 +12,15 @@ This repository serves as directory of individual, self-contained, Sample Apps. 
 
 Our recommenation is to fork or download the entire repository and open a specific project in your IDE or Editor of choice. This will provide full project settings, including NPM tasks and Linting.
 
-**NOTE** These Sample Apps require a mParticle account with an API key.
+:information_source: **Note:** These Sample Apps require a mParticle account and a valid Input API key.
 
-While the code might run and build without mParticle credentials, the SDKs will not upload events to our servers and will generate errors.
+While the code might run and build without mParticle credentials, the SDKs will not upload events to our servers and will generate errors. Please visit [our docs](https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials) for more details on setting up an Input API key.
 
-Please visit [our docs](https://docs.mparticle.com/guides/getting-started/create-an-input) for more details on setting up an API Key.
+> **Startups, try mParticle for free**
+>
+> mParticle offers qualified startups up to one year of complimentary access to its enterprise-grade Customer Data Platform (CDP). There are no sales calls — approved startups get instant access.
+>
+> [Get mParticle Free &rarr;](https://www.mparticle.com/lpg/startup-accelerator/?utm_source=github_sample_apps)
 
 ### Sample Apps Directory
 
