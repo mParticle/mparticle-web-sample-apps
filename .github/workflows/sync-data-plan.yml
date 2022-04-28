@@ -5,7 +5,7 @@ on: [ workflow_dispatch ]
 jobs:
     fetch-data-plan:
       name: Fetch Data Plan
-      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@c0e46586fbba017da4ec55bf6d5b3ae7092c1637
+      uses: mParticle/mparticle-workflows/.github/workflows/data-plan-fetch.yml@stable
       with:
         data_plan_id: higgs_shop_basic_data_plan
         data_plan_version: 1
