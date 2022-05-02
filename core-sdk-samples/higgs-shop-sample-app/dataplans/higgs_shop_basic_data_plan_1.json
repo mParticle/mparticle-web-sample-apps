@@ -5,8 +5,8 @@
     "activated_environment": "development",
     "created_on": "2022-01-05T21:07:16.183",
     "created_by": "alexs@mparticle.com",
-    "last_modified_on": "2022-03-24T16:14:40.16",
-    "last_modified_by": "pjenkins@mparticle.com",
+    "last_modified_on": "2022-04-27T17:55:38.107",
+    "last_modified_by": "alexs@mparticle.com",
     "version_document": {
         "data_points": [
             {
@@ -727,6 +727,29 @@
                     "type": "screen_view",
                     "criteria": {
                         "screen_name": "My Account"
+                    }
+                },
+                "validator": {
+                    "type": "json_schema",
+                    "definition": {
+                        "properties": {
+                            "data": {
+                                "additionalProperties": true,
+                                "properties": {},
+                                "required": [],
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "description": "",
+                "match": {
+                    "type": "custom_event",
+                    "criteria": {
+                        "event_name": "Test Social Like",
+                        "custom_event_type": "social"
                     }
                 },
                 "validator": {
