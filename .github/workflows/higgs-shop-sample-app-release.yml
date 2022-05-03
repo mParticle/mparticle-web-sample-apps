@@ -31,53 +31,11 @@ jobs:
                     echo "You can only run a release from the main branch, you are trying to run it from ${BRANCHNAME}"
                     exit 1
                   fi
-              
-    fetch-data-plans:
-        name: "Fetch Data Plan"
-        runs-on: ubuntu-latest
-        needs: confirm-main-branch
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v2
-
-          - name: Use Node.js
-            uses: actions/setup-node@v1
-            with:
-              node-version: '16.x'
-
-          - name: Install mP CLI
-            run: npm install -g @mparticle/cli
-
-          - name: Fetch Data Plans with mp CLI
-            id: fetch-data-plans
-            env:
-              WORKSPACE_ID: ${{ secrets.HIGGS_SHOP_WORKSPACE_ID }}
-              CLIENT_ID: ${{ secrets.HIGGS_SHOP_CLIENT_ID }}
-              CLIENT_SECRET: ${{ secrets.HIGGS_SHOP_CLIENT_SECRET }}
-            run: |
-              mp planning:data-plan-versions:fetch --dataPlanId=higgs_shop_basic_data_plan --versionNumber=1 --outFile=dataplans/higgs_shop_basic_data_plan_1.json --workspaceId=$WORKSPACE_ID --clientId=$CLIENT_ID --clientSecret=$CLIENT_SECRET
-          
-          - name: Archive Data Plan Artifacts
-            uses: actions/upload-artifact@v3
-            with:
-              name: higgs-shop-dataplan
-              path: core-sdk-samples/higgs-shop-sample-app/dataplans/
-
-          - name: Commit Data Plans to Git
-            uses: EndBug/add-and-commit@v9
-            with:
-              message: Update Higgs Shop Data Plan
-              add: core-sdk-samples/higgs-shop-sample-app/dataplans
-              author_name: mparticle-bot
-              author_email: developers@mparticle.com
-              committer_name: mparticle-bot
-              committer_email: developers@mparticle.com
-              
 
     create-release-branch:
         name: "Create Release Branch"
         runs-on: ubuntu-18.04
-        needs: [confirm-main-branch, fetch-data-plans]
+        needs: confirm-main-branch
         steps:
           - name: "Checkout development branch"
             uses: actions/checkout@v2
