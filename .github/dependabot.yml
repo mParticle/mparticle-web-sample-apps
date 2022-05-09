@@ -6,6 +6,6 @@ updates:
         interval: daily
         time: "08:00"
         timezone: "America/New_York"
-      target-branch: 'chore/development'
+      target-branch: 'chore/dependabot'
       labels: ['dependabot']
       open-pull-requests-limit: 10
