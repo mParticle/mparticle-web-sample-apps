@@ -30,7 +30,7 @@ const App = () => {
         appName: 'Higgs Shop',
         appVersion: version,
 
-        // `packageName` is an optional analytics attribute that mParticle
+        // `package` is an optional analytics attribute that mParticle
         //  uses to measure usage and diagnostics of the Sample Apps.
         //  In a production application, you can safely remove this, or set
         //  it to your own value to help with diagnostics.
