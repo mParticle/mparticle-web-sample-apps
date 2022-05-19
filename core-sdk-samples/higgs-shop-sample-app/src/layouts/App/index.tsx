@@ -18,11 +18,27 @@ import { AccountPage } from '../../pages/AccountPage';
 import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
 
+// (optional) Use the package version number to keep your appVersion up-to-date
+const { version } = require('../../../package.json');
+
 const App = () => {
     const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
 
     const mParticleConfig: mParticle.MPConfiguration = {
+        // (optional) `appName and appVersion are used to associate with your web app
+        // and are included in all event uploads
+        appName: 'Higgs Shop',
+        appVersion: version,
+
+        // `packageName` is an optional analytics attribute that mParticle
+        //  uses to measure usage and diagnostics of the Sample Apps.
+        //  In a production application, you can safely remove this, or set
+        //  it to your own value to help with diagnostics.
+        package: 'com.mparticle.example.HiggsShopSampleApp',
+
+        // Sets to Dev Mode
         isDevelopmentMode: true,
+
         // logLevel can be 'verbose', 'warning', or 'none' (the default is 'warning').
         // This logLevel provides context into the inner workings of mParticle.
         // It can be updated after MP has been initialized using mParticle.setLogLevel().
