@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.3...v1.3.4) (2022-05-19)
+
+
+### Bug Fixes
+
+* add package and app info to mParticle MPConfiguration ([#109](https://github.com/mParticle/mparticle-web-sample-apps/issues/109)) ([e974e93](https://github.com/mParticle/mparticle-web-sample-apps/commit/e974e93b0bdaaf82e74217e0496e6221c4ae4181))
+
 ## [1.3.3](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.2...v1.3.3) (2022-05-09)
 
 ## [1.3.2](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.1...v1.3.2) (2022-05-03)
