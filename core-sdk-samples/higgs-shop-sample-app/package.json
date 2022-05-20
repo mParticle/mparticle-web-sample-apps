@@ -5,7 +5,7 @@
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.8.1",
         "@fontsource/lato": "^4.5.5",
-        "@mparticle/web-sdk": "^2.15.0",
+        "@mparticle/web-sdk": "^2.16.0",
         "@mui/icons-material": "^5.5.1",
         "@mui/material": "^5.2.5",
         "@testing-library/dom": "^8.13.0",
@@ -44,7 +44,7 @@
         ]
     },
     "devDependencies": {
-        "@types/mparticle__web-sdk": "^2.15.1",
+        "@types/mparticle__web-sdk": "^2.16.0",
         "@typescript-eslint/eslint-plugin": "^5.25.0",
         "@typescript-eslint/parser": "^5.19.0",
         "eslint": "^7.32.0",

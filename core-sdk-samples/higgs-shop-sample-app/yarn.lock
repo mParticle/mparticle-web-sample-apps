@@ -1334,9 +1334,9 @@
   version "2.0.3"
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.3.tgz"
 
-"@mparticle/web-sdk@^2.15.0":
-  version "2.15.0"
-  resolved "https://registry.npmjs.org/@mparticle/web-sdk/-/web-sdk-2.15.0.tgz"
+"@mparticle/web-sdk@^2.16.0":
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.16.0.tgz#08ddf1e78ba69a161611b60fe30f8dd37c33a659"
   dependencies:
     "@babel/runtime" "^7.6.0"
     slugify "^1.3.6"
@@ -1798,9 +1798,9 @@
   version "1.3.2"
   resolved "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
 
-"@types/mparticle__web-sdk@^2.15.1":
-  version "2.15.1"
-  resolved "https://registry.npmjs.org/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.15.1.tgz"
+"@types/mparticle__web-sdk@^2.16.0":
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.16.0.tgz#4d7590bcd228fe012bbdd4bce9cbf8a187348fb8"
 
 "@types/node@*", "@types/node@^17.0.23":
   version "17.0.23"
