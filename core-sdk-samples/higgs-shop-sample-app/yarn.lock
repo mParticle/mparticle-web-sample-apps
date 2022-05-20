@@ -1119,9 +1119,9 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/lato@^4.5.5":
-  version "4.5.5"
-  resolved "https://registry.npmjs.org/@fontsource/lato/-/lato-4.5.5.tgz"
+"@fontsource/lato@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/lato/-/lato-4.5.8.tgz#20acb60d0895cc82723b4999492c70b1f9816460"
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
