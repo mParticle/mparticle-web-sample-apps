@@ -66,6 +66,15 @@ const theme = createTheme({
             lineHeight: '24px',
             letterSpacing: '0.15px',
         },
+        subtitle1: {
+            color: 'rgba(255, 255, 255, 0.6)',
+            fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 700,
+            fontSize: '16px',
+            lineHeight: '24px',
+            letterSpacing: '0.15px',
+        },
         caption: {
             color: 'rgba(255, 255, 255, 0.6)',
             fontFamily,
