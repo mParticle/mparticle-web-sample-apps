@@ -1353,9 +1353,9 @@
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
-"@mui/icons-material@^5.5.1":
-  version "5.5.1"
-  resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.5.1.tgz"
+"@mui/icons-material@^5.8.2":
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.8.2.tgz#211ac2a041ece952749d39c3c26071226993be14"
   dependencies:
     "@babel/runtime" "^7.17.2"
 
