@@ -18,6 +18,12 @@ import { AccountPage } from '../../pages/AccountPage';
 import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
+// TODO: Temporarily hidden until functionality is wired in
+// import
+// APIKeyUpdateModal,
+// APIKeyEntryModal,
+// APIKeyRemoveConfirmationModal,
+// '../../components/APIKeyModal';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
@@ -120,6 +126,13 @@ const App = () => {
                                 }
                             />
                             <APIKeyHeaderBar />
+                            {/* 
+                            // TODO: Temporarily hidden until functionality is wired in
+                            <APIKeyRemoveConfirmationModal />
+                            <APIKeyEntryModal />
+                            <APIKeyUpdateModal
+                                currentApiKey={apiKey || '12345'}
+                            /> */}
                             <NavigationMenu />
                             <Routes>
                                 <Route path='/' element={<ShopPage />} />
