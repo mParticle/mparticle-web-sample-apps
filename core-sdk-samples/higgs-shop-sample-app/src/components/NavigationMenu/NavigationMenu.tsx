@@ -30,6 +30,12 @@ const NavigationMenu: React.FC = () => {
     const classes: SxProps<Theme> = {
         appBar: {},
         drawer: {},
+        drawerBox: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'column',
+            height: '100%',
+        },
         link: {
             mx: 3,
             '&:hover': {
@@ -39,6 +45,10 @@ const NavigationMenu: React.FC = () => {
         },
         drawerList: {
             width: 304,
+        },
+        lowerDrawerList: {
+            width: 304,
+            ml: 3,
         },
         drawerLinkIcon: {
             ml: 3,
@@ -254,6 +264,25 @@ const NavigationMenu: React.FC = () => {
         />,
     ];
 
+    const lowerDrawerMenuItems: ReactElement[] = [
+        <MenuItem
+            key='web-key'
+            sx={classes.drawerLink}
+            // TODO: Wire this into API Key Modal
+        >
+            Web Key
+        </MenuItem>,
+
+        <MenuItem
+            key='github-a'
+            component='a'
+            target='_blank'
+            href='https://github.com/mParticle/mparticle-web-sample-apps'
+        >
+            Go to Github Repo
+        </MenuItem>,
+    ];
+
     return (
         <AppBar position='static' sx={classes.appBar} color='transparent'>
             <CssBaseline />
@@ -264,9 +293,15 @@ const NavigationMenu: React.FC = () => {
                     toggleState={drawerState}
                     handleDrawerClose={closeDrawer}
                 >
-                    <MenuList sx={classes.drawerList}>
-                        {drawerMenuItems}
-                    </MenuList>
+                    <Box sx={classes.drawerBox}>
+                        <MenuList sx={classes.drawerList}>
+                            {drawerMenuItems}
+                        </MenuList>
+
+                        <MenuList sx={classes.lowerDrawerList}>
+                            {lowerDrawerMenuItems}
+                        </MenuList>
+                    </Box>
                 </NavigationMenuDrawer>
                 <Toolbar disableGutters>
                     <Box sx={classes.mobileResponsive}>{topNavMobileItems}</Box>

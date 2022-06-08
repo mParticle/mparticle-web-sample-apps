@@ -75,4 +75,31 @@ describe('Navigation Menu', () => {
         ).not.toBeInTheDocument();
         expect(screen.getByTestId('drawer-nav-cart-button')).toBeVisible();
     });
+
+    test('renders api key UI Elements', async () => {
+        render(<NavigationMenu />, { wrapper: MemoryRouter });
+
+        const hamburgerButton = screen.getByTestId(
+            'mobile-nav-hamburger-button',
+        );
+
+        await fireEvent.click(hamburgerButton);
+
+        const githubRepoLink = screen.getByRole('menuitem', {
+            name: /go to github repo/i,
+        });
+
+        const webKeyButton = screen.getByRole('menuitem', {
+            name: /web key/i,
+        });
+
+        expect(webKeyButton).toBeInTheDocument();
+
+        expect(githubRepoLink).toBeInTheDocument();
+
+        expect(githubRepoLink).toHaveAttribute(
+            'href',
+            'https://github.com/mParticle/mparticle-web-sample-apps',
+        );
+    });
 });
