@@ -19,11 +19,11 @@ import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
 // TODO: Temporarily hidden until functionality is wired in
-// import
+// import {
 // APIKeyUpdateModal,
 // APIKeyEntryModal,
 // APIKeyRemoveConfirmationModal,
-// '../../components/APIKeyModal';
+// } from '../../components/APIKeyModal';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
