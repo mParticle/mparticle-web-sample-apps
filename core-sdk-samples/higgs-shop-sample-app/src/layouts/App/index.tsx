@@ -17,6 +17,7 @@ import UserDetailsProvider from '../../contexts/UserDetails';
 import { AccountPage } from '../../pages/AccountPage';
 import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
+import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
@@ -103,14 +104,14 @@ const App = () => {
                                     <>
                                         <Button
                                             variant='contained'
-                                            target='_new'
+                                            target='_blank'
                                             href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
                                         >
                                             Go to Readme
                                         </Button>
                                         <Button
                                             variant='contained'
-                                            target='_new'
+                                            target='_blank'
                                             href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
                                         >
                                             Go to Docs
@@ -118,6 +119,7 @@ const App = () => {
                                     </>
                                 }
                             />
+                            <APIKeyHeaderBar />
                             <NavigationMenu />
                             <Routes>
                                 <Route path='/' element={<ShopPage />} />
