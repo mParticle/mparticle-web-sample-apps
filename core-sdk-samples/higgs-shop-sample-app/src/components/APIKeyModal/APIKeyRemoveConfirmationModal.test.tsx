@@ -16,7 +16,7 @@ describe('API Key Remove Confirmation Modal', () => {
         });
 
         expect(headerText).toBeInTheDocument();
-        expect(removeButton).toBeInTheDocument;
-        expect(backButton).toBeInTheDocument;
+        expect(removeButton).toBeInTheDocument();
+        expect(backButton).toBeInTheDocument();
     });
 });
