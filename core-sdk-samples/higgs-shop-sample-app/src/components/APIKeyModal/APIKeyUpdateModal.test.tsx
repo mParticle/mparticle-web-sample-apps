@@ -31,7 +31,7 @@ describe('API Key Update Modal', () => {
         expect(githubRepoLink).toBeInTheDocument();
         expect(githubRepoLink).toHaveAttribute(
             'href',
-            'https://github.com/mParticle/mparticle-web-sample-apps',
+            'https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials',
         );
         expect(keyTextField).toBeInTheDocument();
         expect(keyTextField).toHaveAttribute('value', 'XXXXX');

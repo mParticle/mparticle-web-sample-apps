@@ -84,7 +84,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                             The web key should be generated in mParticle in
                             order to connect this sample app to your account.
                             <Link
-                                href='https://github.com/mParticle/mparticle-web-sample-apps'
+                                href='https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials'
                                 target='_blank'
                             >
                                 Learn how
