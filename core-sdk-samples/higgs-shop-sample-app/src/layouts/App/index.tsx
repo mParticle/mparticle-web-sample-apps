@@ -19,17 +19,19 @@ import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
 // TODO: Temporarily hidden until functionality is wired in
-// import {
-// APIKeyUpdateModal,
+import // APIKeyUpdateModal,
 // APIKeyEntryModal,
 // APIKeyRemoveConfirmationModal,
-// } from '../../components/APIKeyModal';
+'../../components/APIKeyModal';
+import APIKeyContextProvider from '../../contexts/APIKeyContext';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
 
 const App = () => {
     const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
+    // const [apiKeyEntered, setAPIKeyEntered] = useState('');
+    const [apiKeyEntered] = useState('');
 
     const mParticleConfig: mParticle.MPConfiguration = {
         // (optional) `appName and appVersion are used to associate with your web app
@@ -86,71 +88,84 @@ const App = () => {
     // this should be defined in .env the
     const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
 
+    console.warn('is hosted?', process.env.REACT_APP_HOSTED);
+
     useEffect(() => {
-        if (apiKey) {
+        console.warn('api key entered', apiKeyEntered);
+        if (apiKeyEntered) {
+            mParticle.init(apiKeyEntered, mParticleConfig);
+        } else if (apiKey) {
+            // TODO: Refactor to hide Hosted flow
             mParticle.init(apiKey, mParticleConfig);
         } else {
             setApiKeyModalOpen(true);
             console.error('Please add your mParticle API Key');
         }
-    }, []);
+    }, [apiKeyEntered]);
 
     return (
         <div className='App'>
             <ThemeProvider theme={theme}>
-                <UserDetailsProvider>
-                    <OrderDetailsProvider>
-                        <BrowserRouter>
-                            {/* Hide Shopping dialog if api key warning is visible */}
-                            {!apiKeyModalOpen && <StartShoppingModal />}
-                            <MessageModal
-                                message={APIkeyModalMessage}
-                                open={apiKeyModalOpen}
-                                buttonAction={
-                                    <>
-                                        <Button
-                                            variant='contained'
-                                            target='_blank'
-                                            href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
-                                        >
-                                            Go to Readme
-                                        </Button>
-                                        <Button
-                                            variant='contained'
-                                            target='_blank'
-                                            href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
-                                        >
-                                            Go to Docs
-                                        </Button>
-                                    </>
-                                }
-                            />
-                            <APIKeyHeaderBar />
-                            {/* 
+                <APIKeyContextProvider>
+                    <UserDetailsProvider>
+                        <OrderDetailsProvider>
+                            <BrowserRouter>
+                                {/* Hide Shopping dialog if api key warning is visible */}
+                                {!apiKeyModalOpen && <StartShoppingModal />}
+                                <MessageModal
+                                    message={APIkeyModalMessage}
+                                    open={apiKeyModalOpen}
+                                    buttonAction={
+                                        <>
+                                            <Button
+                                                variant='contained'
+                                                target='_blank'
+                                                href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
+                                            >
+                                                Go to Readme
+                                            </Button>
+                                            <Button
+                                                variant='contained'
+                                                target='_blank'
+                                                href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
+                                            >
+                                                Go to Docs
+                                            </Button>
+                                        </>
+                                    }
+                                />
+                                <APIKeyHeaderBar />
+                                {/* <APIKeyEntryModal
+                                    onSetAPIKey={setAPIKeyEntered}
+                                /> */}
+                                {/* 
                             // TODO: Temporarily hidden until functionality is wired in
                             <APIKeyRemoveConfirmationModal />
-                            <APIKeyEntryModal />
                             <APIKeyUpdateModal
                                 currentApiKey={apiKey || '12345'}
                             /> */}
-                            <NavigationMenu />
-                            <Routes>
-                                <Route path='/' element={<ShopPage />} />
-                                <Route path='shop' element={<ShopPage />} />
-                                <Route path='about' element={<AboutPage />} />
-                                <Route
-                                    path='account'
-                                    element={<AccountPage />}
-                                />
-                                <Route path='cart' element={<CartPage />} />
-                                <Route
-                                    path='/products/:id'
-                                    element={<ProductDetailPage />}
-                                />
-                            </Routes>
-                        </BrowserRouter>
-                    </OrderDetailsProvider>
-                </UserDetailsProvider>
+                                <NavigationMenu />
+                                <Routes>
+                                    <Route path='/' element={<ShopPage />} />
+                                    <Route path='shop' element={<ShopPage />} />
+                                    <Route
+                                        path='about'
+                                        element={<AboutPage />}
+                                    />
+                                    <Route
+                                        path='account'
+                                        element={<AccountPage />}
+                                    />
+                                    <Route path='cart' element={<CartPage />} />
+                                    <Route
+                                        path='/products/:id'
+                                        element={<ProductDetailPage />}
+                                    />
+                                </Routes>
+                            </BrowserRouter>
+                        </OrderDetailsProvider>
+                    </UserDetailsProvider>
+                </APIKeyContextProvider>
             </ThemeProvider>
         </div>
     );

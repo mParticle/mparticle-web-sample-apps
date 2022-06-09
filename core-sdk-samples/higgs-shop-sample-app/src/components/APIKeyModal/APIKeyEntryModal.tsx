@@ -1,3 +1,5 @@
+// TS incorrectly flags function declarations as unused variables
+/* eslint-disable no-unused-vars */
 import {
     Box,
     Button,
@@ -13,7 +15,11 @@ import {
 import React, { useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
 
-const APIKeyEntryModal: React.FC = () => {
+interface APIKeyEntryModalProps {
+    onSetAPIKey?(apiKey: string): void;
+}
+
+const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ onSetAPIKey }) => {
     const [apiKey, setAPIKey] = useState('');
     const [open, setOpen] = useState(true);
 
@@ -22,6 +28,9 @@ const APIKeyEntryModal: React.FC = () => {
     };
 
     const handleButtonClick = () => {
+        if (onSetAPIKey) {
+            onSetAPIKey(apiKey);
+        }
         closeModal();
     };
 
@@ -115,6 +124,10 @@ const APIKeyEntryModal: React.FC = () => {
             </Grid>
         </Dialog>
     );
+};
+
+APIKeyEntryModal.defaultProps = {
+    onSetAPIKey: undefined,
 };
 
 export default APIKeyEntryModal;

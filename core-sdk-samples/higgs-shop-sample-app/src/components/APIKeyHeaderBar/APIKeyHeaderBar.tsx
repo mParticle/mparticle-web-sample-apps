@@ -2,8 +2,11 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyIcon from '@mui/icons-material/Key';
 import React from 'react';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 const APIKeyHeaderBar: React.FC = () => {
+    const { setModalMode } = useAPIKeyContext();
+
     return (
         <Container
             maxWidth={false}
@@ -36,7 +39,11 @@ const APIKeyHeaderBar: React.FC = () => {
                     Learn more
                 </Button>
             </Box>
-            <Button variant='text' startIcon={<KeyIcon />}>
+            <Button
+                variant='text'
+                startIcon={<KeyIcon />}
+                onClick={() => setModalMode('update')}
+            >
                 Web Key
             </Button>
         </Container>

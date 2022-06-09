@@ -10,26 +10,32 @@ import {
     TextField,
     FormControl,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 interface APIKeyUpdateModalProps {
     currentApiKey: string;
+    isOpen?: boolean;
 }
 
 const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
     currentApiKey,
+    isOpen,
 }) => {
-    const [apiKey, setAPIKey] = useState(currentApiKey);
-    const [open, setOpen] = useState(true);
+    const [NewAPIKey, setNewAPIKey] = useState(currentApiKey);
+    const [open, setOpen] = useState(false);
     const [canUpdateAPIKey, setCanUpdateAPIKey] = useState(false);
 
+    const { setAPIKey, setModalMode } = useAPIKeyContext();
+
     const closeModal = () => {
+        setModalMode('closed');
         setOpen(false);
     };
 
     const handleAPIKeyUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAPIKey(e.target.value);
+        setNewAPIKey(e.target.value);
         if (e.target.value === '' || e.target.value === currentApiKey) {
             setCanUpdateAPIKey(false);
         } else {
@@ -39,8 +45,23 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
 
     const handleButtonClick = () => {
         // TODO: Pass API Key to parent
+        setAPIKey(NewAPIKey);
         closeModal();
     };
+
+    useEffect(() => {
+        console.log('peekaboo');
+        // Reset to current api key upon open
+        setNewAPIKey(currentApiKey);
+    }, [open]);
+
+    useEffect(() => {
+        console.log('update: api key changed', currentApiKey);
+    }, [currentApiKey]);
+
+    useEffect(() => {
+        setOpen(isOpen || false);
+    }, [isOpen]);
 
     return (
         <Dialog open={open}>
@@ -96,13 +117,13 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogContent>
                         <FormControl fullWidth focused required>
                             <TextField
-                                error={!apiKey}
+                                error={!NewAPIKey}
                                 id='apiKey'
                                 label='Key'
-                                value={apiKey}
+                                value={NewAPIKey}
                                 placeholder='Paste your Key here'
                                 onChange={handleAPIKeyUpdate}
-                                helperText={!apiKey ? 'Key is required' : ''}
+                                helperText={!NewAPIKey ? 'Key is required' : ''}
                             />
                         </FormControl>
                     </DialogContent>
@@ -110,10 +131,11 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!apiKey}
+                            disabled={!NewAPIKey}
                             variant='contained'
                             color='error'
                             size='large'
+                            onClick={() => setModalMode('confirm')}
                         >
                             Remove Key
                         </Button>
@@ -131,7 +153,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogActions>
                         <Button
                             variant='text'
-                            onClick={() => setOpen(false)}
+                            onClick={closeModal}
                             size='large'
                         >
                             Cancel
@@ -141,6 +163,10 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
             </Grid>
         </Dialog>
     );
+};
+
+APIKeyUpdateModal.defaultProps = {
+    isOpen: false,
 };
 
 export default APIKeyUpdateModal;
