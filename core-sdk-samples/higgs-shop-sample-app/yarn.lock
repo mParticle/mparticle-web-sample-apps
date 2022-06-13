@@ -1033,9 +1033,9 @@
   version "0.8.0"
   resolved "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
 
-"@emotion/is-prop-valid@^1.1.1", "@emotion/is-prop-valid@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.1.2.tgz#34ad6e98e871aa6f7a20469b602911b8b11b3a95"
+"@emotion/is-prop-valid@^1.1.1", "@emotion/is-prop-valid@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.1.3.tgz#f0907a416368cf8df9e410117068e20fe87c0a3a"
   dependencies:
     "@emotion/memoize" "^0.7.4"
 
@@ -1055,9 +1055,9 @@
     "@emotion/weak-memoize" "^0.2.5"
     hoist-non-react-statics "^3.3.1"
 
-"@emotion/serialize@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.0.2.tgz"
+"@emotion/serialize@^1.0.2", "@emotion/serialize@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@emotion/serialize/-/serialize-1.0.4.tgz#ff31fd11bb07999611199c2229e152faadc21a3c"
   dependencies:
     "@emotion/hash" "^0.8.0"
     "@emotion/memoize" "^0.7.4"
@@ -1069,14 +1069,14 @@
   version "1.1.0"
   resolved "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.1.0.tgz"
 
-"@emotion/styled@^11.8.1":
-  version "11.8.1"
-  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-11.8.1.tgz#856f6f63aceef0eb783985fa2322e2bf66d04e17"
+"@emotion/styled@^11.9.3":
+  version "11.9.3"
+  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-11.9.3.tgz#47f0c71137fec7c57035bf3659b52fb536792340"
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@emotion/babel-plugin" "^11.7.1"
-    "@emotion/is-prop-valid" "^1.1.2"
-    "@emotion/serialize" "^1.0.2"
+    "@emotion/is-prop-valid" "^1.1.3"
+    "@emotion/serialize" "^1.0.4"
     "@emotion/utils" "^1.1.0"
 
 "@emotion/unitless@^0.7.5":
