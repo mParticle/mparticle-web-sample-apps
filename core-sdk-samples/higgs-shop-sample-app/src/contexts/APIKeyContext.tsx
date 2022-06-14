@@ -39,6 +39,8 @@ export function useAPIKeyContext() {
     return context;
 }
 
+// TODO: Reload app every time API Key changes or is updated
+
 const APIKeyContextProvider: React.FC = ({ children }) => {
     const [apiKey, isHosted] = useApiKey();
     const [localStorageApiKey, setLocalStorageApiKey, removeLocalStorageKey] =

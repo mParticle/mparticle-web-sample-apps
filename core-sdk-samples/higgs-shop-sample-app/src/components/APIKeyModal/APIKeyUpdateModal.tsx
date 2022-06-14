@@ -66,6 +66,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
         }
     };
 
+    // TODO: Can we remove this?
     useEffect(() => {
         // Reset the api key in the ui component back to whatever is currently in
         // the application state
@@ -73,6 +74,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
         setCanUpdateAPIKey(false);
     }, [open]);
 
+    // TODO: Can we remove this?
     useEffect(() => {
         // Listens for the `isOpen` state to make sure
         // component stays closed when it isn't needed
