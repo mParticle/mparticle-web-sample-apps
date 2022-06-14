@@ -12,13 +12,16 @@ import {
     APIKeyRemoveConfirmationModal,
     APIKeyUpdateModal,
 } from '../components/APIKeyModal';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 type modalModeType = 'closed' | 'entry' | 'update' | 'confirm';
 
 interface APIKeyContextStore {
     apiKey: string;
+    getAPIKey(): string;
     setAPIKey(apiKey: string): void;
     setModalMode(mode: modalModeType): void;
+    removeAPIKey(): void;
 }
 
 const APIKeyContext = createContext({} as APIKeyContextStore);
@@ -35,31 +38,38 @@ export function useAPIKeyContext() {
     return context;
 }
 
+// TODO: Reload app every time API Key changes or is updated
+
 const APIKeyContextProvider: React.FC = ({ children }) => {
-    // TODO: Should we provide methods to change the api key here?
-    //     const apiKey = '12346';
-    const [apiKey, setAPIKey] = useState('');
+    const [apiKey, setAPIKey, _removeApiKey] = useLocalStorage(
+        'mp-sample-app-api-key',
+        '',
+    );
     const [modalMode, setModalMode] = useState<modalModeType>('closed');
 
     const value = useMemo(() => {
-        return { apiKey, setAPIKey, setModalMode };
+        const getAPIKey = () => {
+            return apiKey;
+        };
+
+        const removeAPIKey = () => {
+            _removeApiKey();
+            window.location.reload();
+        };
+
+        return { apiKey, getAPIKey, setAPIKey, setModalMode, removeAPIKey };
     }, [apiKey, setAPIKey, setModalMode]);
 
     useEffect(() => {
-        console.log('what is modal mode?', modalMode);
-    }, [modalMode]);
-
-    useEffect(() => {
-        console.log('what is my api key?', apiKey);
+        if (!apiKey) {
+            setModalMode('entry');
+        }
     }, [apiKey]);
 
     return (
         <APIKeyContext.Provider value={value}>
-            <APIKeyEntryModal onSetAPIKey={setAPIKey} />
-            <APIKeyUpdateModal
-                currentApiKey={apiKey}
-                isOpen={modalMode === 'update'}
-            />
+            <APIKeyEntryModal isOpen={modalMode === 'entry'} />
+            <APIKeyUpdateModal isOpen={modalMode === 'update'} />
             <APIKeyRemoveConfirmationModal isOpen={modalMode === 'confirm'} />
             {children}
         </APIKeyContext.Provider>

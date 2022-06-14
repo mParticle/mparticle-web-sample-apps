@@ -3,7 +3,7 @@ import APIKeyUpdateModal from './APIKeyUpdateModal';
 
 describe('API Key Update Modal', () => {
     test('renders a modal with necessary UI elements', () => {
-        render(<APIKeyUpdateModal currentApiKey='XXXXX' />);
+        render(<APIKeyUpdateModal />);
 
         const header = screen.queryByText('Web Key');
 
@@ -42,7 +42,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should enable Update button if API Key is Changed', async () => {
-        render(<APIKeyUpdateModal currentApiKey='XXXXX' />);
+        render(<APIKeyUpdateModal />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,
@@ -60,7 +60,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should close Cancel is clicked', async () => {
-        render(<APIKeyUpdateModal currentApiKey='XXXXX' />);
+        render(<APIKeyUpdateModal />);
 
         expect(screen.queryByText('Web Key')).toBeInTheDocument();
 
@@ -81,7 +81,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should close if API Key is updated', async () => {
-        render(<APIKeyUpdateModal currentApiKey='XXXXX' />);
+        render(<APIKeyUpdateModal />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,

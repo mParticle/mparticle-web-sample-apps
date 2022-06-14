@@ -18,10 +18,10 @@ const APIKeyRemoveConfirmationModal: React.FC<
 > = ({ isOpen }) => {
     const [open, setOpen] = useState(false);
 
-    const { setAPIKey, setModalMode } = useAPIKeyContext();
+    const { setModalMode, removeAPIKey } = useAPIKeyContext();
 
     const handleRemoveKeyClick = () => {
-        setAPIKey('');
+        removeAPIKey();
         setModalMode('closed');
         setOpen(false);
     };

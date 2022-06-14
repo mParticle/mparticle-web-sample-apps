@@ -12,27 +12,33 @@ import {
     TextField,
     FormControl,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 interface APIKeyEntryModalProps {
-    onSetAPIKey?(apiKey: string): void;
+    isOpen?: boolean;
 }
 
-const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ onSetAPIKey }) => {
-    const [apiKey, setAPIKey] = useState('');
+const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
+    const [currentAPIKey, setCurrentAPIKey] = useState('');
     const [open, setOpen] = useState(true);
 
+    const { setModalMode, apiKey, setAPIKey } = useAPIKeyContext();
+
     const closeModal = () => {
+        setModalMode('closed');
         setOpen(false);
     };
 
     const handleButtonClick = () => {
-        if (onSetAPIKey) {
-            onSetAPIKey(apiKey);
-        }
+        setAPIKey(currentAPIKey);
         closeModal();
     };
+
+    useEffect(() => {
+        setOpen(isOpen || false);
+    }, [isOpen]);
 
     return (
         <Dialog open={open}>
@@ -104,7 +110,9 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ onSetAPIKey }) => {
                                 id='apiKey'
                                 label='Key'
                                 placeholder='Paste your Key here'
-                                onChange={(e) => setAPIKey(e.target.value)}
+                                onChange={(e) =>
+                                    setCurrentAPIKey(e.target.value)
+                                }
                             />
                         </FormControl>
                     </DialogContent>
@@ -112,7 +120,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ onSetAPIKey }) => {
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!apiKey}
+                            disabled={!currentAPIKey}
                             variant='contained'
                             onClick={handleButtonClick}
                             size='large'
@@ -127,7 +135,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ onSetAPIKey }) => {
 };
 
 APIKeyEntryModal.defaultProps = {
-    onSetAPIKey: undefined,
+    isOpen: false,
 };
 
 export default APIKeyEntryModal;

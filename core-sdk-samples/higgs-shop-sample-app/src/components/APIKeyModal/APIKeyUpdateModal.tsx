@@ -15,19 +15,15 @@ import { HiggsLogo } from '../HiggsLogo';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 interface APIKeyUpdateModalProps {
-    currentApiKey: string;
     isOpen?: boolean;
 }
 
-const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
-    currentApiKey,
-    isOpen,
-}) => {
-    const [NewAPIKey, setNewAPIKey] = useState(currentApiKey);
+const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
+    const { apiKey, setAPIKey, setModalMode } = useAPIKeyContext();
+
+    const [currentAPIKey, setCurrentAPIKey] = useState(apiKey);
     const [open, setOpen] = useState(false);
     const [canUpdateAPIKey, setCanUpdateAPIKey] = useState(false);
-
-    const { setAPIKey, setModalMode } = useAPIKeyContext();
 
     const closeModal = () => {
         setModalMode('closed');
@@ -35,29 +31,29 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
     };
 
     const handleAPIKeyUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNewAPIKey(e.target.value);
-        if (e.target.value === '' || e.target.value === currentApiKey) {
+        setCurrentAPIKey(e.target.value);
+        if (e.target.value === '' || e.target.value === currentAPIKey) {
             setCanUpdateAPIKey(false);
         } else {
             setCanUpdateAPIKey(true);
         }
     };
 
-    const handleButtonClick = () => {
-        // TODO: Pass API Key to parent
-        setAPIKey(NewAPIKey);
+    const handleUpdateClick = () => {
+        setAPIKey(currentAPIKey);
         closeModal();
     };
 
+    // TODO: Can we remove this?
     useEffect(() => {
-        console.log('peekaboo');
         // Reset to current api key upon open
-        setNewAPIKey(currentApiKey);
+        setCurrentAPIKey(apiKey);
     }, [open]);
 
+    // TODO: Can we remove this?
     useEffect(() => {
-        console.log('update: api key changed', currentApiKey);
-    }, [currentApiKey]);
+        setCurrentAPIKey(apiKey);
+    }, [apiKey]);
 
     useEffect(() => {
         setOpen(isOpen || false);
@@ -117,13 +113,15 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogContent>
                         <FormControl fullWidth focused required>
                             <TextField
-                                error={!NewAPIKey}
+                                error={!currentAPIKey}
                                 id='apiKey'
                                 label='Key'
-                                value={NewAPIKey}
+                                value={currentAPIKey}
                                 placeholder='Paste your Key here'
                                 onChange={handleAPIKeyUpdate}
-                                helperText={!NewAPIKey ? 'Key is required' : ''}
+                                helperText={
+                                    !currentAPIKey ? 'Key is required' : ''
+                                }
                             />
                         </FormControl>
                     </DialogContent>
@@ -131,7 +129,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!NewAPIKey}
+                            disabled={!currentAPIKey}
                             variant='contained'
                             color='error'
                             size='large'
@@ -142,7 +140,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                         <Button
                             disabled={!canUpdateAPIKey}
                             variant='contained'
-                            onClick={handleButtonClick}
+                            onClick={handleUpdateClick}
                             size='large'
                         >
                             Update

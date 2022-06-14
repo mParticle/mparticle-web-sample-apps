@@ -18,11 +18,6 @@ import { AccountPage } from '../../pages/AccountPage';
 import { MessageModal } from '../../components/MessageModal';
 import { APIkeyModalMessage } from '../../constants';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
-// TODO: Temporarily hidden until functionality is wired in
-import // APIKeyUpdateModal,
-// APIKeyEntryModal,
-// APIKeyRemoveConfirmationModal,
-'../../components/APIKeyModal';
 import APIKeyContextProvider from '../../contexts/APIKeyContext';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
@@ -85,7 +80,12 @@ const App = () => {
         },
     };
 
-    // this should be defined in .env the
+    // In a standard implementation, you should load your mParticle API Key via
+    // an environment variable.
+    // For example: const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
+    // As this is a sample app, we are using a modal to allow the API Key to
+    // be modified in run time, which is not something you should do in a
+    // production application.
     const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
 
     console.warn('is hosted?', process.env.REACT_APP_HOSTED);
@@ -135,15 +135,6 @@ const App = () => {
                                     }
                                 />
                                 <APIKeyHeaderBar />
-                                {/* <APIKeyEntryModal
-                                    onSetAPIKey={setAPIKeyEntered}
-                                /> */}
-                                {/* 
-                            // TODO: Temporarily hidden until functionality is wired in
-                            <APIKeyRemoveConfirmationModal />
-                            <APIKeyUpdateModal
-                                currentApiKey={apiKey || '12345'}
-                            /> */}
                                 <NavigationMenu />
                                 <Routes>
                                     <Route path='/' element={<ShopPage />} />
