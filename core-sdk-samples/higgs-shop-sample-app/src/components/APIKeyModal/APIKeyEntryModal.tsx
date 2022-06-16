@@ -23,7 +23,7 @@ interface APIKeyEntryModalProps {
 
 const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
     const [currentAPIKey, setCurrentAPIKey] = useState('');
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const { setModalMode, apiKey, setAPIKey } = useAPIKeyContext();
 
