@@ -11,10 +11,12 @@ import {
     APIKeyEntryModal,
     APIKeyRemoveConfirmationModal,
     APIKeyUpdateModal,
+    APIKeyEnvMessageModal,
 } from '../components/APIKeyModal';
+import useApiKey from '../hooks/useAPIKey';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-type modalModeType = 'closed' | 'entry' | 'update' | 'confirm';
+type modalModeType = 'closed' | 'entry' | 'update' | 'confirm' | 'env';
 
 interface APIKeyContextStore {
     apiKey: string;
@@ -39,8 +41,10 @@ export function useAPIKeyContext() {
 }
 
 // TODO: Reload app every time API Key changes or is updated
+// TODO: Move message modal from index to here
 
 const APIKeyContextProvider: React.FC = ({ children }) => {
+    const [dasApiKey, isHosted] = useApiKey();
     const [apiKey, setAPIKey, _removeApiKey] = useLocalStorage(
         'mp-sample-app-api-key',
         '',
@@ -61,16 +65,23 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
     }, [apiKey, setAPIKey, setModalMode]);
 
     useEffect(() => {
-        if (!apiKey) {
+        if (!dasApiKey && !isHosted) {
+            setModalMode('env');
+        } else if (!dasApiKey && isHosted) {
             setModalMode('entry');
         }
-    }, [apiKey]);
+    }, [dasApiKey]);
+
+    useEffect(() => {
+        console.warn('modal mode changed', modalMode);
+    }, [modalMode]);
 
     return (
         <APIKeyContext.Provider value={value}>
-            <APIKeyEntryModal isOpen={modalMode === 'entry'} />
+            <APIKeyEntryModal isOpen={modalMode === 'entry' && !dasApiKey} />
             <APIKeyUpdateModal isOpen={modalMode === 'update'} />
             <APIKeyRemoveConfirmationModal isOpen={modalMode === 'confirm'} />
+            <APIKeyEnvMessageModal isOpen={modalMode === 'env' && !dasApiKey} />
             {children}
         </APIKeyContext.Provider>
     );

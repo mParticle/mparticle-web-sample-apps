@@ -3,9 +3,15 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyIcon from '@mui/icons-material/Key';
 import React from 'react';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import useApiKey from '../../hooks/useAPIKey';
 
 const APIKeyHeaderBar: React.FC = () => {
     const { setModalMode } = useAPIKeyContext();
+    const [, isHosted] = useApiKey();
+
+    if (!isHosted) {
+        return <div />;
+    }
 
     return (
         <Container

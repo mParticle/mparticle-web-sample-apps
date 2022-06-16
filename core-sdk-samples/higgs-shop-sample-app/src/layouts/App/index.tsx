@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import mParticle from '@mparticle/web-sdk';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { ShopPage } from '../../pages/ShopPage';
 import { AboutPage } from '../../pages/AboutPage';
@@ -11,22 +11,20 @@ import './index.css';
 import theme from '../../contexts/theme';
 import { ProductDetailPage } from '../../pages/ProductDetailPage';
 import { CartPage } from '../../pages/CartPage';
-import { StartShoppingModal } from '../../components/StartShoppingModal';
 import OrderDetailsProvider from '../../contexts/OrderDetails';
 import UserDetailsProvider from '../../contexts/UserDetails';
 import { AccountPage } from '../../pages/AccountPage';
-import { MessageModal } from '../../components/MessageModal';
-import { APIkeyModalMessage } from '../../constants';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
 import APIKeyContextProvider from '../../contexts/APIKeyContext';
+import useApiKey from '../../hooks/useAPIKey';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
 
 const App = () => {
-    const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
-    // const [apiKeyEntered, setAPIKeyEntered] = useState('');
     const [apiKeyEntered] = useState('');
+    // TODO: Consolidate DasAPIKey with apiKey
+    const [dasApiKey] = useApiKey();
 
     const mParticleConfig: mParticle.MPConfiguration = {
         // (optional) `appName and appVersion are used to associate with your web app
@@ -88,8 +86,6 @@ const App = () => {
     // production application.
     const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
 
-    console.warn('is hosted?', process.env.REACT_APP_HOSTED);
-
     useEffect(() => {
         console.warn('api key entered', apiKeyEntered);
         if (apiKeyEntered) {
@@ -98,10 +94,13 @@ const App = () => {
             // TODO: Refactor to hide Hosted flow
             mParticle.init(apiKey, mParticleConfig);
         } else {
-            setApiKeyModalOpen(true);
             console.error('Please add your mParticle API Key');
         }
     }, [apiKeyEntered]);
+
+    useEffect(() => {
+        console.log('fetching api key from hooks', dasApiKey);
+    }, [dasApiKey]);
 
     return (
         <div className='App'>
@@ -110,30 +109,10 @@ const App = () => {
                     <UserDetailsProvider>
                         <OrderDetailsProvider>
                             <BrowserRouter>
+                                {/* TODO: Restore Start Shopping Modal */}
                                 {/* Hide Shopping dialog if api key warning is visible */}
-                                {!apiKeyModalOpen && <StartShoppingModal />}
-                                <MessageModal
-                                    message={APIkeyModalMessage}
-                                    open={apiKeyModalOpen}
-                                    buttonAction={
-                                        <>
-                                            <Button
-                                                variant='contained'
-                                                target='_blank'
-                                                href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
-                                            >
-                                                Go to Readme
-                                            </Button>
-                                            <Button
-                                                variant='contained'
-                                                target='_blank'
-                                                href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
-                                            >
-                                                Go to Docs
-                                            </Button>
-                                        </>
-                                    }
-                                />
+                                {/* {!apiKeyModalOpen && <StartShoppingModal />} */}
+
                                 <APIKeyHeaderBar />
                                 <NavigationMenu />
                                 <Routes>
