@@ -39,9 +39,6 @@ export function useAPIKeyContext() {
     return context;
 }
 
-// TODO: Reload app every time API Key changes or is updated
-// TODO: Move message modal from index to here
-
 const APIKeyContextProvider: React.FC = ({ children }) => {
     const [apiKey, isHosted] = useApiKey();
     const [localStorageApiKey, setLocalStorageApiKey, removeLocalStorageKey] =
