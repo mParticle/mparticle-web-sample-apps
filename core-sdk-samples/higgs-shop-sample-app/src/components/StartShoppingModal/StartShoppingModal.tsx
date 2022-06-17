@@ -11,9 +11,11 @@ import {
 import mParticle from '@mparticle/web-sdk';
 import { HiggsLogo } from '../HiggsLogo';
 import HiggsmartLogo from '../../assets/images/higgsmart-logo.svg';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 const StartShoppingModal: React.FC = () => {
     const [open, setOpen] = useState(false);
+    const { modalMode } = useAPIKeyContext();
 
     const closeModal = () => {
         setOpen(false);
@@ -38,11 +40,13 @@ const StartShoppingModal: React.FC = () => {
         false;
 
     useEffect(() => {
-        if (!shouldIgnoreModal()) {
+        if (!shouldIgnoreModal() && modalMode === 'closed') {
             mParticle.logPageView('Landing');
             setOpen(true);
+        } else {
+            setOpen(false);
         }
-    }, []);
+    }, [modalMode, open]);
 
     return (
         <Dialog open={open} onClose={handleBackgroundClick}>

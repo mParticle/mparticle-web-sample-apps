@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import mParticle from '@mparticle/web-sdk';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-// import { Button } from '@mui/material';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { ShopPage } from '../../pages/ShopPage';
 import { AboutPage } from '../../pages/AboutPage';
@@ -17,15 +16,12 @@ import { AccountPage } from '../../pages/AccountPage';
 import { APIKeyHeaderBar } from '../../components/APIKeyHeaderBar';
 import APIKeyContextProvider from '../../contexts/APIKeyContext';
 import useApiKey from '../../hooks/useAPIKey';
+import { StartShoppingModal } from '../../components/StartShoppingModal';
 
 // (optional) Use the package version number to keep your appVersion up-to-date
 const { version } = require('../../../package.json');
 
 const App = () => {
-    const [apiKeyEntered] = useState('');
-    // TODO: Consolidate DasAPIKey with apiKey
-    const [dasApiKey] = useApiKey();
-
     const mParticleConfig: mParticle.MPConfiguration = {
         // (optional) `appName and appVersion are used to associate with your web app
         // and are included in all event uploads
@@ -78,29 +74,28 @@ const App = () => {
         },
     };
 
-    // In a standard implementation, you should load your mParticle API Key via
+    // In a true production implementation, you should load your mParticle API Key via
     // an environment variable.
-    // For example: const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
-    // As this is a sample app, we are using a modal to allow the API Key to
-    // be modified in run time, which is not something you should do in a
-    // production application.
-    const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
+    // For example:
+    //
+    // const apiKey = process.env.REACT_APP_MPARTICLE_API_KEY;
+    //
+    // As this is an interactive sample app, we are using a custom hook to
+    // allow an API Key to be modified in run time.
+
+    const [apiKey] = useApiKey();
+
+    // It is however recommended that once the API Key is instantiated,
+    // that you use a `useEffect` statement like the example below so that
+    // mParticle initializes immediately once your App component is mounted.
 
     useEffect(() => {
-        console.warn('api key entered', apiKeyEntered);
-        if (apiKeyEntered) {
-            mParticle.init(apiKeyEntered, mParticleConfig);
-        } else if (apiKey) {
-            // TODO: Refactor to hide Hosted flow
+        if (apiKey) {
             mParticle.init(apiKey, mParticleConfig);
         } else {
             console.error('Please add your mParticle API Key');
         }
-    }, [apiKeyEntered]);
-
-    useEffect(() => {
-        console.log('fetching api key from hooks', dasApiKey);
-    }, [dasApiKey]);
+    }, [apiKey]);
 
     return (
         <div className='App'>
@@ -109,9 +104,7 @@ const App = () => {
                     <UserDetailsProvider>
                         <OrderDetailsProvider>
                             <BrowserRouter>
-                                {/* TODO: Restore Start Shopping Modal */}
-                                {/* Hide Shopping dialog if api key warning is visible */}
-                                {/* {!apiKeyModalOpen && <StartShoppingModal />} */}
+                                <StartShoppingModal />
 
                                 <APIKeyHeaderBar />
                                 <NavigationMenu />

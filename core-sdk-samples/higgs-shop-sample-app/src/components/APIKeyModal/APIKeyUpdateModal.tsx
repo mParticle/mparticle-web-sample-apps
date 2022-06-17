@@ -13,6 +13,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
 interface APIKeyUpdateModalProps {
     isOpen?: boolean;
@@ -26,13 +27,13 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
     const [canUpdateAPIKey, setCanUpdateAPIKey] = useState(false);
 
     const closeModal = () => {
-        setModalMode('closed');
+        setModalMode(MODAL_MODES.CLOSED);
         setOpen(false);
     };
 
     const handleAPIKeyUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentAPIKey(e.target.value);
-        if (e.target.value === '' || e.target.value === currentAPIKey) {
+        if (e.target.value === '' || e.target.value === apiKey) {
             setCanUpdateAPIKey(false);
         } else {
             setCanUpdateAPIKey(true);
@@ -40,20 +41,17 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
     };
 
     const handleUpdateClick = () => {
-        setAPIKey(currentAPIKey);
-        closeModal();
+        if (currentAPIKey) {
+            setAPIKey(currentAPIKey);
+            closeModal();
+        }
     };
 
-    // TODO: Can we remove this?
     useEffect(() => {
         // Reset to current api key upon open
         setCurrentAPIKey(apiKey);
+        setCanUpdateAPIKey(false);
     }, [open]);
-
-    // TODO: Can we remove this?
-    useEffect(() => {
-        setCurrentAPIKey(apiKey);
-    }, [apiKey]);
 
     useEffect(() => {
         setOpen(isOpen || false);
@@ -99,7 +97,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
                     <DialogContent>
                         <Typography variant='body1' align='center'>
                             The web key should be generated in mParticle in
-                            order to connect this sample app to your account.
+                            order to connect this sample app to your account.{' '}
                             <Link
                                 href='https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials'
                                 target='_blank'
@@ -133,7 +131,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
                             variant='contained'
                             color='error'
                             size='large'
-                            onClick={() => setModalMode('confirm')}
+                            onClick={() => setModalMode(MODAL_MODES.CONFIRM)}
                         >
                             Remove Key
                         </Button>

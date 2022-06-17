@@ -7,6 +7,7 @@ import {
     Typography,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { MODAL_MODES } from '../../constants';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
 interface APIKeyRemoveConfirmationModalProps {
@@ -22,12 +23,12 @@ const APIKeyRemoveConfirmationModal: React.FC<
 
     const handleRemoveKeyClick = () => {
         removeAPIKey();
-        setModalMode('closed');
+        setModalMode(MODAL_MODES.CLOSED);
         setOpen(false);
     };
 
     const handleBackClick = () => {
-        setModalMode('update');
+        setModalMode(MODAL_MODES.UPDATE);
         setOpen(false);
     };
 

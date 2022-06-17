@@ -15,6 +15,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
 interface APIKeyEntryModalProps {
     isOpen?: boolean;
@@ -27,11 +28,11 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
     const { setModalMode, apiKey, setAPIKey } = useAPIKeyContext();
 
     const closeModal = () => {
-        setModalMode('closed');
+        setModalMode(MODAL_MODES.ENTRY);
         setOpen(false);
     };
 
-    const handleButtonClick = () => {
+    const handleSaveButtonClick = () => {
         setAPIKey(currentAPIKey);
         closeModal();
     };
@@ -122,7 +123,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
                         <Button
                             disabled={!currentAPIKey}
                             variant='contained'
-                            onClick={handleButtonClick}
+                            onClick={handleSaveButtonClick}
                             size='large'
                         >
                             Save &amp; Go

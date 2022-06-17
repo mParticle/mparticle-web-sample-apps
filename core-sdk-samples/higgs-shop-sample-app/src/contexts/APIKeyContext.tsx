@@ -13,16 +13,15 @@ import {
     APIKeyUpdateModal,
     APIKeyEnvMessageModal,
 } from '../components/APIKeyModal';
+import { LOCAL_STORAGE_KEY, ModalModeTypes, MODAL_MODES } from '../constants';
 import useApiKey from '../hooks/useAPIKey';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-type modalModeType = 'closed' | 'entry' | 'update' | 'confirm' | 'env';
-
 interface APIKeyContextStore {
-    apiKey: string;
-    getAPIKey(): string;
+    apiKey: string | undefined;
+    modalMode: ModalModeTypes;
     setAPIKey(apiKey: string): void;
-    setModalMode(mode: modalModeType): void;
+    setModalMode(mode: ModalModeTypes): void;
     removeAPIKey(): void;
 }
 
@@ -40,48 +39,54 @@ export function useAPIKeyContext() {
     return context;
 }
 
-// TODO: Reload app every time API Key changes or is updated
-// TODO: Move message modal from index to here
-
 const APIKeyContextProvider: React.FC = ({ children }) => {
-    const [dasApiKey, isHosted] = useApiKey();
-    const [apiKey, setAPIKey, _removeApiKey] = useLocalStorage(
-        'mp-sample-app-api-key',
-        '',
+    const [apiKey, isHosted] = useApiKey();
+    const [localStorageApiKey, setLocalStorageApiKey, removeLocalStorageKey] =
+        useLocalStorage(LOCAL_STORAGE_KEY, '');
+    const [modalMode, setModalMode] = useState<ModalModeTypes>(
+        MODAL_MODES.CLOSED,
     );
-    const [modalMode, setModalMode] = useState<modalModeType>('closed');
 
     const value = useMemo(() => {
-        const getAPIKey = () => {
-            return apiKey;
-        };
-
-        const removeAPIKey = () => {
-            _removeApiKey();
+        const setAPIKey = (key: string) => {
+            setLocalStorageApiKey(key);
             window.location.reload();
         };
 
-        return { apiKey, getAPIKey, setAPIKey, setModalMode, removeAPIKey };
-    }, [apiKey, setAPIKey, setModalMode]);
+        const removeAPIKey = () => {
+            removeLocalStorageKey();
+            window.location.reload();
+        };
+
+        return {
+            apiKey,
+            modalMode,
+            setAPIKey,
+            setModalMode,
+            removeAPIKey,
+        };
+    }, [localStorageApiKey, modalMode, setModalMode]);
 
     useEffect(() => {
-        if (!dasApiKey && !isHosted) {
-            setModalMode('env');
-        } else if (!dasApiKey && isHosted) {
-            setModalMode('entry');
+        if (!apiKey && !isHosted) {
+            setModalMode(MODAL_MODES.ENV);
+        } else if (!apiKey && isHosted) {
+            setModalMode(MODAL_MODES.ENTRY);
         }
-    }, [dasApiKey]);
-
-    useEffect(() => {
-        console.warn('modal mode changed', modalMode);
-    }, [modalMode]);
+    }, [apiKey]);
 
     return (
         <APIKeyContext.Provider value={value}>
-            <APIKeyEntryModal isOpen={modalMode === 'entry' && !dasApiKey} />
-            <APIKeyUpdateModal isOpen={modalMode === 'update'} />
-            <APIKeyRemoveConfirmationModal isOpen={modalMode === 'confirm'} />
-            <APIKeyEnvMessageModal isOpen={modalMode === 'env' && !dasApiKey} />
+            <APIKeyEntryModal
+                isOpen={modalMode === MODAL_MODES.ENTRY && !apiKey}
+            />
+            <APIKeyUpdateModal isOpen={modalMode === MODAL_MODES.UPDATE} />
+            <APIKeyRemoveConfirmationModal
+                isOpen={modalMode === MODAL_MODES.CONFIRM}
+            />
+            <APIKeyEnvMessageModal
+                isOpen={modalMode === MODAL_MODES.ENV && !apiKey}
+            />
             {children}
         </APIKeyContext.Provider>
     );

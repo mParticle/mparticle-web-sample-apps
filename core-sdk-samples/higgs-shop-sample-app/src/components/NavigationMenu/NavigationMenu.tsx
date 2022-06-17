@@ -26,6 +26,7 @@ import theme from '../../contexts/theme';
 import { useOrderDetails } from '../../contexts/OrderDetails';
 import useApiKey from '../../hooks/useAPIKey';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
 const NavigationMenu: React.FC = () => {
     const { numberOfProducts } = useOrderDetails();
@@ -273,7 +274,7 @@ const NavigationMenu: React.FC = () => {
         <MenuItem
             key='web-key'
             sx={classes.drawerLink}
-            onClick={() => setModalMode('update')}
+            onClick={() => setModalMode(MODAL_MODES.UPDATE)}
         >
             Web Key
         </MenuItem>,

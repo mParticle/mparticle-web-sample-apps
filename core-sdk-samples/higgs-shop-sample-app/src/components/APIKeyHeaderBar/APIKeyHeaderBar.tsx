@@ -4,6 +4,7 @@ import KeyIcon from '@mui/icons-material/Key';
 import React from 'react';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 import useApiKey from '../../hooks/useAPIKey';
+import { MODAL_MODES } from '../../constants';
 
 const APIKeyHeaderBar: React.FC = () => {
     const { setModalMode } = useAPIKeyContext();
@@ -48,7 +49,7 @@ const APIKeyHeaderBar: React.FC = () => {
             <Button
                 variant='text'
                 startIcon={<KeyIcon />}
-                onClick={() => setModalMode('update')}
+                onClick={() => setModalMode(MODAL_MODES.UPDATE)}
             >
                 Web Key
             </Button>
