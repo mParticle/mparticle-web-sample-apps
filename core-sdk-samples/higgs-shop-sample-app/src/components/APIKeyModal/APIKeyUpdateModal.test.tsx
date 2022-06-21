@@ -1,5 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import APIKeyContextProvider from '../../contexts/APIKeyContext';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyUpdateModal from './APIKeyUpdateModal';
 

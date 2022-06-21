@@ -37,6 +37,7 @@ const APIKeyHeaderBar: React.FC = () => {
                     You are viewing the mParticle Web Sample App
                 </Typography>
                 <Button
+                    role='button'
                     variant='text'
                     startIcon={<GitHubIcon />}
                     target='_blank'
@@ -47,6 +48,7 @@ const APIKeyHeaderBar: React.FC = () => {
                 </Button>
             </Box>
             <Button
+                role='button'
                 variant='text'
                 startIcon={<KeyIcon />}
                 onClick={() => setModalMode(MODAL_MODES.UPDATE)}
