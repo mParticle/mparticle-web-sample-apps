@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import APIKeyContextProvider from '../../contexts/APIKeyContext';
+import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyUpdateModal from './APIKeyUpdateModal';
 
 describe('API Key Update Modal', () => {
@@ -22,11 +23,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('renders a modal with necessary UI elements', () => {
-        render(
-            <APIKeyContextProvider>
-                <APIKeyUpdateModal isOpen />
-            </APIKeyContextProvider>,
-        );
+        renderWithAPIKeyContext(<APIKeyUpdateModal isOpen />);
 
         const header = screen.queryByText('Web Key');
 
@@ -65,11 +62,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should enable Update button if API Key is Changed', async () => {
-        render(
-            <APIKeyContextProvider>
-                <APIKeyUpdateModal isOpen />
-            </APIKeyContextProvider>,
-        );
+        renderWithAPIKeyContext(<APIKeyUpdateModal isOpen />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,
@@ -87,11 +80,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should close when Cancel is clicked', async () => {
-        render(
-            <APIKeyContextProvider>
-                <APIKeyUpdateModal isOpen />
-            </APIKeyContextProvider>,
-        );
+        renderWithAPIKeyContext(<APIKeyUpdateModal isOpen />);
 
         expect(screen.queryByText('Web Key')).toBeInTheDocument();
 
@@ -112,11 +101,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should close when API Key is updated', async () => {
-        render(
-            <APIKeyContextProvider>
-                <APIKeyUpdateModal isOpen />
-            </APIKeyContextProvider>,
-        );
+        renderWithAPIKeyContext(<APIKeyUpdateModal isOpen />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,
@@ -140,11 +125,7 @@ describe('API Key Update Modal', () => {
     });
 
     test('should reload window when API Key is updated', async () => {
-        render(
-            <APIKeyContextProvider>
-                <APIKeyUpdateModal isOpen />
-            </APIKeyContextProvider>,
-        );
+        renderWithAPIKeyContext(<APIKeyUpdateModal isOpen />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,

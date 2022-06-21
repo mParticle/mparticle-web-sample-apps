@@ -46,7 +46,7 @@ const StartShoppingModal: React.FC = () => {
         } else {
             setOpen(false);
         }
-    }, [modalMode, open]);
+    }, [modalMode]);
 
     return (
         <Dialog open={open} onClose={handleBackgroundClick}>

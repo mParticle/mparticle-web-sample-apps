@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import mParticle from '@mparticle/web-sdk';
 import StartShoppingModal from './StartShoppingModal';
 import App from '../../layouts/App';
+import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 
 describe('Start Shopping Modal', () => {
     beforeEach(() => {
@@ -9,7 +10,7 @@ describe('Start Shopping Modal', () => {
     });
 
     test('should have a start shopping button', () => {
-        render(<StartShoppingModal />);
+        renderWithAPIKeyContext(<StartShoppingModal />);
 
         const startShoppingButton = screen.getByRole('button', {
             name: /start shopping/i,
@@ -19,7 +20,7 @@ describe('Start Shopping Modal', () => {
     });
 
     test('should not re-appear after button is clicked', () => {
-        render(<StartShoppingModal />);
+        renderWithAPIKeyContext(<StartShoppingModal />);
 
         const startShoppingButton = screen.getByRole('button', {
             name: /start shopping/i,
@@ -29,13 +30,13 @@ describe('Start Shopping Modal', () => {
 
         expect(startShoppingButton).not.toBeVisible();
 
-        render(<StartShoppingModal />);
+        renderWithAPIKeyContext(<StartShoppingModal />);
 
         expect(startShoppingButton).not.toBeVisible();
     });
 
     test('fires an mParticle Page View when it appears', () => {
-        render(<StartShoppingModal />);
+        renderWithAPIKeyContext(<StartShoppingModal />);
 
         expect(mParticle.logPageView).toHaveBeenCalledWith('Landing');
 
@@ -43,7 +44,7 @@ describe('Start Shopping Modal', () => {
     });
 
     test('fires an mParticle custom event when button is clicked', () => {
-        render(<StartShoppingModal />);
+        renderWithAPIKeyContext(<StartShoppingModal />);
 
         const startShoppingButton = screen.getByRole('button', {
             name: /start shopping/i,
