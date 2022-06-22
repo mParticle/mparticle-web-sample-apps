@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.65bce500.css",
+    "main.js": "/static/js/main.ca23e72e.js",
+    "static/js/787.b748e847.chunk.js": "/static/js/787.b748e847.chunk.js",
+    "static/media/lato-all-400-normal.woff": "/static/media/lato-all-400-normal.3dc1eff492ab1f598560.woff",
+    "static/media/Dev-Higgs.svg": "/static/media/Dev-Higgs.88d0d205e8f4e8c586053b5083913917.svg",
+    "static/media/lato-latin-400-normal.woff2": "/static/media/lato-latin-400-normal.be36596da218e1eec01c.woff2",
+    "static/media/higgsmart-logo.svg": "/static/media/higgsmart-logo.00a56e5381cfc80c4ba58631e8e1c16e.svg",
+    "static/media/lato-latin-ext-400-normal.woff2": "/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
+    "index.html": "/index.html",
+    "main.65bce500.css.map": "/static/css/main.65bce500.css.map",
+    "main.ca23e72e.js.map": "/static/js/main.ca23e72e.js.map",
+    "787.b748e847.chunk.js.map": "/static/js/787.b748e847.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65bce500.css",
+    "static/js/main.ca23e72e.js"
+  ]
+}
