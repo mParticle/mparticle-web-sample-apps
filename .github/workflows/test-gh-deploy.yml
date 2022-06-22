@@ -1,7 +1,14 @@
-name: TEST Github Pages Deployment
+name: Deploy Higgs Shop to Github Pages
 
 on:
     workflow_dispatch:
+    # TODO: Enable the steps below once we are ready to release
+    # workflow_run:
+    #     workflows: ['Release Higgs Shop']
+    #     types:
+    #         - completed
+    #     branches:
+    #         - main
 
 defaults:
     run:
