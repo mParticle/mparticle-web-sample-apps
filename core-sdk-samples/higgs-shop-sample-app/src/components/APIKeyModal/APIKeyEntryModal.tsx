@@ -19,13 +19,17 @@ import { MODAL_MODES } from '../../constants';
 
 interface APIKeyEntryModalProps {
     isOpen?: boolean;
+    initialKey?: string;
 }
 
-const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
-    const [currentAPIKey, setCurrentAPIKey] = useState('');
+const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({
+    isOpen,
+    initialKey,
+}) => {
+    const [currentAPIKey, setCurrentAPIKey] = useState(initialKey || '');
     const [open, setOpen] = useState(false);
 
-    const { setModalMode, apiKey, setAPIKey } = useAPIKeyContext();
+    const { setModalMode, setAPIKey } = useAPIKeyContext();
 
     const closeModal = () => {
         setModalMode(MODAL_MODES.ENTRY);
@@ -110,6 +114,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
                             <TextField
                                 id='apiKey'
                                 label='Key'
+                                value={currentAPIKey}
                                 placeholder='Paste your Key here'
                                 onChange={(e) =>
                                     setCurrentAPIKey(e.target.value)
@@ -137,6 +142,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
 
 APIKeyEntryModal.defaultProps = {
     isOpen: false,
+    initialKey: undefined,
 };
 
 export default APIKeyEntryModal;
