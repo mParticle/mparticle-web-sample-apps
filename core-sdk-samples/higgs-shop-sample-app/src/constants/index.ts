@@ -31,3 +31,5 @@ export const APIkeyModalMessage =
     'You have started the app without an API key in the config. For information on how to add your API key, see the README.md. Once you add your API key, restart your server for changes to take effect.';
 
 export const LOCAL_STORAGE_KEY = 'mp-higgs-shop';
+
+export const API_KEY_QUERY_PARAM = 'key';

@@ -49,6 +49,18 @@ describe('API Key Entry Modal', () => {
         expect(saveAndGoButton).toBeDisabled();
     });
 
+    test('should allow an API Key as a parameter', () => {
+        renderWithAPIKeyContext(
+            <APIKeyEntryModal isOpen initialKey='XXXXXX' />,
+        );
+
+        const keyTextField = screen.getByRole('textbox', {
+            name: /key/i,
+        });
+
+        expect(keyTextField).toHaveValue('XXXXXX');
+    });
+
     test('should enable Save & Go button if API Key is Entered', async () => {
         renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
