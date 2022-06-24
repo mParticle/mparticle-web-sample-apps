@@ -12,7 +12,7 @@ export enum MODAL_MODES {
     ENTRY = 'entry',
     UPDATE = 'update',
     CONFIRM = 'confirm',
-    ENV = 'env',
+    LOCAL_DEV = 'local_dev',
 }
 
 export type ModalModeTypes =
@@ -20,7 +20,7 @@ export type ModalModeTypes =
     | MODAL_MODES.ENTRY
     | MODAL_MODES.UPDATE
     | MODAL_MODES.CONFIRM
-    | MODAL_MODES.ENV;
+    | MODAL_MODES.LOCAL_DEV;
 
 export type OrderPhaseTypes =
     | ORDER_PHASES.IN_PROGRESS

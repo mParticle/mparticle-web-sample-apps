@@ -69,7 +69,7 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
 
     useEffect(() => {
         if (!apiKey && !isHosted) {
-            setModalMode(MODAL_MODES.ENV);
+            setModalMode(MODAL_MODES.LOCAL_DEV);
         } else if (!apiKey && isHosted) {
             setModalMode(MODAL_MODES.ENTRY);
         }
@@ -85,7 +85,7 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
                 isOpen={modalMode === MODAL_MODES.CONFIRM}
             />
             <APIKeyEnvMessageModal
-                isOpen={modalMode === MODAL_MODES.ENV && !apiKey}
+                isOpen={modalMode === MODAL_MODES.LOCAL_DEV && !apiKey}
             />
             {children}
         </APIKeyContext.Provider>
