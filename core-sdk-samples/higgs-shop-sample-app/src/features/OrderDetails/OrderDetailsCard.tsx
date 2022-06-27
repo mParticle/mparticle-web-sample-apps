@@ -45,7 +45,7 @@ const OrderDetailsCard: React.FC<OrderDetailsCardProps> = ({
             <CardMedia
                 sx={{ width: { xs: 100, sm: 209 } }}
                 component='img'
-                image={imageUrl}
+                image={process.env.PUBLIC_URL + imageUrl}
                 alt={altText}
             />
             <CardContent
