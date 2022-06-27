@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mparticle-web-sample-apps/higgs-shop/static/css/main.30aa0a7f.css",
-    "main.js": "/mparticle-web-sample-apps/higgs-shop/static/js/main.97389380.js",
+    "main.js": "/mparticle-web-sample-apps/higgs-shop/static/js/main.b69ee26f.js",
     "static/js/787.b748e847.chunk.js": "/mparticle-web-sample-apps/higgs-shop/static/js/787.b748e847.chunk.js",
     "static/media/lato-all-400-normal.woff": "/mparticle-web-sample-apps/higgs-shop/static/media/lato-all-400-normal.3dc1eff492ab1f598560.woff",
     "static/media/Dev-Higgs.svg": "/mparticle-web-sample-apps/higgs-shop/static/media/Dev-Higgs.88d0d205e8f4e8c586053b5083913917.svg",
@@ -10,11 +10,11 @@
     "static/media/lato-latin-ext-400-normal.woff2": "/mparticle-web-sample-apps/higgs-shop/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
     "index.html": "/mparticle-web-sample-apps/higgs-shop/index.html",
     "main.30aa0a7f.css.map": "/mparticle-web-sample-apps/higgs-shop/static/css/main.30aa0a7f.css.map",
-    "main.97389380.js.map": "/mparticle-web-sample-apps/higgs-shop/static/js/main.97389380.js.map",
+    "main.b69ee26f.js.map": "/mparticle-web-sample-apps/higgs-shop/static/js/main.b69ee26f.js.map",
     "787.b748e847.chunk.js.map": "/mparticle-web-sample-apps/higgs-shop/static/js/787.b748e847.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30aa0a7f.css",
-    "static/js/main.97389380.js"
+    "static/js/main.b69ee26f.js"
   ]
 }
