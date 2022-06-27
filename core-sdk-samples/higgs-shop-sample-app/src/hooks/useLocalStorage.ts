@@ -43,7 +43,7 @@ function useLocalStorage<T>(
                 window.localStorage.removeItem(key);
             }
         } catch (error) {
-            console.error(error);
+            console.error('Error removing APIKey', error);
         }
     };
 

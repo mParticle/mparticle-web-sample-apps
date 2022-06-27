@@ -1,3 +1,11 @@
+/**
+ * Sample App UI Component
+ *
+ * The the code in this file is purely for Sample App functionality and presentation
+ * and does not in any way reflect how mParticle actually works in a production or
+ * 'real world' application
+ */
+
 import {
     Box,
     Button,
@@ -20,9 +28,14 @@ interface APIKeyUpdateModalProps {
 }
 
 const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
-    const { apiKey, setAPIKey, setModalMode } = useAPIKeyContext();
+    const {
+        // Change attributes to provide more clarity
+        apiKey: globalAPIKey,
+        setAPIKey: setGlobalAPIKey,
+        setModalMode,
+    } = useAPIKeyContext();
 
-    const [currentAPIKey, setCurrentAPIKey] = useState(apiKey);
+    const [tempAPIKey, setTempAPIKey] = useState(globalAPIKey);
     const [open, setOpen] = useState(false);
     const [canUpdateAPIKey, setCanUpdateAPIKey] = useState(false);
 
@@ -32,8 +45,12 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
     };
 
     const handleAPIKeyUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrentAPIKey(e.target.value);
-        if (e.target.value === '' || e.target.value === apiKey) {
+        // Checks if the Update Button should be enabled by comparing the
+        // component level `tempAPIKey` with the application's `apiKey`
+        // If they match, then the api key has not changed and should not be
+        // updated
+        setTempAPIKey(e.target.value);
+        if (e.target.value === '' || e.target.value === globalAPIKey) {
             setCanUpdateAPIKey(false);
         } else {
             setCanUpdateAPIKey(true);
@@ -41,19 +58,24 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
     };
 
     const handleUpdateClick = () => {
-        if (currentAPIKey) {
-            setAPIKey(currentAPIKey);
+        // Closes the modal only if api key has been updated
+        // Button will be disabled if api key has not changed
+        if (tempAPIKey) {
+            setGlobalAPIKey(tempAPIKey);
             closeModal();
         }
     };
 
     useEffect(() => {
-        // Reset to current api key upon open
-        setCurrentAPIKey(apiKey);
+        // Reset the api key in the ui component back to whatever is currently in
+        // the application state
+        setTempAPIKey(globalAPIKey);
         setCanUpdateAPIKey(false);
     }, [open]);
 
     useEffect(() => {
+        // Listens for the `isOpen` state to make sure
+        // component stays closed when it isn't needed
         setOpen(isOpen || false);
     }, [isOpen]);
 
@@ -111,14 +133,14 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
                     <DialogContent>
                         <FormControl fullWidth focused required>
                             <TextField
-                                error={!currentAPIKey}
+                                error={!tempAPIKey}
                                 id='apiKey'
                                 label='Key'
-                                value={currentAPIKey}
+                                value={tempAPIKey}
                                 placeholder='Paste your Key here'
                                 onChange={handleAPIKeyUpdate}
                                 helperText={
-                                    !currentAPIKey ? 'Key is required' : ''
+                                    !tempAPIKey ? 'Key is required' : ''
                                 }
                             />
                         </FormControl>
@@ -127,7 +149,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!currentAPIKey}
+                            disabled={!tempAPIKey}
                             variant='contained'
                             color='error'
                             size='large'
