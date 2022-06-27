@@ -24,9 +24,15 @@ import NavigationMenuDrawer from './NavigationMenuDrawer';
 import HiggsmartLogo from '../HiggsLogo/HiggsmartLogo';
 import theme from '../../contexts/theme';
 import { useOrderDetails } from '../../contexts/OrderDetails';
+import useApiKey from '../../hooks/useAPIKey';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
 const NavigationMenu: React.FC = () => {
     const { numberOfProducts } = useOrderDetails();
+    const { setModalMode } = useAPIKeyContext();
+    const [, isHosted] = useApiKey();
+
     const classes: SxProps<Theme> = {
         appBar: {},
         drawer: {},
@@ -268,7 +274,7 @@ const NavigationMenu: React.FC = () => {
         <MenuItem
             key='web-key'
             sx={classes.drawerLink}
-            // TODO: Wire this into API Key Modal
+            onClick={() => setModalMode(MODAL_MODES.UPDATE)}
         >
             Web Key
         </MenuItem>,
@@ -298,9 +304,11 @@ const NavigationMenu: React.FC = () => {
                             {drawerMenuItems}
                         </MenuList>
 
-                        <MenuList sx={classes.lowerDrawerList}>
-                            {lowerDrawerMenuItems}
-                        </MenuList>
+                        {isHosted && (
+                            <MenuList sx={classes.lowerDrawerList}>
+                                {lowerDrawerMenuItems}
+                            </MenuList>
+                        )}
                     </Box>
                 </NavigationMenuDrawer>
                 <Toolbar disableGutters>

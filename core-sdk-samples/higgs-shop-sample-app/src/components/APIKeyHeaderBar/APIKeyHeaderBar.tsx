@@ -2,8 +2,18 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyIcon from '@mui/icons-material/Key';
 import React from 'react';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import useApiKey from '../../hooks/useAPIKey';
+import { MODAL_MODES } from '../../constants';
 
 const APIKeyHeaderBar: React.FC = () => {
+    const { setModalMode } = useAPIKeyContext();
+    const [, isHosted] = useApiKey();
+
+    if (!isHosted) {
+        return <div />;
+    }
+
     return (
         <Container
             maxWidth={false}
@@ -27,6 +37,7 @@ const APIKeyHeaderBar: React.FC = () => {
                     You are viewing the mParticle Web Sample App
                 </Typography>
                 <Button
+                    role='button'
                     variant='text'
                     startIcon={<GitHubIcon />}
                     target='_blank'
@@ -36,7 +47,12 @@ const APIKeyHeaderBar: React.FC = () => {
                     Learn more
                 </Button>
             </Box>
-            <Button variant='text' startIcon={<KeyIcon />}>
+            <Button
+                role='button'
+                variant='text'
+                startIcon={<KeyIcon />}
+                onClick={() => setModalMode(MODAL_MODES.UPDATE)}
+            >
                 Web Key
             </Button>
         </Container>

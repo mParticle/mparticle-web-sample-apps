@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyRemoveConfirmationModal from './APIKeyRemoveConfirmationModal';
 
 describe('API Key Remove Confirmation Modal', () => {
     test('renders a modal with necessary UI elements', () => {
-        render(<APIKeyRemoveConfirmationModal />);
+        renderWithAPIKeyContext(<APIKeyRemoveConfirmationModal isOpen />);
 
         const headerText = screen.getByText('Are you sure?');
 

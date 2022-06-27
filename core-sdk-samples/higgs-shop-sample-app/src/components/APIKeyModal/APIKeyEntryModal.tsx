@@ -1,3 +1,5 @@
+// TS incorrectly flags function declarations as unused variables
+/* eslint-disable no-unused-vars */
 import {
     Box,
     Button,
@@ -10,20 +12,34 @@ import {
     TextField,
     FormControl,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
-const APIKeyEntryModal: React.FC = () => {
-    const [apiKey, setAPIKey] = useState('');
-    const [open, setOpen] = useState(true);
+interface APIKeyEntryModalProps {
+    isOpen?: boolean;
+}
+
+const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({ isOpen }) => {
+    const [currentAPIKey, setCurrentAPIKey] = useState('');
+    const [open, setOpen] = useState(false);
+
+    const { setModalMode, apiKey, setAPIKey } = useAPIKeyContext();
 
     const closeModal = () => {
+        setModalMode(MODAL_MODES.ENTRY);
         setOpen(false);
     };
 
-    const handleButtonClick = () => {
+    const handleSaveButtonClick = () => {
+        setAPIKey(currentAPIKey);
         closeModal();
     };
+
+    useEffect(() => {
+        setOpen(isOpen || false);
+    }, [isOpen]);
 
     return (
         <Dialog open={open}>
@@ -95,7 +111,9 @@ const APIKeyEntryModal: React.FC = () => {
                                 id='apiKey'
                                 label='Key'
                                 placeholder='Paste your Key here'
-                                onChange={(e) => setAPIKey(e.target.value)}
+                                onChange={(e) =>
+                                    setCurrentAPIKey(e.target.value)
+                                }
                             />
                         </FormControl>
                     </DialogContent>
@@ -103,9 +121,9 @@ const APIKeyEntryModal: React.FC = () => {
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!apiKey}
+                            disabled={!currentAPIKey}
                             variant='contained'
-                            onClick={handleButtonClick}
+                            onClick={handleSaveButtonClick}
                             size='large'
                         >
                             Save &amp; Go
@@ -115,6 +133,10 @@ const APIKeyEntryModal: React.FC = () => {
             </Grid>
         </Dialog>
     );
+};
+
+APIKeyEntryModal.defaultProps = {
+    isOpen: false,
 };
 
 export default APIKeyEntryModal;

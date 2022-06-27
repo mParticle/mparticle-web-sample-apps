@@ -1,9 +1,28 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyEntryModal from './APIKeyEntryModal';
 
 describe('API Key Entry Modal', () => {
+    const originalWinLocation = window.location;
+
+    // Mock window location since update modal resets window
+    beforeAll(() => {
+        Object.defineProperty(window, 'location', {
+            configurable: true,
+            value: { reload: jest.fn() },
+        });
+    });
+
+    // Unmock window location
+    afterAll(() => {
+        Object.defineProperty(window, 'location', {
+            configurable: true,
+            value: originalWinLocation,
+        });
+    });
+
     test('renders a modal with necessary UI elements', () => {
-        render(<APIKeyEntryModal />);
+        renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
         const welcomeText = screen.getByText('Welcome to HiggsMart!');
 
@@ -31,7 +50,7 @@ describe('API Key Entry Modal', () => {
     });
 
     test('should enable Save & Go button if API Key is Entered', async () => {
-        render(<APIKeyEntryModal />);
+        renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,
@@ -48,8 +67,8 @@ describe('API Key Entry Modal', () => {
         await waitFor(() => expect(saveAndGoButton).toBeEnabled());
     });
 
-    test('should close only if API Key is entered', async () => {
-        render(<APIKeyEntryModal />);
+    test('should close only if API Key is entered and reload window', async () => {
+        renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
         const keyTextField = screen.getByRole('textbox', {
             name: /key/i,
@@ -67,5 +86,6 @@ describe('API Key Entry Modal', () => {
                 screen.queryByText('Welcome to HiggsMart!'),
             ).not.toBeVisible(),
         );
+        await waitFor(() => expect(window.location.reload).toHaveBeenCalled());
     });
 });

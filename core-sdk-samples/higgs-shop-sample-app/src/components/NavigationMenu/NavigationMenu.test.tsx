@@ -4,6 +4,17 @@ import { MemoryRouter } from 'react-router-dom';
 import { NavigationMenu } from '.';
 
 describe('Navigation Menu', () => {
+    const OLD_ENV = process.env;
+
+    beforeEach(() => {
+        jest.resetModules();
+        process.env = { ...OLD_ENV };
+    });
+
+    afterAll(() => {
+        process.env = OLD_ENV;
+    });
+
     test('renders a desktop navigation Menu', () => {
         render(<NavigationMenu />, { wrapper: MemoryRouter });
 
@@ -78,6 +89,8 @@ describe('Navigation Menu', () => {
 
     test('renders api key UI Elements', async () => {
         render(<NavigationMenu />, { wrapper: MemoryRouter });
+
+        process.env.REACT_APP_HOSTED = 'true';
 
         const hamburgerButton = screen.getByTestId(
             'mobile-nav-hamburger-button',
