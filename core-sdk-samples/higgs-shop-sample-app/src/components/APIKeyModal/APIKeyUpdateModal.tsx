@@ -1,3 +1,11 @@
+/**
+ * Sample App UI Component
+ *
+ * The the code in this file is purely for Sample App functionality and presentation
+ * and does not in any way reflect how mParticle actually works in a production or
+ * 'real world' application
+ */
+
 import {
     Box,
     Button,
@@ -10,37 +18,66 @@ import {
     TextField,
     FormControl,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiggsLogo } from '../HiggsLogo';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES } from '../../constants';
 
 interface APIKeyUpdateModalProps {
-    currentApiKey: string;
+    isOpen?: boolean;
 }
 
-const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
-    currentApiKey,
-}) => {
-    const [apiKey, setAPIKey] = useState(currentApiKey);
-    const [open, setOpen] = useState(true);
+const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
+    const {
+        // Change attributes to provide more clarity
+        apiKey: globalAPIKey,
+        setAPIKey: setGlobalAPIKey,
+        setModalMode,
+    } = useAPIKeyContext();
+
+    const [tempAPIKey, setTempAPIKey] = useState(globalAPIKey);
+    const [open, setOpen] = useState(false);
     const [canUpdateAPIKey, setCanUpdateAPIKey] = useState(false);
 
     const closeModal = () => {
+        setModalMode(MODAL_MODES.CLOSED);
         setOpen(false);
     };
 
     const handleAPIKeyUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAPIKey(e.target.value);
-        if (e.target.value === '' || e.target.value === currentApiKey) {
+        // Checks if the Update Button should be enabled by comparing the
+        // component level `tempAPIKey` with the application's `apiKey`
+        // If they match, then the api key has not changed and should not be
+        // updated
+        setTempAPIKey(e.target.value);
+        if (e.target.value === '' || e.target.value === globalAPIKey) {
             setCanUpdateAPIKey(false);
         } else {
             setCanUpdateAPIKey(true);
         }
     };
 
-    const handleButtonClick = () => {
-        // TODO: Pass API Key to parent
-        closeModal();
+    const handleUpdateClick = () => {
+        // Closes the modal only if api key has been updated
+        // Button will be disabled if api key has not changed
+        if (tempAPIKey) {
+            setGlobalAPIKey(tempAPIKey);
+            closeModal();
+        }
     };
+
+    useEffect(() => {
+        // Reset the api key in the ui component back to whatever is currently in
+        // the application state
+        setTempAPIKey(globalAPIKey);
+        setCanUpdateAPIKey(false);
+    }, [open]);
+
+    useEffect(() => {
+        // Listens for the `isOpen` state to make sure
+        // component stays closed when it isn't needed
+        setOpen(isOpen || false);
+    }, [isOpen]);
 
     return (
         <Dialog open={open}>
@@ -82,7 +119,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogContent>
                         <Typography variant='body1' align='center'>
                             The web key should be generated in mParticle in
-                            order to connect this sample app to your account.
+                            order to connect this sample app to your account.{' '}
                             <Link
                                 href='https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials'
                                 target='_blank'
@@ -96,13 +133,15 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogContent>
                         <FormControl fullWidth focused required>
                             <TextField
-                                error={!apiKey}
+                                error={!tempAPIKey}
                                 id='apiKey'
                                 label='Key'
-                                value={apiKey}
+                                value={tempAPIKey}
                                 placeholder='Paste your Key here'
                                 onChange={handleAPIKeyUpdate}
-                                helperText={!apiKey ? 'Key is required' : ''}
+                                helperText={
+                                    !tempAPIKey ? 'Key is required' : ''
+                                }
                             />
                         </FormControl>
                     </DialogContent>
@@ -110,17 +149,18 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                 <Grid item>
                     <DialogActions>
                         <Button
-                            disabled={!apiKey}
+                            disabled={!tempAPIKey}
                             variant='contained'
                             color='error'
                             size='large'
+                            onClick={() => setModalMode(MODAL_MODES.CONFIRM)}
                         >
                             Remove Key
                         </Button>
                         <Button
                             disabled={!canUpdateAPIKey}
                             variant='contained'
-                            onClick={handleButtonClick}
+                            onClick={handleUpdateClick}
                             size='large'
                         >
                             Update
@@ -131,7 +171,7 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
                     <DialogActions>
                         <Button
                             variant='text'
-                            onClick={() => setOpen(false)}
+                            onClick={closeModal}
                             size='large'
                         >
                             Cancel
@@ -141,6 +181,10 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({
             </Grid>
         </Dialog>
     );
+};
+
+APIKeyUpdateModal.defaultProps = {
+    isOpen: false,
 };
 
 export default APIKeyUpdateModal;

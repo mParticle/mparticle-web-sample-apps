@@ -6,10 +6,36 @@ import {
     Grid,
     Typography,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { MODAL_MODES } from '../../constants';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 
-const APIKeyRemoveConfirmationModal: React.FC = () => {
-    const [open, setOpen] = useState(true);
+interface APIKeyRemoveConfirmationModalProps {
+    isOpen?: boolean;
+}
+
+const APIKeyRemoveConfirmationModal: React.FC<
+    APIKeyRemoveConfirmationModalProps
+> = ({ isOpen }) => {
+    const [open, setOpen] = useState(false);
+
+    const { setModalMode, removeAPIKey } = useAPIKeyContext();
+
+    const handleRemoveKeyClick = () => {
+        removeAPIKey();
+        setModalMode(MODAL_MODES.CLOSED);
+        setOpen(false);
+    };
+
+    const handleBackClick = () => {
+        setModalMode(MODAL_MODES.UPDATE);
+        setOpen(false);
+    };
+
+    useEffect(() => {
+        setOpen(isOpen || false);
+    }, [isOpen]);
+
     return (
         <Dialog open={open}>
             <Grid
@@ -41,7 +67,12 @@ const APIKeyRemoveConfirmationModal: React.FC = () => {
                 </Grid>
                 <Grid item>
                     <DialogActions>
-                        <Button variant='contained' color='error' size='large'>
+                        <Button
+                            variant='contained'
+                            color='error'
+                            size='large'
+                            onClick={handleRemoveKeyClick}
+                        >
                             Remove key &amp; reset app
                         </Button>
                     </DialogActions>
@@ -51,7 +82,7 @@ const APIKeyRemoveConfirmationModal: React.FC = () => {
                         <Button
                             variant='text'
                             size='large'
-                            onClick={() => setOpen(false)}
+                            onClick={handleBackClick}
                         >
                             Back
                         </Button>
@@ -60,6 +91,10 @@ const APIKeyRemoveConfirmationModal: React.FC = () => {
             </Grid>
         </Dialog>
     );
+};
+
+APIKeyRemoveConfirmationModal.defaultProps = {
+    isOpen: false,
 };
 
 export default APIKeyRemoveConfirmationModal;

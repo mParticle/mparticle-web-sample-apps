@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React, { ReactElement } from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import APIKeyContextProvider from '../contexts/APIKeyContext';
 import OrderDetailsProvider from '../contexts/OrderDetails';
 
 const updateQuantity = async (quantity: number) => {
@@ -130,6 +131,10 @@ export const renderWithRouter = (
             </MemoryRouter>
         </OrderDetailsProvider>,
     );
+};
+
+export const renderWithAPIKeyContext = (element: ReactElement) => {
+    render(<APIKeyContextProvider>{element}</APIKeyContextProvider>);
 };
 
 export const mockCreateProduct = () => {
