@@ -134,7 +134,10 @@ export const renderWithRouter = (
 };
 
 export const renderWithAPIKeyContext = (element: ReactElement) => {
-    render(<APIKeyContextProvider>{element}</APIKeyContextProvider>);
+    renderWithRouter(<APIKeyContextProvider>{element}</APIKeyContextProvider>, {
+        path: '/',
+        pathSignature: '/',
+    });
 };
 
 export const mockCreateProduct = () => {

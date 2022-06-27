@@ -100,10 +100,10 @@ const App = () => {
     return (
         <div className='App'>
             <ThemeProvider theme={theme}>
-                <APIKeyContextProvider>
-                    <UserDetailsProvider>
-                        <OrderDetailsProvider>
-                            <BrowserRouter>
+                <UserDetailsProvider>
+                    <OrderDetailsProvider>
+                        <BrowserRouter>
+                            <APIKeyContextProvider>
                                 <StartShoppingModal />
 
                                 <APIKeyHeaderBar />
@@ -125,10 +125,10 @@ const App = () => {
                                         element={<ProductDetailPage />}
                                     />
                                 </Routes>
-                            </BrowserRouter>
-                        </OrderDetailsProvider>
-                    </UserDetailsProvider>
-                </APIKeyContextProvider>
+                            </APIKeyContextProvider>
+                        </BrowserRouter>
+                    </OrderDetailsProvider>
+                </UserDetailsProvider>
             </ThemeProvider>
         </div>
     );

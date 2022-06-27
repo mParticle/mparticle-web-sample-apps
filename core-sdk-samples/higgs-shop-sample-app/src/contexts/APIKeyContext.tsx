@@ -7,13 +7,19 @@ import React, {
     useMemo,
     useState,
 } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
     APIKeyEntryModal,
     APIKeyRemoveConfirmationModal,
     APIKeyUpdateModal,
     APIKeyEnvMessageModal,
 } from '../components/APIKeyModal';
-import { LOCAL_STORAGE_KEY, ModalModeTypes, MODAL_MODES } from '../constants';
+import {
+    API_KEY_QUERY_PARAM,
+    LOCAL_STORAGE_KEY,
+    ModalModeTypes,
+    MODAL_MODES,
+} from '../constants';
 import useApiKey from '../hooks/useAPIKey';
 import useLocalStorage from '../hooks/useLocalStorage';
 
@@ -43,9 +49,12 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
     const [apiKey, isHosted] = useApiKey();
     const [localStorageApiKey, setLocalStorageApiKey, removeLocalStorageKey] =
         useLocalStorage(LOCAL_STORAGE_KEY, '');
+    const [searchParams, setSearchParams] = useSearchParams();
     const [modalMode, setModalMode] = useState<ModalModeTypes>(
         MODAL_MODES.CLOSED,
     );
+
+    const queryParamKey = searchParams.get(API_KEY_QUERY_PARAM);
 
     const value = useMemo(() => {
         const setAPIKey = (key: string) => {
@@ -79,6 +88,7 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
         <APIKeyContext.Provider value={value}>
             <APIKeyEntryModal
                 isOpen={modalMode === MODAL_MODES.ENTRY && !apiKey}
+                initialKey={queryParamKey || undefined}
             />
             <APIKeyUpdateModal isOpen={modalMode === MODAL_MODES.UPDATE} />
             <APIKeyRemoveConfirmationModal
