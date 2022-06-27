@@ -73,7 +73,6 @@ const APIKeyUpdateModal: React.FC<APIKeyUpdateModalProps> = ({ isOpen }) => {
         setCanUpdateAPIKey(false);
     }, [open]);
 
-    // TODO: Can we remove this?
     useEffect(() => {
         // Listens for the `isOpen` state to make sure
         // component stays closed when it isn't needed
