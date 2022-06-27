@@ -49,7 +49,7 @@ const APIKeyContextProvider: React.FC = ({ children }) => {
     const [apiKey, isHosted] = useApiKey();
     const [localStorageApiKey, setLocalStorageApiKey, removeLocalStorageKey] =
         useLocalStorage(LOCAL_STORAGE_KEY, '');
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [modalMode, setModalMode] = useState<ModalModeTypes>(
         MODAL_MODES.CLOSED,
     );
