@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/mparticle-web-sample-apps/higgs-shop/static/css/main.30aa0a7f.css",
-    "main.js": "/mparticle-web-sample-apps/higgs-shop/static/js/main.155b6c0d.js",
-    "static/js/787.b748e847.chunk.js": "/mparticle-web-sample-apps/higgs-shop/static/js/787.b748e847.chunk.js",
-    "static/media/lato-all-400-normal.woff": "/mparticle-web-sample-apps/higgs-shop/static/media/lato-all-400-normal.3dc1eff492ab1f598560.woff",
-    "static/media/Dev-Higgs.svg": "/mparticle-web-sample-apps/higgs-shop/static/media/Dev-Higgs.88d0d205e8f4e8c586053b5083913917.svg",
-    "static/media/lato-latin-400-normal.woff2": "/mparticle-web-sample-apps/higgs-shop/static/media/lato-latin-400-normal.be36596da218e1eec01c.woff2",
-    "static/media/higgsmart-logo.svg": "/mparticle-web-sample-apps/higgs-shop/static/media/higgsmart-logo.00a56e5381cfc80c4ba58631e8e1c16e.svg",
-    "static/media/lato-latin-ext-400-normal.woff2": "/mparticle-web-sample-apps/higgs-shop/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
-    "index.html": "/mparticle-web-sample-apps/higgs-shop/index.html",
-    "main.30aa0a7f.css.map": "/mparticle-web-sample-apps/higgs-shop/static/css/main.30aa0a7f.css.map",
-    "main.155b6c0d.js.map": "/mparticle-web-sample-apps/higgs-shop/static/js/main.155b6c0d.js.map",
-    "787.b748e847.chunk.js.map": "/mparticle-web-sample-apps/higgs-shop/static/js/787.b748e847.chunk.js.map"
+    "main.css": "/higgs-shop/static/css/main.77d5bd9b.css",
+    "main.js": "/higgs-shop/static/js/main.d4420722.js",
+    "static/js/787.b748e847.chunk.js": "/higgs-shop/static/js/787.b748e847.chunk.js",
+    "static/media/lato-all-400-normal.woff": "/higgs-shop/static/media/lato-all-400-normal.3dc1eff492ab1f598560.woff",
+    "static/media/Dev-Higgs.svg": "/higgs-shop/static/media/Dev-Higgs.88d0d205e8f4e8c586053b5083913917.svg",
+    "static/media/lato-latin-400-normal.woff2": "/higgs-shop/static/media/lato-latin-400-normal.be36596da218e1eec01c.woff2",
+    "static/media/higgsmart-logo.svg": "/higgs-shop/static/media/higgsmart-logo.00a56e5381cfc80c4ba58631e8e1c16e.svg",
+    "static/media/lato-latin-ext-400-normal.woff2": "/higgs-shop/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
+    "index.html": "/higgs-shop/index.html",
+    "main.77d5bd9b.css.map": "/higgs-shop/static/css/main.77d5bd9b.css.map",
+    "main.d4420722.js.map": "/higgs-shop/static/js/main.d4420722.js.map",
+    "787.b748e847.chunk.js.map": "/higgs-shop/static/js/787.b748e847.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30aa0a7f.css",
-    "static/js/main.155b6c0d.js"
+    "static/css/main.77d5bd9b.css",
+    "static/js/main.d4420722.js"
   ]
 }
