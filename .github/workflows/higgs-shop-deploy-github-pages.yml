@@ -15,8 +15,7 @@ defaults:
 jobs:
     deploy-github-pages:
         name: Deploy Higgs Shop to Github Pages
-        if: >
-            ${{ github.event.workflow_run.conclusion == 'success' }}
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         runs-on: ubuntu-latest
         env:
             GIT_AUTHOR_NAME: mparticle-automation
