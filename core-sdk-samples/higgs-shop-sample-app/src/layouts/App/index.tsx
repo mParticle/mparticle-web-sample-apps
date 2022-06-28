@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
 import mParticle from '@mparticle/web-sdk';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { ShopPage } from '../../pages/ShopPage';
@@ -102,7 +102,7 @@ const App = () => {
             <ThemeProvider theme={theme}>
                 <UserDetailsProvider>
                     <OrderDetailsProvider>
-                        <BrowserRouter>
+                        <HashRouter>
                             <APIKeyContextProvider>
                                 <StartShoppingModal />
 
@@ -126,7 +126,7 @@ const App = () => {
                                     />
                                 </Routes>
                             </APIKeyContextProvider>
-                        </BrowserRouter>
+                        </HashRouter>
                     </OrderDetailsProvider>
                 </UserDetailsProvider>
             </ThemeProvider>

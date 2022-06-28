@@ -26,7 +26,9 @@
         "web-vitals": "^1.0.1"
     },
     "scripts": {
-        "predeploy": "BUILD_PATH=./build.tmp npm run build && mkdir -p build/higgs-shop && mv build.tmp/* build/higgs-shop && rm -rf build.tmp",
+        "predeploy": "npm run build:clean && BUILD_PATH=./build/higgs-shop npm run build",
+        "build:local-serve": "npm run build:clean && BUILD_PATH=./build/mparticle-web-sample-apps/higgs-shop npm run build",
+        "build:clean": "rm -rf build",
         "deploy": "gh-pages -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
