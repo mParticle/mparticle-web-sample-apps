@@ -4,7 +4,7 @@ import KeyIcon from '@mui/icons-material/Key';
 import React from 'react';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 import useApiKey from '../../hooks/useAPIKey';
-import { MODAL_MODES } from '../../constants';
+import { MODAL_MODES, SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 
 const APIKeyHeaderBar: React.FC = () => {
     const { setModalMode } = useAPIKeyContext();
@@ -41,8 +41,7 @@ const APIKeyHeaderBar: React.FC = () => {
                     variant='text'
                     startIcon={<GitHubIcon />}
                     target='_blank'
-                    // TODO: Refactor url into constant once we integrate
-                    href='https://github.com/mParticle/mparticle-web-sample-apps'
+                    href={SAMPLE_APP_GITHUB_REPOSITORY_URL}
                 >
                     Learn more
                 </Button>

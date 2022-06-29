@@ -33,3 +33,15 @@ export const APIkeyModalMessage =
 export const LOCAL_STORAGE_KEY = 'mp-higgs-shop';
 
 export const API_KEY_QUERY_PARAM = 'key';
+
+export const SAMPLE_APP_GITHUB_REPOSITORY_URL =
+    'https://github.com/mParticle/mparticle-web-sample-apps';
+
+export const SAMPLE_APP_README_GITHUB_REPOSITORY_URL =
+    'https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md';
+
+export const DOCSITE_API_KEY_QUICKSTART =
+    'https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2';
+
+export const DOCSITE_API_KEY_ACCESS =
+    'https://docs.mparticle.com/guides/getting-started/create-an-input/#create-access-credentials';

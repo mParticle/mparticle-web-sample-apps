@@ -1,5 +1,8 @@
 import { screen } from '@testing-library/react';
-import { LOCAL_STORAGE_KEY } from '../../constants';
+import {
+    LOCAL_STORAGE_KEY,
+    SAMPLE_APP_GITHUB_REPOSITORY_URL,
+} from '../../constants';
 import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyHeaderBar from './APIKeyHeaderBar';
 
@@ -46,7 +49,7 @@ describe('API Key Header Bar', () => {
 
         expect(githubRepoLink).toHaveAttribute(
             'href',
-            'https://github.com/mParticle/mparticle-web-sample-apps',
+            SAMPLE_APP_GITHUB_REPOSITORY_URL,
         );
     });
 
