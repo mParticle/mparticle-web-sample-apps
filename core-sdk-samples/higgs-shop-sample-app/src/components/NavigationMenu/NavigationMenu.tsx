@@ -26,7 +26,7 @@ import theme from '../../contexts/theme';
 import { useOrderDetails } from '../../contexts/OrderDetails';
 import useApiKey from '../../hooks/useAPIKey';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
-import { MODAL_MODES } from '../../constants';
+import { MODAL_MODES, SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 
 const NavigationMenu: React.FC = () => {
     const { numberOfProducts } = useOrderDetails();
@@ -283,7 +283,7 @@ const NavigationMenu: React.FC = () => {
             key='github-a'
             component='a'
             target='_blank'
-            href='https://github.com/mParticle/mparticle-web-sample-apps'
+            href={SAMPLE_APP_GITHUB_REPOSITORY_URL}
         >
             Go to Github Repo
         </MenuItem>,

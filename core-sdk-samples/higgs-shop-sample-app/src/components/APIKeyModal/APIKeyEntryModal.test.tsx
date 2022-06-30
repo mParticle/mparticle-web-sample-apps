@@ -1,4 +1,5 @@
 import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 import { renderWithAPIKeyContext } from '../../test-utils/helpers';
 import APIKeyEntryModal from './APIKeyEntryModal';
 
@@ -42,7 +43,7 @@ describe('API Key Entry Modal', () => {
         expect(githubRepoLink).toBeInTheDocument();
         expect(githubRepoLink).toHaveAttribute(
             'href',
-            'https://github.com/mParticle/mparticle-web-sample-apps',
+            SAMPLE_APP_GITHUB_REPOSITORY_URL,
         );
         expect(keyTextField).toBeInTheDocument();
         expect(saveAndGoButton).toBeInTheDocument();

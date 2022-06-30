@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { NavigationMenu } from '.';
+import { SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 
 describe('Navigation Menu', () => {
     const OLD_ENV = process.env;
@@ -112,7 +113,7 @@ describe('Navigation Menu', () => {
 
         expect(githubRepoLink).toHaveAttribute(
             'href',
-            'https://github.com/mParticle/mparticle-web-sample-apps',
+            SAMPLE_APP_GITHUB_REPOSITORY_URL,
         );
     });
 });

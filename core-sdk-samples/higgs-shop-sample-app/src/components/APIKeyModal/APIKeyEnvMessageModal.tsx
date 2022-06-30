@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { MessageModal } from '../MessageModal';
-import { APIkeyModalMessage } from '../../constants';
+import {
+    APIkeyModalMessage,
+    DOCSITE_API_KEY_QUICKSTART,
+    SAMPLE_APP_README_GITHUB_REPOSITORY_URL,
+} from '../../constants';
 
 interface APIKeyEnvMessageModalProps {
     isOpen: boolean;
@@ -19,14 +23,14 @@ const APIKeyEnvMessageModal: React.FC<APIKeyEnvMessageModalProps> = ({
                     <Button
                         variant='contained'
                         target='_blank'
-                        href='https://github.com/mParticle/mparticle-web-sample-apps/blob/main/core-sdk-samples/higgs-shop-sample-app/README.md'
+                        href={SAMPLE_APP_README_GITHUB_REPOSITORY_URL}
                     >
                         Go to Readme
                     </Button>
                     <Button
                         variant='contained'
                         target='_blank'
-                        href='https://docs.mparticle.com/developers/quickstart/senddata/#1-generate-your-api-key-2'
+                        href={DOCSITE_API_KEY_QUICKSTART}
                     >
                         Go to Docs
                     </Button>
