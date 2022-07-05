@@ -6,8 +6,6 @@ import {
     Typography,
     FormControl,
     SelectChangeEvent,
-    Theme,
-    SxProps,
     TextField,
     Button,
     Snackbar,
@@ -21,7 +19,7 @@ import { ProductVariantSelect } from '../../features/ProductDetails';
 import { useOrderDetails } from '../../contexts/OrderDetails';
 
 const ProductDetailPage: React.FC = () => {
-    const classes: SxProps<Theme> = {
+    const classes = {
         mobileResponsive: {
             display: { xs: 'flex', md: 'none' },
         },

@@ -11,8 +11,6 @@ import {
     MenuItem,
     IconButton,
     alpha,
-    SxProps,
-    Theme,
 } from '@mui/material';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -33,7 +31,7 @@ const NavigationMenu: React.FC = () => {
     const { setModalMode } = useAPIKeyContext();
     const [, isHosted] = useApiKey();
 
-    const classes: SxProps<Theme> = {
+    const classes = {
         appBar: {},
         drawer: {},
         drawerBox: {
