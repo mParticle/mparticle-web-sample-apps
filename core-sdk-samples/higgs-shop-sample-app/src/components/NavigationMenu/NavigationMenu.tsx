@@ -24,12 +24,24 @@ import NavigationMenuDrawer from './NavigationMenuDrawer';
 import HiggsmartLogo from '../HiggsLogo/HiggsmartLogo';
 import theme from '../../contexts/theme';
 import { useOrderDetails } from '../../contexts/OrderDetails';
+import useApiKey from '../../hooks/useAPIKey';
+import { useAPIKeyContext } from '../../contexts/APIKeyContext';
+import { MODAL_MODES, SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 
 const NavigationMenu: React.FC = () => {
     const { numberOfProducts } = useOrderDetails();
+    const { setModalMode } = useAPIKeyContext();
+    const [, isHosted] = useApiKey();
+
     const classes: SxProps<Theme> = {
         appBar: {},
         drawer: {},
+        drawerBox: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'column',
+            height: '100%',
+        },
         link: {
             mx: 3,
             '&:hover': {
@@ -39,6 +51,10 @@ const NavigationMenu: React.FC = () => {
         },
         drawerList: {
             width: 304,
+        },
+        lowerDrawerList: {
+            width: 304,
+            ml: 3,
         },
         drawerLinkIcon: {
             ml: 3,
@@ -254,6 +270,25 @@ const NavigationMenu: React.FC = () => {
         />,
     ];
 
+    const lowerDrawerMenuItems: ReactElement[] = [
+        <MenuItem
+            key='web-key'
+            sx={classes.drawerLink}
+            onClick={() => setModalMode(MODAL_MODES.UPDATE)}
+        >
+            Web Key
+        </MenuItem>,
+
+        <MenuItem
+            key='github-a'
+            component='a'
+            target='_blank'
+            href={SAMPLE_APP_GITHUB_REPOSITORY_URL}
+        >
+            Go to Github Repo
+        </MenuItem>,
+    ];
+
     return (
         <AppBar position='static' sx={classes.appBar} color='transparent'>
             <CssBaseline />
@@ -264,9 +299,17 @@ const NavigationMenu: React.FC = () => {
                     toggleState={drawerState}
                     handleDrawerClose={closeDrawer}
                 >
-                    <MenuList sx={classes.drawerList}>
-                        {drawerMenuItems}
-                    </MenuList>
+                    <Box sx={classes.drawerBox}>
+                        <MenuList sx={classes.drawerList}>
+                            {drawerMenuItems}
+                        </MenuList>
+
+                        {isHosted && (
+                            <MenuList sx={classes.lowerDrawerList}>
+                                {lowerDrawerMenuItems}
+                            </MenuList>
+                        )}
+                    </Box>
                 </NavigationMenuDrawer>
                 <Toolbar disableGutters>
                     <Box sx={classes.mobileResponsive}>{topNavMobileItems}</Box>

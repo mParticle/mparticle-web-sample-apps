@@ -187,7 +187,7 @@ const ProductDetailPage: React.FC = () => {
                                 height: 'auto',
                             }}
                             alt={product.altText}
-                            src={product.imageUrl}
+                            src={process.env.PUBLIC_URL + product.imageUrl}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>

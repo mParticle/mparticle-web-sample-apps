@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <CardMedia
                     component='img'
                     height='361'
-                    image={imageUrl}
+                    image={process.env.PUBLIC_URL + imageUrl}
                     alt={altText}
                 />
                 <CardContent
