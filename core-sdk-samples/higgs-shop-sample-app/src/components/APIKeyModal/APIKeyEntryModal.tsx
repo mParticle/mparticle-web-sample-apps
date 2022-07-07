@@ -87,18 +87,26 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({
             </Grid>
             <Grid item>
                 <DialogContent>
-                    <Typography variant='body1' align='center'>
+                    <Typography
+                        variant='body1'
+                        align='center'
+                        sx={{
+                            fontSize: '14px',
+                            fontWeight: '700',
+                            lineHeight: '20px',
+                            letterSpacing: '0.13px',
+                        }}
+                    >
                         To get started, add the web key you generated in
                         mParticle to connect this sample app to your account.
                     </Typography>
                 </DialogContent>
             </Grid>
             <Grid item xs={12} sx={{ width: '100%' }}>
-                <DialogContent>
+                <DialogContent sx={{ py: 0 }}>
                     <FormControl fullWidth focused required>
                         <TextField
                             id='apiKey'
-                            label='Key'
                             value={currentAPIKey}
                             placeholder='Paste your Key here'
                             onChange={(e) => setCurrentAPIKey(e.target.value)}

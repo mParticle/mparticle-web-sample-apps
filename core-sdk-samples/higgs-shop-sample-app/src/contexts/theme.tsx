@@ -30,6 +30,15 @@ const theme = createTheme({
             lineHeight: '56px',
             textAlign: 'center',
         },
+        h4: {
+            color: '#FFFFFF',
+            fontFamily,
+            fontStyle: 'normal',
+            fontWeight: 800,
+            fontSize: '34px',
+            lineHeight: '36px',
+            textAlign: 'center',
+        },
         h5: {
             color: '#FFFFFF',
             fontFamily,
