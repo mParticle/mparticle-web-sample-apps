@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.4...v1.4.0) (2022-07-07)
+
+
+### Bug Fixes
+
+* Update package dependencies and linting errors ([#190](https://github.com/mParticle/mparticle-web-sample-apps/issues/190)) ([557dc15](https://github.com/mParticle/mparticle-web-sample-apps/commit/557dc159ff7b6b37d0e469824ffa6a4ea9000b3a))
+* Update Prettierrc to support Windows ([#166](https://github.com/mParticle/mparticle-web-sample-apps/issues/166)) ([1c074fe](https://github.com/mParticle/mparticle-web-sample-apps/commit/1c074fe96c510daca3c7d26f0acf647720d44d03))
+
+
+### Features
+
+* Allow Sample App to be Hosted on Github Pages with API Key UI Components ([#170](https://github.com/mParticle/mparticle-web-sample-apps/issues/170)) ([8cd7f83](https://github.com/mParticle/mparticle-web-sample-apps/commit/8cd7f83168564b8d4099d7c1ea7857f40b68271e)), closes [#126](https://github.com/mParticle/mparticle-web-sample-apps/issues/126) [#127](https://github.com/mParticle/mparticle-web-sample-apps/issues/127) [#123](https://github.com/mParticle/mparticle-web-sample-apps/issues/123) [#138](https://github.com/mParticle/mparticle-web-sample-apps/issues/138) [#162](https://github.com/mParticle/mparticle-web-sample-apps/issues/162) [#171](https://github.com/mParticle/mparticle-web-sample-apps/issues/171) [#172](https://github.com/mParticle/mparticle-web-sample-apps/issues/172) [#173](https://github.com/mParticle/mparticle-web-sample-apps/issues/173) [#177](https://github.com/mParticle/mparticle-web-sample-apps/issues/177)
+
 ## [1.3.4](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.3...v1.3.4) (2022-05-19)
 
 
