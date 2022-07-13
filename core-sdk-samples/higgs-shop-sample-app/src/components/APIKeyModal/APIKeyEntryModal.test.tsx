@@ -31,9 +31,7 @@ describe('API Key Entry Modal', () => {
             name: /learn/i,
         });
 
-        const keyTextField = screen.getByRole('textbox', {
-            name: /key/i,
-        });
+        const keyTextField = screen.getByTestId('apiKey-entry');
 
         const saveAndGoButton = screen.getByRole('button', {
             name: 'Save & Go',
@@ -55,9 +53,7 @@ describe('API Key Entry Modal', () => {
             <APIKeyEntryModal isOpen initialKey='XXXXXX' />,
         );
 
-        const keyTextField = screen.getByRole('textbox', {
-            name: /key/i,
-        });
+        const keyTextField = screen.getByTestId('apiKey-entry');
 
         expect(keyTextField).toHaveValue('XXXXXX');
     });
@@ -65,9 +61,7 @@ describe('API Key Entry Modal', () => {
     test('should enable Save & Go button if API Key is Entered', async () => {
         renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
-        const keyTextField = screen.getByRole('textbox', {
-            name: /key/i,
-        });
+        const keyTextField = screen.getByTestId('apiKey-entry');
 
         const saveAndGoButton = screen.getByRole('button', {
             name: 'Save & Go',
@@ -83,9 +77,7 @@ describe('API Key Entry Modal', () => {
     test('should close only if API Key is entered and reload window', async () => {
         renderWithAPIKeyContext(<APIKeyEntryModal isOpen />);
 
-        const keyTextField = screen.getByRole('textbox', {
-            name: /key/i,
-        });
+        const keyTextField = screen.getByTestId('apiKey-entry');
 
         const saveAndGoButton = screen.getByRole('button', {
             name: 'Save & Go',

@@ -21,18 +21,18 @@ const APIKeyEnvMessageModal: React.FC<APIKeyEnvMessageModalProps> = ({
             buttonAction={
                 <>
                     <Button
+                        variant='outlined'
+                        target='_blank'
+                        href={DOCSITE_API_KEY_QUICKSTART}
+                    >
+                        Go to Docs
+                    </Button>
+                    <Button
                         variant='contained'
                         target='_blank'
                         href={SAMPLE_APP_README_GITHUB_REPOSITORY_URL}
                     >
                         Go to Readme
-                    </Button>
-                    <Button
-                        variant='contained'
-                        target='_blank'
-                        href={DOCSITE_API_KEY_QUICKSTART}
-                    >
-                        Go to Docs
                     </Button>
                 </>
             }

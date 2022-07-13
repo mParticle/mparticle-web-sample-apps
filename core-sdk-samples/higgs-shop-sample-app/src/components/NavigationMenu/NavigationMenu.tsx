@@ -160,27 +160,14 @@ const NavigationMenu: React.FC = () => {
     // The following desktop navigation items use mParticle.logEvent
     // internally so that they stay DRY and handle optional callbacks.
     const topNavDesktopItems: ReactElement[] = [
-        // Space for missing About Us section
-        <Box key='spacer' sx={{ width: '220px' }} />,
-
         <NavigationMenuItem
             testId='desktop-nav-shop-button'
             component={Link}
             to='/shop'
             sx={classes.link}
-            label='Shop'
+            label='Shop All'
             key='Shop'
         />,
-
-        // Hide until About us content is available
-        // <NavigationMenuItem
-        //     testId='desktop-nav-about-button'
-        //     component={Link}
-        //     to='/about'
-        //     sx={classes.link}
-        //     label='About'
-        //     key='About'
-        // />,
 
         <MenuItem
             data-testid='desktop-nav-home-button'
@@ -193,15 +180,18 @@ const NavigationMenu: React.FC = () => {
             <HiggsmartLogo />
         </MenuItem>,
 
-        <NavigationMenuItem
-            testId='desktop-nav-account-button'
+        <IconButton
+            aria-label='Account'
+            data-testid='desktop-nav-account-button'
             component={Link}
-            to='/account'
+            to='/Account'
             sx={classes.link}
-            label='Account'
-            iconLeft={<PersonIcon sx={classes.topnavLinkIcon} />}
             key='Account'
-        />,
+        >
+            <Badge color='primary'>
+                <PersonIcon sx={classes.topnavLinkIcon} />
+            </Badge>
+        </IconButton>,
 
         <IconButton
             aria-label='Cart'
@@ -228,18 +218,6 @@ const NavigationMenu: React.FC = () => {
             label='Shop'
             iconLeft={<CheckroomIcon sx={classes.drawerLinkIcon} />}
         />,
-
-        // Hide until About us content is available
-        // <NavigationMenuItem
-        //     testId='drawer-nav-about-button'
-        //     key='about'
-        //     component={Link}
-        //     to='/about'
-        //     sx={classes.drawerLink}
-        //     clickCallback={closeDrawer}
-        //     label='About'
-        //     iconLeft={<InfoIcon sx={classes.drawerLinkIcon} />}
-        // />,
 
         <NavigationMenuItem
             testId='drawer-nav-account-button'

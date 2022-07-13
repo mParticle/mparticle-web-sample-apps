@@ -1,5 +1,77 @@
 const products: Product[] = [
     {
+        id: '128113',
+        label: 'Gamer Sticker',
+        imageUrl: '/products/128113.png',
+        altText: 'Gamer Sticker',
+        price: 1.0,
+        category: 'Stickers',
+        brand: 'Higgs',
+        description: '2.3" W x 2.25" H',
+    },
+    {
+        id: '128115',
+        label: 'Mug Sticker',
+        imageUrl: '/products/128115.png',
+        altText: 'Mug Sticker',
+        price: 1.0,
+        category: 'Stickers',
+        brand: 'Higgs',
+        description: '2.25" W x 2.1" H',
+    },
+    {
+        id: '128114',
+        label: 'Glasses Sticker',
+        imageUrl: '/products/128114.png',
+        altText: 'Glasses Sticker',
+        price: 1.0,
+        category: 'Stickers',
+        brand: 'Higgs',
+        description: '2" W x 2.25" H',
+    },
+    {
+        id: '128747',
+        label: 'Unisex Higgs Tee',
+        imageUrl: '/products/128747.png',
+        altText: 'Unisex Tee',
+        category: 'Apparel',
+        brand: 'mParticle',
+        price: 8.0,
+        variants: {
+            color: ['Dark Grey Heather'],
+            size: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
+        },
+        description: `
+        Comfortable cotton tees you'll be proud to wear!
+
+- 4.2-ounce, 100% Airlume combed and ring spun cotton
+- Retail fit
+- Tear-away label
+- Side seamed
+- Shoulder taping
+`,
+    },
+    {
+        id: '128742',
+        label: 'Pride Sticker',
+        imageUrl: '/products/128742.png',
+        altText: 'Pride Sticker',
+        price: 2.0,
+        category: 'Stickers',
+        brand: 'mParticle',
+        description: '3" W x 3" H',
+    },
+    {
+        id: '128741',
+        label: 'Pride Decal',
+        imageUrl: '/products/128741.png',
+        altText: 'Pride Decal',
+        price: 3.0,
+        category: 'Stickers',
+        brand: 'mParticle',
+        description: '',
+    },
+    {
         id: '128740',
         label: 'mP Icon Full Zip',
         imageUrl: '/products/128740.png',
@@ -108,28 +180,6 @@ const products: Product[] = [
 `,
     },
     {
-        id: '128747',
-        label: 'Unisex Tee',
-        imageUrl: '/products/128747.png',
-        altText: 'Unisex Tee',
-        category: 'Apparel',
-        brand: 'mParticle',
-        price: 8.0,
-        variants: {
-            color: ['Dark Grey Heather'],
-            size: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-        },
-        description: `
-        Comfortable cotton tees you'll be proud to wear!
-
-- 4.2-ounce, 100% Airlume combed and ring spun cotton
-- Retail fit
-- Tear-away label
-- Side seamed
-- Shoulder taping
-`,
-    },
-    {
         id: '128746',
         label: 'Unisex Pride Tee',
         imageUrl: '/products/128746.png',
@@ -184,56 +234,7 @@ const products: Product[] = [
         - 50 x60
 `,
     },
-    {
-        id: '128741',
-        label: 'Pride Decal',
-        imageUrl: '/products/128741.png',
-        altText: 'Pride Decal',
-        price: 3.0,
-        category: 'Stickers',
-        brand: 'mParticle',
-        description: '',
-    },
-    {
-        id: '128113',
-        label: 'Gamer Sticker',
-        imageUrl: '/products/128113.png',
-        altText: 'Gamer Sticker',
-        price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2.3" W x 2.25" H',
-    },
-    {
-        id: '128115',
-        label: 'Mug Sticker',
-        imageUrl: '/products/128115.png',
-        altText: 'Mug Sticker',
-        price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2.25" W x 2.1" H',
-    },
-    {
-        id: '128114',
-        label: 'Glasses Sticker',
-        imageUrl: '/products/128114.png',
-        altText: 'Glasses Sticker',
-        price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2" W x 2.25" H',
-    },
-    {
-        id: '128742',
-        label: 'Pride Sticker',
-        imageUrl: '/products/128742.png',
-        altText: 'Pride Sticker',
-        price: 2.0,
-        category: 'Stickers',
-        brand: 'mParticle',
-        description: '3" W x 3" H',
-    },
+
     {
         id: '128743',
         label: 'Tennis Ball',
