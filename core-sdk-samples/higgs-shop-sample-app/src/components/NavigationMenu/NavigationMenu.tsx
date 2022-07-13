@@ -188,7 +188,7 @@ const NavigationMenu: React.FC = () => {
             sx={classes.link}
             key='Account'
         >
-            <Badge badgeContent={numberOfProducts} color='primary'>
+            <Badge color='primary'>
                 <PersonIcon sx={classes.topnavLinkIcon} />
             </Badge>
         </IconButton>,
