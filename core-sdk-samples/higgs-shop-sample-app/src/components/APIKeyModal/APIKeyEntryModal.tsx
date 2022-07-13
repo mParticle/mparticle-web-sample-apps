@@ -108,7 +108,7 @@ const APIKeyEntryModal: React.FC<APIKeyEntryModalProps> = ({
                         <TextField
                             id='apiKey'
                             // Use inputProps to target for testing because of Material UI's
-                            // component abscration and because we are not using a label
+                            // component abstraction and because we are not using a label
                             // to fetch via getByRole
                             // https://stackoverflow.com/questions/57110557/react-testing-library-the-given-element-does-not-have-a-value-setter-when-firee
                             inputProps={{ 'data-testid': 'apiKey-entry' }}
