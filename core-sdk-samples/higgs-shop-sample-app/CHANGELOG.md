@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.4.0...v1.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* Design Fit and Finish ([#193](https://github.com/mParticle/mparticle-web-sample-apps/issues/193)) ([0afb3bb](https://github.com/mParticle/mparticle-web-sample-apps/commit/0afb3bbeea4bc9763149d986643f21a6b0015a80))
+
 # [1.4.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.3.4...v1.4.0) (2022-07-07)
 
 
