@@ -1637,9 +1637,9 @@
     "@testing-library/dom" "^8.0.0"
     "@types/react-dom" "<18.0.0"
 
-"@testing-library/user-event@^14.0.1":
-  version "14.0.1"
-  resolved "https://registry.npmjs.org/@testing-library/user-event/-/user-event-14.0.1.tgz"
+"@testing-library/user-event@^14.2.5":
+  version "14.2.5"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.2.5.tgz#a27a16ee7f915c22c62b9c065d743248ee79dcb6"
 
 "@tootallnate/once@1":
   version "1.1.2"
