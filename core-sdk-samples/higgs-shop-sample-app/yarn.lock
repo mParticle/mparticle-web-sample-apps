@@ -1802,9 +1802,9 @@
   version "2.15.1"
   resolved "https://registry.npmjs.org/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.15.1.tgz"
 
-"@types/node@*", "@types/node@^17.0.23":
-  version "17.0.23"
-  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.23.tgz"
+"@types/node@*", "@types/node@^18.6.5":
+  version "18.6.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.5.tgz#06caea822caf9e59d5034b695186ee74154d2802"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
