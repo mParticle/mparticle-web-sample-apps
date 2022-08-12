@@ -1,6 +1,6 @@
 name: "Pull Request Checks"
 
-on: [ pull_request_target ]
+on: [ push, workflow_dispatch, pull_request ]
 
 jobs:
 
@@ -11,29 +11,21 @@ jobs:
       app_relative_path: "core-sdk-samples/higgs-shop-sample-app"
 
   automerge-dependabot:
-    name: "Automerge Dependabot PR"
+    name: "Save PR Number for Dependabot Automerge"
     needs: [ higgs-shop-sample-app ]
-    if: ${{ github.actor == 'dependabot[bot]' }}
-    env:
-      GITHUB_TOKEN: ${{ secrets.MP_SEMANTIC_RELEASE_BOT }}
-      GIT_AUTHOR_NAME: mparticle-bot
-      GIT_AUTHOR_EMAIL: developers@mparticle.com
-      GIT_COMMITTER_NAME: mparticle-bot
-      GIT_COMMITTER_EMAIL: developers@mparticle.com
+    if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
-      - name: "Rebase Dependabot PR"
-        uses: actions/github-script@v3
+      - name: "Checkout PR branch"
+        uses: actions/checkout@v2
         with:
-          script: |
-            github.pulls.merge({
-                owner: context.repo.owner,
-                repo: context.payload.repository.name,
-                pull_number: context.payload.pull_request.number,
-                merge_method: 'rebase'
-            });
-  rebase-development:
-      name: "Rebase Development onto Dependabot Branch"
-      needs: [ automerge-dependabot ]
-      if: ${{ github.actor == 'dependabot[bot]' }}
-      uses: mParticle/mparticle-workflows/.github/workflows/dependabot-rebase-development.yml@stable
+          submodules: recursive
+          fetch-depth: 0
+      - name: "Save Pull Request Number"
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/NR
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: pr/
