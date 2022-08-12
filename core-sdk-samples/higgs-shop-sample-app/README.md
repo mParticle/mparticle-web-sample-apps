@@ -5,6 +5,8 @@
 
 ![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
 
+**DEMO**: https://mparticle.github.io/mparticle-web-sample-apps/higgs-shop/
+
 # The HiggsMart Sample App
 :wave: Hello and welcome to HiggsMart! This sample Web application will provide you with a hands-on way to understand how mParticle collects and forwards data, so you can easily implement data collection in your own projects. Throughout this application, the mParticle Web and Media SDK have been set up to capture user events and identities and forward them to mParticle.
 

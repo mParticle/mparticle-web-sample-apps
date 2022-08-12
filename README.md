@@ -26,9 +26,9 @@ While the code might run and build without mParticle credentials, the SDKs will 
 
 Below is a list of sample apps, with a brief description of their intended use case. Please navigate to an individual Sample App's README.md file for specific use cases and implementation details.
 
-| App Name   | Path                                                                             | Description                                                            |
-| ---------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Higgs Shop | [core-sdk-samples/higgs-shop-sample-app](core-sdk-samples/higgs-shop-sample-app) | An example of an e-commerce application with simple media interactions |
+| App Name   | Demo                                                                                                                                  | Path                                                                             | Description                                                            |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Higgs Shop | [https://mparticle.github.io/mparticle-web-sample-apps/higgs-shop](https://mparticle.github.io/mparticle-web-sample-apps/higgs-shop/) | [core-sdk-samples/higgs-shop-sample-app](core-sdk-samples/higgs-shop-sample-app) | An example of an e-commerce application with simple media interactions |
 
 ## Contributing
 
