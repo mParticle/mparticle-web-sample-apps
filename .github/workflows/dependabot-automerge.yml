@@ -3,7 +3,7 @@ name: "Dependabot Automerge"
 on:
   workflow_run:
     workflows:
-      - "Higgs Shop Sample App Pull Request"
+      - "Pull Request Checks"
     types:
       - completed
 
