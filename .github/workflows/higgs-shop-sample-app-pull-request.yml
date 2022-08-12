@@ -1,10 +1,16 @@
 name: Higgs Shop Sample App Pull Request
 
 on:
-    pull_request:
-
+    workflow_call:
+      inputs:
+        app_relative_path:
+          description: 'repo path for sample app'
+          required: true
+          type: string
+    
 defaults:
     run:
+        # Should be: working-directory: ${{ inputs.app_relative_path }}
         working-directory: core-sdk-samples/higgs-shop-sample-app
 
 jobs:
