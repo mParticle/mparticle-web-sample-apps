@@ -1472,9 +1472,9 @@
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@mparticle/event-models/-/event-models-1.1.6.tgz#1deb2cad83b192448f005112e546d8aab818524e"
 
-"@mparticle/web-sdk@^2.17.0":
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.17.0.tgz#2e4ec4400acd253840fb8fc171dd795fceea3de9"
+"@mparticle/web-sdk@^2.17.1":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.17.1.tgz#61fa30644af2dac100c8203954ae8ac6f2721292"
   dependencies:
     "@babel/runtime" "^7.6.0"
     slugify "^1.3.6"
