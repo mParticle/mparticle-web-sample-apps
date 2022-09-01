@@ -8023,9 +8023,9 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-web-vitals@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-3.0.0.tgz#db8a32fd62738a439343309336720ee5685ac71e"
+web-vitals@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-3.0.1.tgz#7129668af2d1598ff4a574535a46b1432af337c8"
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
