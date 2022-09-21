@@ -1,12 +1,13 @@
 import React from 'react';
 import { Grid, Typography, Button, Box } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import mParticle from '@mparticle/web-sdk';
 import { useOrderDetails } from '../../contexts/OrderDetails';
 import OrderDetailsTotals from './OrderDetailsTotals';
 import OrderDetailsCustomerDetails from './OrderDetailsCustomerDetails';
 import { ORDER_PHASES, OrderPhaseTypes } from '../../constants';
 import OrderDetailsCard from './OrderDetailsCard';
+
+const { mParticle } = window;
 
 interface OrderDetailsPurchaseReviewProps {
     setOrderPhase: React.Dispatch<React.SetStateAction<OrderPhaseTypes>>;

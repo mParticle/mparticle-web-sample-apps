@@ -7,12 +7,13 @@ import {
     Typography,
     Box,
 } from '@mui/material';
-import mParticle from '@mparticle/web-sdk';
 import { HiggsLogo } from '../HiggsLogo';
 import HiggsmartLogo from '../../assets/images/higgsmart-logo.svg';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 import { MODAL_MODES } from '../../constants';
 import { ModalContainer } from '../ModalContainer';
+
+const { mParticle } = window;
 
 const StartShoppingModal: React.FC = () => {
     const [open, setOpen] = useState(false);

@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
-import mParticle from '@mparticle/web-sdk';
 import { Page } from '../../layouts/Page';
 import { ProductList } from '../../features/ProductDetails';
 import products from '../../models/Products';
+
+const { mParticle } = window;
 
 const ShopPage = () => {
     // As per React conventions, it is recommended to trigger each mParticle

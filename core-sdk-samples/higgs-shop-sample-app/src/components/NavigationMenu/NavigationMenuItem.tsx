@@ -7,7 +7,8 @@ import {
     SxProps,
     Theme,
 } from '@mui/material';
-import mParticle from '@mparticle/web-sdk';
+
+const { mParticle } = window;
 
 interface NavigationMenuItemProps {
     testId: string;

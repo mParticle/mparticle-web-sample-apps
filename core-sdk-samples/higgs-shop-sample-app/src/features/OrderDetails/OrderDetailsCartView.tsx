@@ -1,11 +1,12 @@
 import React from 'react';
 import { Grid, Typography, Box, Button } from '@mui/material';
-import mParticle from '@mparticle/web-sdk';
 import { ORDER_PHASES, OrderPhaseTypes } from '../../constants';
 import { useOrderDetails } from '../../contexts/OrderDetails';
 import OrderDetailsTotals from './OrderDetailsTotals';
 import OrderDetailsCard from './OrderDetailsCard';
 import { Product } from '../../models/Products';
+
+const { mParticle } = window;
 
 interface OrderDetailsCartViewProps {
     setOrderPhase: React.Dispatch<React.SetStateAction<OrderPhaseTypes>>;

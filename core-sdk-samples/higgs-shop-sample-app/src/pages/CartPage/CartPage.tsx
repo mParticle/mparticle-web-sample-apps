@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import mParticle from '@mparticle/web-sdk';
 import { Snackbar } from '@mui/material';
 import { Page } from '../../layouts/Page';
 import { useOrderDetails } from '../../contexts/OrderDetails';
@@ -16,6 +15,8 @@ import { ORDER_PHASES, OrderPhaseTypes } from '../../constants';
 // - Review: Cart has items and user has checked out their cart
 // - Complete: User has completed a purchase and the cart has been emptied
 // Completing an order should reset the items list, and reset the order phase to 'in progress'
+
+const { mParticle } = window;
 
 const CartPage: React.FC = () => {
     // Extract cart state from Context Provider

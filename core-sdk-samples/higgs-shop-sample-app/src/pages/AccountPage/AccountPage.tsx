@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
-import mParticle from '@mparticle/web-sdk';
 import { Page } from '../../layouts/Page';
 import { useUserDetails } from '../../contexts/UserDetails';
 import { AccountDetails, LoginView } from '../../features/AccountDetails';
@@ -9,6 +8,8 @@ import { AccountDetails, LoginView } from '../../features/AccountDetails';
 // In this example, we are only using 'Login' and 'Logout' Identity Requests. To
 // learn more about many of the other features, please visit our Doc Site:
 // https://docs.mparticle.com/developers/sdk/web/idsync/
+
+const { mParticle } = window;
 
 const AccountPage = () => {
     // For demonstration purposes, our account page simply controls whether our

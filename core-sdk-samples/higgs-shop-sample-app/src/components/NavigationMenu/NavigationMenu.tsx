@@ -16,7 +16,6 @@ import CheckroomIcon from '@mui/icons-material/Checkroom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
-import mParticle from '@mparticle/web-sdk';
 import NavigationMenuItem from './NavigationMenuItem';
 import NavigationMenuDrawer from './NavigationMenuDrawer';
 import HiggsmartLogo from '../HiggsLogo/HiggsmartLogo';
@@ -25,6 +24,8 @@ import { useOrderDetails } from '../../contexts/OrderDetails';
 import useApiKey from '../../hooks/useAPIKey';
 import { useAPIKeyContext } from '../../contexts/APIKeyContext';
 import { MODAL_MODES, SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
+
+const { mParticle } = window;
 
 const NavigationMenu: React.FC = () => {
     const { numberOfProducts } = useOrderDetails();

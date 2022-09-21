@@ -10,13 +10,14 @@ import {
     Button,
     Snackbar,
 } from '@mui/material';
-import mParticle from '@mparticle/web-sdk';
 import { Page } from '../../layouts/Page';
 import { formatCurrency, Product, getProductById } from '../../models/Products';
 import { WrappedTypography } from '../../components/WrappedTypography';
 import { BackButton } from '../../components/BackButton';
 import { ProductVariantSelect } from '../../features/ProductDetails';
 import { useOrderDetails } from '../../contexts/OrderDetails';
+
+const { mParticle } = window;
 
 const ProductDetailPage: React.FC = () => {
     const classes = {
