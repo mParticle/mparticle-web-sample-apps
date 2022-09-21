@@ -135,7 +135,7 @@ const ProductDetailPage: React.FC = () => {
 
         // If you re-render and the product changes,
         // this will re-fire a new Product View Detail Event
-    }, [product]);
+    }, [product, mParticle]);
 
     useEffect(() => {
         // Listens for product, size or color change so that

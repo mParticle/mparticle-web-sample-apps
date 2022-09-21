@@ -36,7 +36,7 @@ const CartPage: React.FC = () => {
             number_of_products: numberOfProducts,
             total_product_amounts: subTotal,
         });
-    }, []);
+    }, [mParticle]);
 
     useEffect(() => {
         // Listen for order phase to be complete so we can trigger

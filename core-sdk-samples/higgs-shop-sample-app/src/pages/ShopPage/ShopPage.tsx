@@ -17,7 +17,7 @@ const ShopPage = () => {
         // is our Landing page, so we are logging it as a "Landing"
         // Page View
         mParticle.logPageView('Landing');
-    });
+    }, [mParticle]);
 
     useEffect(() => {
         // As our sample application represents a simple, streamlined use case,
@@ -45,7 +45,7 @@ const ShopPage = () => {
 
         // Then log the product impression
         mParticle.eCommerce.logImpression(impressions);
-    });
+    }, [mParticle]);
 
     return (
         <Page>

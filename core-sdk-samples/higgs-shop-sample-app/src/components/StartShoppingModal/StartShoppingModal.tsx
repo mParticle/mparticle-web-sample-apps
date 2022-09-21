@@ -48,7 +48,7 @@ const StartShoppingModal: React.FC = () => {
         } else {
             setOpen(false);
         }
-    }, [modalMode]);
+    }, [modalMode, mParticle]);
 
     return (
         <ModalContainer isOpen={open} handleClose={handleBackgroundClick}>
