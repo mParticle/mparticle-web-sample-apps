@@ -1,5 +1,5 @@
 {
-    "globals": { "JSX": true, "mParticle": true},
+    "globals": { "JSX": true, "mParticle": true, "window": true, "appboy": true},
     "env": {
         "browser": true,
         "es2021": true,
@@ -8,7 +8,8 @@
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
