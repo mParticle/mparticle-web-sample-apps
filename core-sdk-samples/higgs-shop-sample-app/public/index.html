@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="text/javascript">
+
+            //configure the SDK
+            window.mParticle = {
+                config: {
+                    versions: {
+                        MP_CORE: '2.15.4',
+                        BRAZE: '3.2.4'
+                    },
+                    isDevelopmentMode: true,
+                    identifyRequest: {
+                        userIdentities: {
+                            email: 'email@example.com',
+                            customerid: '123456',
+                        },
+                    },
+                    identityCallback: function (result) {
+                        // Do something once an identity call has been made.
+                        // For more information, see https://docs.mparticle.com/developers/sdk/web/idsync/#sdk-initialization-and-identify
+                        console.log(result);
+                    },
+                    dataPlan: {
+                        planId: 'my_plan_id',
+                        planVersion: 2
+                    },
+                    v2SecureServiceUrl: 'jssdk-origin-qa21269.qa.corp.mparticle.com/v2/JS/',
+                    v3SecureServiceUrl: 'jssdks-qa1.qa.corp.mparticle.com/v3/JS/',
+                    configUrl: 'config2-origin-qa1.qa.corp.mparticle.com/v2/JS/',
+                    identityUrl: 'identity-qa1.qa.corp.mparticle.com/v1/',
+                },
+            };
+
+            //load the SDK
+            (function (e) { window.mParticle = window.mParticle || {}; window.mParticle.EventType = { Unknown: 0, Navigation: 1, Location: 2, Search: 3, Transaction: 4, UserContent: 5, UserPreference: 6, Social: 7, Other: 8 }; window.mParticle.eCommerce = { Cart: {} }; window.mParticle.Identity = {}; window.mParticle.config = window.mParticle.config || {}; window.mParticle.config.rq = []; window.mParticle.config.snippetVersion = 2.3; window.mParticle.ready = function (e) { window.mParticle.config.rq.push(e) }; var i = ["endSession", "logError", "logBaseEvent", "logEvent", "logForm", "logLink", "logPageView", "setSessionAttribute", "setAppName", "setAppVersion", "setOptOut", "setPosition", "startNewSession", "startTrackingLocation", "stopTrackingLocation"]; var n = ["setCurrencyCode", "logCheckout"]; var t = ["identify", "login", "logout", "modify"]; i.forEach(function (e) { window.mParticle[e] = o(e) }); n.forEach(function (e) { window.mParticle.eCommerce[e] = o(e, "eCommerce") }); t.forEach(function (e) { window.mParticle.Identity[e] = o(e, "Identity") }); function o(i, n) { return function () { if (n) { i = n + "." + i } var e = Array.prototype.slice.call(arguments); e.unshift(i); window.mParticle.config.rq.push(e) } } var r, c, a = window.mParticle.config, s = a.isDevelopmentMode ? 1 : 0, l = "?env=" + s, w = window.mParticle.config.dataPlan; if (w) { r = w.planId; c = w.planVersion; if (r) { if (c && (c < 1 || c > 1e3)) { c = null } l += "&plan_id=" + r + (c ? "&plan_version=" + c : "") } } var d = window.mParticle.config.versions; var m = ""; if (d) { var f = []; Object.keys(d).forEach(function (e) { f.push(e + "=" + d[e] + ";") }); m = btoa(f.join(";")); m = m ? "/" + m : "" } var p = document.createElement("script"); p.type = "text/javascript"; p.async = true; p.src = ("https:" == document.location.protocol ? "https://jssdk-origin-qa21269.qa.corp" : "http://jssdk-origin-qa21269.qa.corp") + ".mparticle.com/js/v2/" + e + m + "/mparticle.js" + l; var g = document.getElementsByTagName("script")[0]; g.parentNode.insertBefore(p, g) })
+                ("REPLACE-ME");
+        </script>
+
         <meta charset="utf-8" />
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,39 +101,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <script type="text/javascript">
-
-        //configure the SDK
-        window.mParticle = {
-            config: {
-                versions: {
-                    MP_CORE: '2.15.4',
-                    BRAZE: '3.2.4'
-                },
-                isDevelopmentMode: true,
-                identifyRequest: {
-                    userIdentities: {
-                        email: 'email@example.com',
-                        customerid: '123456',
-                    },
-                },
-                identityCallback: function(result) {
-                    // Do something once an identity call has been made.
-                    // For more information, see https://docs.mparticle.com/developers/sdk/web/idsync/#sdk-initialization-and-identify
-                    console.log(result);
-                },
-                dataPlan: {
-                   planId: 'my_plan_id',
-                   planVersion: 2
-                }
-            },
-        };
-        
-        //load the SDK
-        (function(e){window.mParticle=window.mParticle||{};window.mParticle.EventType={Unknown:0,Navigation:1,Location:2,Search:3,Transaction:4,UserContent:5,UserPreference:6,Social:7,Other:8};window.mParticle.eCommerce={Cart:{}};window.mParticle.Identity={};window.mParticle.config=window.mParticle.config||{};window.mParticle.config.rq=[];window.mParticle.config.snippetVersion=2.3;window.mParticle.ready=function(e){window.mParticle.config.rq.push(e)};var i=["endSession","logError","logBaseEvent","logEvent","logForm","logLink","logPageView","setSessionAttribute","setAppName","setAppVersion","setOptOut","setPosition","startNewSession","startTrackingLocation","stopTrackingLocation"];var n=["setCurrencyCode","logCheckout"];var t=["identify","login","logout","modify"];i.forEach(function(e){window.mParticle[e]=o(e)});n.forEach(function(e){window.mParticle.eCommerce[e]=o(e,"eCommerce")});t.forEach(function(e){window.mParticle.Identity[e]=o(e,"Identity")});function o(i,n){return function(){if(n){i=n+"."+i}var e=Array.prototype.slice.call(arguments);e.unshift(i);window.mParticle.config.rq.push(e)}}var r,c,a=window.mParticle.config,s=a.isDevelopmentMode?1:0,l="?env="+s,w=window.mParticle.config.dataPlan;if(w){r=w.planId;c=w.planVersion;if(r){if(c&&(c<1||c>1e3)){c=null}l+="&plan_id="+r+(c?"&plan_version="+c:"")}}var d=window.mParticle.config.versions;if(d){var m=[];Object.keys(d).forEach(function(e){m.push(e+"="+d[e])})}var f=document.createElement("script");f.type="text/javascript";f.async=true;f.src=("https:"==document.location.protocol?"https://jssdkcdns":"http://jssdkcdn")+".mparticle.com/js/v2/"+e+"/mparticle.js"+l+"&"+m.join("&");var p=document.getElementsByTagName("script")[0];p.parentNode.insertBefore(f,p)})
-        ("REPLACE WITH API KEY");
-        </script>
-
+    
     </body>
 </html>
 
