@@ -42,7 +42,7 @@ const ProductDetailPage: React.FC = () => {
     // It is recommended to use mParticle.createProduct when using our
     // eCommerce logging functions to generate events so that you can
     // be sure to include all of our data points properly
-    const getMPProduct = (_product: Product): mParticle.Product => {
+    const getMPProduct = (_product: Product): mParticle.Product | undefined => {
         const { label, id, price } = _product;
 
         // When passing attributes into mParticle, it's best to not include
@@ -62,20 +62,23 @@ const ProductDetailPage: React.FC = () => {
         // application. As such, we are passing undefined for many of these
         // attributes to highlight cases where you want may need some
         // parameters but not all of them.
-        return mParticle.eCommerce.createProduct(
-            label,
-            id,
-            price,
-            parseInt(quantity, 10),
-            undefined, // Variant: used for single variants.
-            // Use Custom ATtributes for multiple variants like
-            // in this use case
-            undefined, // Category
-            undefined, // Brand
-            undefined, // Position
-            undefined, // Coupon Code
-            attributes,
-        );
+        if (window.mParticle.eCommerce.createProduct) {
+            return window.mParticle.eCommerce.createProduct(
+                label,
+                id,
+                price,
+                parseInt(quantity, 10),
+                undefined, // Variant: used for single variants.
+                // Use Custom ATtributes for multiple variants like
+                // in this use case
+                undefined, // Category
+                undefined, // Brand
+                undefined, // Position
+                undefined, // Coupon Code
+                attributes,
+            );
+        }
+        return undefined;
     };
 
     // **** Event Handlers
@@ -98,11 +101,12 @@ const ProductDetailPage: React.FC = () => {
             addToCart(product, parseInt(quantity, 10), { color, size });
 
             // Generate an mParticle Product Object before sending any eCommerce Events
-            const mParticleProduct: mParticle.Product = getMPProduct(product);
+            const mParticleProduct: mParticle.Product | undefined =
+                getMPProduct(product);
 
-            mParticle.eCommerce.logProductAction(
-                mParticle.ProductActionType.AddToCart,
-                mParticleProduct,
+            window.mParticle.eCommerce.logProductAction(
+                window.mParticle.ProductActionType.AddToCart,
+                [mParticleProduct as mParticle.Product],
             );
             setToastVisible(true);
         }
@@ -124,13 +128,16 @@ const ProductDetailPage: React.FC = () => {
         // viewed the product details, potentially leading to an 'Add to Cart' Event
         if (product) {
             // Generate an mParticle Product Object before sending any eCommerce Events
-            const mParticleProduct: mParticle.Product = getMPProduct(product);
+            const mParticleProduct: mParticle.Product | undefined =
+                getMPProduct(product);
 
             // Fire a single eCommerce Product View Detail Event for this product page
-            mParticle.eCommerce.logProductAction(
-                mParticle.ProductActionType.ViewDetail,
-                mParticleProduct,
-            );
+            if (window.mParticle.eCommerce.logProductAction) {
+                window.mParticle.eCommerce.logProductAction(
+                    mParticle.ProductActionType.ViewDetail,
+                    [mParticleProduct as mParticle.Product],
+                );
+            }
         }
 
         // If you re-render and the product changes,

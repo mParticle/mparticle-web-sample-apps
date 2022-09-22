@@ -6,8 +6,6 @@ import OrderDetailsTotals from './OrderDetailsTotals';
 import OrderDetailsCard from './OrderDetailsCard';
 import { Product } from '../../models/Products';
 
-const { mParticle } = window;
-
 interface OrderDetailsCartViewProps {
     setOrderPhase: React.Dispatch<React.SetStateAction<OrderPhaseTypes>>;
 }
@@ -24,7 +22,7 @@ const OrderDetailsCartView: React.FC<OrderDetailsCartViewProps> = ({
     ): mParticle.Product => {
         const { label, id, price } = product;
 
-        return mParticle.eCommerce.createProduct(
+        return window.mParticle.eCommerce.createProduct(
             label,
             id,
             price,
@@ -47,8 +45,8 @@ const OrderDetailsCartView: React.FC<OrderDetailsCartViewProps> = ({
             variants,
         );
 
-        mParticle.eCommerce.logProductAction(
-            mParticle.ProductActionType.RemoveFromCart,
+        window.mParticle.eCommerce.logProductAction(
+            window.mParticle.ProductActionType.RemoveFromCart,
             mParticleProduct,
         );
 
@@ -72,8 +70,8 @@ const OrderDetailsCartView: React.FC<OrderDetailsCartViewProps> = ({
         // For more details: https://docs.mparticle.com/developers/sdk/web/event-tracking/#custom-flags
         const customFlags: mParticle.SDKEventCustomFlags = {};
 
-        mParticle.eCommerce.logProductAction(
-            mParticle.ProductActionType.Checkout,
+        window.mParticle.eCommerce.logProductAction(
+            window.mParticle.ProductActionType.Checkout,
             mParticleProducts,
             customAttributes,
             customFlags,

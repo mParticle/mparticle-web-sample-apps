@@ -44,7 +44,9 @@ const ModalContainer: React.FC<ModalProps> = ({
 };
 
 ModalContainer.defaultProps = {
-    handleClose: () => {},
+    handleClose: () => {
+        return true;
+    },
 };
 
 export default ModalContainer;

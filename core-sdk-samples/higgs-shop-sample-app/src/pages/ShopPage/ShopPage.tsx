@@ -6,8 +6,6 @@ import { ProductList } from '../../features/ProductDetails';
 import products from '../../models/Products';
 // import { SAMPLE_APP_GITHUB_REPOSITORY_URL } from '../../constants';
 
-const { mParticle } = window;
-
 declare global {
     interface Window {
         appboy: {
@@ -30,8 +28,8 @@ const ShopPage = () => {
         // In the case of this example application, our Shop Page
         // is our Landing page, so we are logging it as a "Landing"
         // Page View
-        mParticle.logPageView('Landing');
-    }, [mParticle]);
+        window.mParticle.logPageView('Landing');
+    });
 
     useEffect(() => {
         // As our sample application represents a simple, streamlined use case,
@@ -47,19 +45,20 @@ const ShopPage = () => {
         // attributes
         // For more information, please review our Docs:
         // https://docs.mparticle.com/developers/sdk/web/commerce-tracking/#tracking-basic-purchases
-        const mParticleProducts = products.map(({ label, id, price }) =>
-            mParticle.eCommerce.createProduct(label, id, price),
-        );
 
-        // We then create a product impression
-        const impressions = mParticle.eCommerce.createImpression(
-            'Product List Impression',
-            mParticleProducts,
-        );
-
-        // Then log the product impression
-        mParticle.eCommerce.logImpression(impressions);
-    }, [mParticle]);
+        if (window.mParticle.eCommerce.createProduct) {
+            const mParticleProducts = products.map(({ label, id, price }) =>
+                window.mParticle.eCommerce.createProduct(label, id, price),
+            );
+            // We then create a product impression
+            const impressions = window.mParticle.eCommerce.createImpression(
+                'Product List Impression',
+                mParticleProducts,
+            );
+            // Then log the product impression
+            window.mParticle.eCommerce.logImpression(impressions);
+        }
+    }, [window.mParticle.eCommerce.createProduct]);
 
     return (
         <Page>

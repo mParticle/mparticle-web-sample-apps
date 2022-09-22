@@ -43,7 +43,7 @@ const StartShoppingModal: React.FC = () => {
 
     useEffect(() => {
         if (!shouldIgnoreModal() && modalMode === MODAL_MODES.CLOSED) {
-            mParticle.logPageView('Landing');
+            window.mParticle.logPageView('Landing');
             setOpen(true);
         } else {
             setOpen(false);
