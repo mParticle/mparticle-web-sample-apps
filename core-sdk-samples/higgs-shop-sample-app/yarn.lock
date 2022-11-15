@@ -1930,9 +1930,9 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@*", "@types/jest@^29.2.2":
-  version "29.2.2"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.2.2.tgz#874e7dc6702fa6a3fe6107792aa98636dcc480b4"
+"@types/jest@*", "@types/jest@^29.2.3":
+  version "29.2.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.2.3.tgz#f5fd88e43e5a9e4221ca361e23790d48fcf0a211"
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
