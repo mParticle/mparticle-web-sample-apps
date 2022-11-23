@@ -1472,9 +1472,9 @@
   version "5.10.15"
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.10.15.tgz#490f3dea5327c892f063496a0219c48301da0fa0"
 
-"@mui/icons-material@^5.10.14":
-  version "5.10.14"
-  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.10.14.tgz#6b1e40cc95f2a27e6547980f6a1636f54ac05617"
+"@mui/icons-material@^5.10.15":
+  version "5.10.15"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.10.15.tgz#c93f1ba8d2b55fe0a16f559a568304df172cbbcb"
   dependencies:
     "@babel/runtime" "^7.20.1"
 
