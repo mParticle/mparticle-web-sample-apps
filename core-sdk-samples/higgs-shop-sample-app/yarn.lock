@@ -2110,13 +2110,13 @@
   dependencies:
     "@typescript-eslint/utils" "5.30.5"
 
-"@typescript-eslint/parser@^5.47.0", "@typescript-eslint/parser@^5.5.0":
-  version "5.47.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.47.0.tgz#62e83de93499bf4b500528f74bf2e0554e3a6c8d"
+"@typescript-eslint/parser@^5.47.1", "@typescript-eslint/parser@^5.5.0":
+  version "5.47.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.47.1.tgz#c4bf16f8c3c7608ce4bf8ff804b677fc899f173f"
   dependencies:
-    "@typescript-eslint/scope-manager" "5.47.0"
-    "@typescript-eslint/types" "5.47.0"
-    "@typescript-eslint/typescript-estree" "5.47.0"
+    "@typescript-eslint/scope-manager" "5.47.1"
+    "@typescript-eslint/types" "5.47.1"
+    "@typescript-eslint/typescript-estree" "5.47.1"
     debug "^4.3.4"
 
 "@typescript-eslint/scope-manager@5.30.5":
@@ -2132,6 +2132,13 @@
   dependencies:
     "@typescript-eslint/types" "5.47.0"
     "@typescript-eslint/visitor-keys" "5.47.0"
+
+"@typescript-eslint/scope-manager@5.47.1":
+  version "5.47.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-5.47.1.tgz#0d302b3c2f20ab24e4787bf3f5a0d8c449b823bd"
+  dependencies:
+    "@typescript-eslint/types" "5.47.1"
+    "@typescript-eslint/visitor-keys" "5.47.1"
 
 "@typescript-eslint/type-utils@5.47.0":
   version "5.47.0"
@@ -2149,6 +2156,10 @@
 "@typescript-eslint/types@5.47.0":
   version "5.47.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.47.0.tgz#67490def406eaa023dbbd8da42ee0d0c9b5229d3"
+
+"@typescript-eslint/types@5.47.1":
+  version "5.47.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.47.1.tgz#459f07428aec5a8c4113706293c2ae876741ac8e"
 
 "@typescript-eslint/typescript-estree@5.30.5":
   version "5.30.5"
@@ -2168,6 +2179,18 @@
   dependencies:
     "@typescript-eslint/types" "5.47.0"
     "@typescript-eslint/visitor-keys" "5.47.0"
+    debug "^4.3.4"
+    globby "^11.1.0"
+    is-glob "^4.0.3"
+    semver "^7.3.7"
+    tsutils "^3.21.0"
+
+"@typescript-eslint/typescript-estree@5.47.1":
+  version "5.47.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.47.1.tgz#b9d8441308aca53df7f69b2c67a887b82c9ed418"
+  dependencies:
+    "@typescript-eslint/types" "5.47.1"
+    "@typescript-eslint/visitor-keys" "5.47.1"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -2210,6 +2233,13 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.47.0.tgz#4aca4efbdf6209c154df1f7599852d571b80bb45"
   dependencies:
     "@typescript-eslint/types" "5.47.0"
+    eslint-visitor-keys "^3.3.0"
+
+"@typescript-eslint/visitor-keys@5.47.1":
+  version "5.47.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.47.1.tgz#d35c2da544dbb685db9c5b5b85adac0a1d74d1f2"
+  dependencies:
+    "@typescript-eslint/types" "5.47.1"
     eslint-visitor-keys "^3.3.0"
 
 "@webassemblyjs/ast@1.11.1":
