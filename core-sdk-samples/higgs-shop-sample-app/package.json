@@ -6,7 +6,7 @@
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
         "@fontsource/lato": "^4.5.10",
-        "@mparticle/web-sdk": "^2.18.0",
+        "@mparticle/web-sdk": "^2.18.1",
         "@mui/icons-material": "^5.11.0",
         "@mui/material": "^5.11.3",
         "@testing-library/dom": "^8.19.1",
