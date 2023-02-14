@@ -902,7 +902,7 @@
     "@babel/helper-validator-option" "^7.18.6"
     "@babel/plugin-transform-typescript" "^7.18.6"
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.6", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.20.13"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.13.tgz#7055ab8a7cff2b8f6058bf6ae45ff84ad2aded4b"
   dependencies:
@@ -1465,11 +1465,11 @@
   version "5.11.9"
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-5.11.9.tgz#0d3b20c2ef7704537c38597f9ecfc1894fe7c367"
 
-"@mui/icons-material@^5.11.0":
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.11.0.tgz#9ea6949278b2266d2683866069cd43009eaf6464"
+"@mui/icons-material@^5.11.9":
+  version "5.11.9"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.11.9.tgz#db26c106d0d977ae1fc0c2d20ba2e829a8174c05"
   dependencies:
-    "@babel/runtime" "^7.20.6"
+    "@babel/runtime" "^7.20.13"
 
 "@mui/material@^5.11.9":
   version "5.11.9"
