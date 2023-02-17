@@ -9,7 +9,7 @@
         "@mparticle/web-sdk": "^2.19.0",
         "@mui/icons-material": "^5.11.9",
         "@mui/material": "^5.11.9",
-        "@testing-library/dom": "^8.20.0",
+        "@testing-library/dom": "^9.0.0",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.5",
         "@testing-library/user-event": "^14.0.1",
