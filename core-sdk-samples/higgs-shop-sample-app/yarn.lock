@@ -1960,9 +1960,9 @@
   dependencies:
     "@mparticle/event-models" "^1.1.3"
 
-"@types/node@*", "@types/node@^18.7.15":
-  version "18.7.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.15.tgz#20ae1ec80c57ee844b469f968a1cd511d4088b29"
+"@types/node@*", "@types/node@^18.14.2":
+  version "18.14.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.2.tgz#c076ed1d7b6095078ad3cf21dfeea951842778b1"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
