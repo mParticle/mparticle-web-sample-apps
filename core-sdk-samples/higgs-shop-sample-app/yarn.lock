@@ -2020,10 +2020,9 @@
     "lz-string" "^1.4.4"
     "pretty-format" "^27.0.2"
 
-"@testing-library/dom@^9.0.0", "@testing-library/dom@>=7.21.4":
-  "integrity" "sha512-fTOVsMY9QLFCCXRHG3Ese6cMH5qIWwSbgxZsgeF5TNsy81HKaZ4kgehnSF8FsR3OF+numlIV2YcU79MzbnhSig=="
-  "resolved" "https://registry.npmjs.org/@testing-library/dom/-/dom-9.0.1.tgz"
-  "version" "9.0.1"
+"@testing-library/dom@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-9.0.1.tgz#fb9e3837fe2a662965df1536988f0863f01dbf51"
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.12.5"
@@ -6699,10 +6698,13 @@ esquery@^1.4.2:
   dependencies:
     "yallist" "^3.0.2"
 
-"lru-cache@^6.0.0":
-  "integrity" "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA=="
-  "resolved" "https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz"
-  "version" "6.0.0"
+lz-string@^1.4.4, lz-string@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.5.0.tgz#c1ab50f77887b712621201ba9fd4e3a6ed099941"
+
+magic-string@^0.25.0, magic-string@^0.25.7:
+  version "0.25.9"
+  resolved "https://registry.npmjs.org/magic-string/-/magic-string-0.25.9.tgz"
   dependencies:
     "yallist" "^4.0.0"
 
