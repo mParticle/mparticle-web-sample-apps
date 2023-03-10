@@ -1,4 +1,4 @@
-var initialization = {
+const initialization = {
   name: "SampleSideLoadedKit",
   initForwarder: function (
     forwarderSettings,

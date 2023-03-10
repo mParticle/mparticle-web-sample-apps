@@ -1,4 +1,4 @@
-var sessionHandler = {
+const sessionHandler = {
     onSessionStart: function(event) {
         console.log("side loaded kit onSessionStart called");
     },

@@ -44,7 +44,7 @@ const testEndToEndBuild = {
 
 let selectedBuilds = [];
 if (ENVIRONMENT === 'production') {
-    selectedBuilds.push(productionBuilds.iife, productionBuilds.cjs);
+    selectedBuilds.push(...productionBuilds);
 } else if (ENVIRONMENT === 'testEndToEnd') {
     selectedBuilds.push(testEndToEndBuild);
 }

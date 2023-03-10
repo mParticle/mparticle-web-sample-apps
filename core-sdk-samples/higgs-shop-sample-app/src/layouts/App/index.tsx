@@ -72,6 +72,7 @@ const App = () => {
                 // the IDSync call failed
             }
         },
+
         // Sideloaded kits are developed using our integration-builder. They are
         // imported, and then included using the following API:
         // @ts-ignore
