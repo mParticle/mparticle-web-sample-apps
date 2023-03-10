@@ -6,25 +6,25 @@ IdentityHandler.prototype.onUserIdentified = function (mParticleUser) {
 };
 IdentityHandler.prototype.onIdentifyComplete = function (
   mParticleUser,
-  identityApiRequest
+  identityApiRequest,
 ) {
   console.log("side loaded kit onIdentifyComplete called");
 };
 IdentityHandler.prototype.onLoginComplete = function (
   mParticleUser,
-  identityApiRequest
+  identityApiRequest,
 ) {
   console.log("side loaded kit onLoginComplete called");
 };
 IdentityHandler.prototype.onLogoutComplete = function (
   mParticleUser,
-  identityApiRequest
+  identityApiRequest,
 ) {
   console.log("side loaded kit onLogoutComplete called");
 };
 IdentityHandler.prototype.onModifyComplete = function (
   mParticleUser,
-  identityApiRequest
+  identityApiRequest,
 ) {
   console.log("side loaded kit onModifyComplete called");
 };

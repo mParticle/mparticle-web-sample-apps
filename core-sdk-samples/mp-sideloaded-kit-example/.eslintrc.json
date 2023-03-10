@@ -1,0 +1,19 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "mParticle": true
+    },
+    "extends": ["plugin:prettier/recommended", "eslint:recommended"],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-prototype-builtins": "off",
+        "no-empty": "off",
+        "no-useless-escape": "off",
+        "no-unexpected-multiline": "off",
+        "no-unused-vars": "off"
+    }
+}
