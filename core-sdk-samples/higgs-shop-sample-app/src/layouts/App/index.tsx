@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import mParticle from '@mparticle/web-sdk';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
+import sideloadedKit from 'mp-sideloaded-kit-example';
 import { NavigationMenu } from '../../components/NavigationMenu';
 import { ShopPage } from '../../pages/ShopPage';
 import { AboutPage } from '../../pages/AboutPage';
@@ -27,7 +28,6 @@ const App = () => {
         // and are included in all event uploads
         appName: 'Higgs Shop',
         appVersion: version,
-
         // `package` is an optional analytics attribute that mParticle
         //  uses to measure usage and diagnostics of the Sample Apps.
         //  In a production application, you can safely remove this, or set
@@ -72,6 +72,10 @@ const App = () => {
                 // the IDSync call failed
             }
         },
+        // Sideloaded kits are developed using our integration-builder. They are
+        // imported, and then included using the following API:
+        // @ts-ignore
+        sideloadedKits: [sideloadedKit],
     };
 
     // In a true production implementation, you should load your mParticle API Key via
