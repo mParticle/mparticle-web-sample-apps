@@ -1671,9 +1671,9 @@
   "resolved" "https://registry.npmjs.org/@mparticle/event-models/-/event-models-1.1.6.tgz"
   "version" "1.1.6"
 
-"@mparticle/web-sdk@^2.19.2":
-  version "2.19.2"
-  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.19.2.tgz#3340d02e0ae1449433d21912323de501e722caaa"
+"@mparticle/web-sdk@^2.19.3":
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.19.3.tgz#0f9244bde345f6ceb702885db9abc244950c9435"
   dependencies:
     "@babel/runtime" "^7.6.0"
     "slugify" "^1.3.6"
