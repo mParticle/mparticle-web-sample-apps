@@ -1,25 +1,25 @@
 function UserAttributeHandler(common) {
-  this.common = common || {};
+    this.common = common || {};
 }
 UserAttributeHandler.prototype.onRemoveUserAttribute = function (
-  key,
-  mParticleUser
+    key,
+    mParticleUser,
 ) {
-  console.log("side loaded kit onRemoveUserAttribute called");
+    console.log('side loaded kit onRemoveUserAttribute called');
 };
 UserAttributeHandler.prototype.onSetUserAttribute = function (
-  key,
-  value,
-  mParticleUser
+    key,
+    value,
+    mParticleUser,
 ) {
-  console.log("side loaded kit onSetUserAttribute called");
+    console.log('side loaded kit onSetUserAttribute called');
 };
 UserAttributeHandler.prototype.onConsentStateUpdated = function (
-  oldState,
-  newState,
-  mParticleUser
+    oldState,
+    newState,
+    mParticleUser,
 ) {
-  console.log("side loaded kit onConsentStateUpdated called");
+    console.log('side loaded kit onConsentStateUpdated called');
 };
 
 module.exports = UserAttributeHandler;
