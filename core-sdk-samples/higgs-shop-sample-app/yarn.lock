@@ -9503,10 +9503,9 @@ string.prototype.matchall@^4.0.6, string.prototype.matchall@^4.0.8:
   dependencies:
     "minimalistic-assert" "^1.0.0"
 
-"web-vitals@^3.1.1":
-  "integrity" "sha512-GZsEmJBNclIpViS/7QVOTr7Kbt4BgLeR7kQ5zCCtJVuiWsA+K6xTXaoEXssvl8yYFICEyNmA2Nr+vgBYTnS4bA=="
-  "resolved" "https://registry.npmjs.org/web-vitals/-/web-vitals-3.3.0.tgz"
-  "version" "3.3.0"
+web-vitals@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-3.3.0.tgz#2e14bcbb3acf71d00c49519ab92cc517511476d5"
 
 "webidl-conversions@^4.0.2":
   "integrity" "sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg=="
