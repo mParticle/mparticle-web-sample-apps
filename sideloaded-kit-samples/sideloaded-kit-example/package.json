@@ -1,5 +1,5 @@
 {
-  "name": "mp-sideloaded-kit-example",
+  "name": "sideloaded-kit-example",
   "version": "1.0.3",
   "scripts": {
     "testKarma": "node test/boilerplate/test-karma.js",

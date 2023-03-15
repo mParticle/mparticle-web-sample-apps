@@ -1,1 +1,1 @@
-declare module 'mp-sideloaded-kit-example';
+declare module 'sideloaded-kit-example';

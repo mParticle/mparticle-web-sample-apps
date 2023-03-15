@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
 import mParticle from '@mparticle/web-sdk';
-import sideloadedKit from 'mp-sideloaded-kit-example';
+import sideloadedKit from 'sideloaded-kit-example';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { NavigationMenu } from '../../components/NavigationMenu';
