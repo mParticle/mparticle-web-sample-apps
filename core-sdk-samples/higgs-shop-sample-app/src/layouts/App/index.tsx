@@ -73,9 +73,16 @@ const App = () => {
             }
         },
 
-        // Sideloaded kits are developed using our integration-builder. They are
-        // imported, and then included using the following API:
-        // @ts-ignore
+        // Sideloaded kits can be used to receive callbacks when various things
+        // happen such as events being logged.  You can use them to debug the
+        // events going to your forwarders, or if you want to create a kit for a
+        // third party SDK that we don't yet support.
+        // This example is a simple implementation that only logs the callbacks
+        // and event received to the console, but the data in the callbacks can
+        // be used for anything.
+        // Please read our docs about sideloaded kits at
+        // https://docs.mparticle.com/developers/sdk/web/kits/#sideloaded-kits-custom-kits
+        // NOTE: Sideloaded kits are always active.
         sideloadedKits: [sideloadedKit],
     };
 
