@@ -19,7 +19,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Git checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Branch name
               run: |
@@ -38,7 +38,7 @@ jobs:
         needs: confirm-main-branch
         steps:
           - name: "Checkout development branch"
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
             with:
               repository: mparticle/mparticle-web-sample-apps
               ref: development
@@ -59,7 +59,7 @@ jobs:
 
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Setup Node.js
               uses: actions/setup-node@v1
@@ -110,7 +110,7 @@ jobs:
                 semantic-release
 
             - name: Archive npm failure logs
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: failure()
               with:
                 name: npm-logs
@@ -122,7 +122,7 @@ jobs:
       runs-on: ubuntu-18.04
       steps:
        - name: "Checkout main branch"
-         uses: actions/checkout@v2
+         uses: actions/checkout@v3
          with:
            fetch-depth: 0
            repository: ${{ github.repository }}
