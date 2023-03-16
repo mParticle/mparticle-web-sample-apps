@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
 import mParticle from '@mparticle/web-sdk';
+import sideloadedKit from 'sideloaded-kit-example';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { NavigationMenu } from '../../components/NavigationMenu';
@@ -27,7 +28,6 @@ const App = () => {
         // and are included in all event uploads
         appName: 'Higgs Shop',
         appVersion: version,
-
         // `package` is an optional analytics attribute that mParticle
         //  uses to measure usage and diagnostics of the Sample Apps.
         //  In a production application, you can safely remove this, or set
@@ -72,6 +72,18 @@ const App = () => {
                 // the IDSync call failed
             }
         },
+
+        // Sideloaded kits can be used to receive callbacks when various things
+        // happen such as events being logged.  You can use them to debug the
+        // events going to your forwarders, or if you want to create a kit for a
+        // third party SDK that we don't yet support.
+        // This example is a simple implementation that only logs the callbacks
+        // and event received to the console, but the data in the callbacks can
+        // be used for anything.
+        // Please read our docs about sideloaded kits at
+        // https://docs.mparticle.com/developers/sdk/web/kits/#sideloaded-kits-custom-kits
+        // NOTE: Sideloaded kits are always active.
+        sideloadedKits: [sideloadedKit],
     };
 
     // In a true production implementation, you should load your mParticle API Key via
