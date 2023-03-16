@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "globals": {
+        "mParticle": true
+    },
+    "extends": ["plugin:prettier/recommended", "eslint:recommended"],
+    "plugins": ["prettier"],
+    "rules": {
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "prettier/prettier": "error",
+        "no-prototype-builtins": "off",
+        "no-empty": "off",
+        "no-useless-escape": "off",
+        "no-unexpected-multiline": "off",
+        "no-unused-vars": "off",
+        "comma-dangle": ["error", "always-multiline"]
+    }
+}

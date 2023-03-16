@@ -15,6 +15,7 @@ describe('mParticle Web Sample App', () => {
                 isDevelopmentMode: true,
                 logLevel: 'verbose',
                 identityCallback: expect.any(Function),
+                sideloadedKits: expect.any(Array),
             });
         });
     });
