@@ -1454,9 +1454,9 @@
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@mparticle/event-models/-/event-models-1.1.6.tgz#1deb2cad83b192448f005112e546d8aab818524e"
 
-"@mparticle/web-sdk@^2.19.3":
-  version "2.19.3"
-  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.19.3.tgz#0f9244bde345f6ceb702885db9abc244950c9435"
+"@mparticle/web-sdk@^2.20.0":
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/@mparticle/web-sdk/-/web-sdk-2.20.0.tgz#3f4bbf7fa21b90a862e13b2558b28533da46c14a"
   dependencies:
     "@babel/runtime" "^7.6.0"
     slugify "^1.3.6"
@@ -1968,9 +1968,9 @@
   version "1.3.2"
   resolved "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
 
-"@types/mparticle__web-sdk@^2.18.0":
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.18.0.tgz#13befbe2c196bcb960872cd2362bcf2bb7279cfd"
+"@types/mparticle__web-sdk@^2.20.0":
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.20.0.tgz#e090c1f341034a18532e98b58aeb7a928d9e901d"
   dependencies:
     "@mparticle/event-models" "^1.1.3"
 
