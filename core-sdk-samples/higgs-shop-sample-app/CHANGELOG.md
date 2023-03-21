@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.4.2...v1.5.0) (2023-03-21)
+
+
+### Features
+
+* Add sideloaded kit example ([#494](https://github.com/mParticle/mparticle-web-sample-apps/issues/494)) ([bba9c2c](https://github.com/mParticle/mparticle-web-sample-apps/commit/bba9c2c5b99dac5d971ed608babf8feb179d4d4e))
+
 ## [1.4.2](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.4.1...v1.4.2) (2023-03-01)
 
 ## [1.4.1](https://github.com/mParticle/mparticle-web-sample-apps/compare/v1.4.0...v1.4.1) (2022-07-13)
