@@ -9,7 +9,7 @@
   },
   "main": "dist/SampleSideLoadedKit-Kit.common.js",
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "chai": "^4.2.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
