@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mParticle Core Web Snippet Sample App</title>
+
+        <!-- Load mParticle Bundle -->
+        <script type="text/javascript">
+            // configure the SDK
+            window.mParticle = {
+                config: {
+                    // If you are doing local development, set this to false
+                    requestConfig: true,
+
+                    flags: {},
+
+                    logLevel: 'verbose',
+
+                    isDevelopmentMode: true,
+                    identifyRequest: {
+                        // userIdentities: {
+                        //     // email: 'email@example.com',
+                        //     // customerid: '123456',
+                        // },
+                    },
+                    // identityCallback: function (result) {
+                    //     // Do something once an identity call has been made.
+                    //     // For more information, see https://docs.mparticle.com/developers/sdk/web/idsync/#sdk-initialization-and-identify
+                    //     console.log(result);
+                    // },
+                    // dataPlan: {
+                    //     planId: 'my_plan_id',
+                    //     planVersion: 2,
+                    // },
+                },
+            };
+        </script>
+    </head>
+    <body>
+        <h1>mParticle Core Web Snippet Sample App</h1>
+
+        <p>View the developer console for debug information</p>
+
+        <button id="js-log-event">Fire Event</button>
+
+        <!-- Disable the following to override the CDN Snippet for local development -->
+        <script src="src/snippet.js"></script>
+
+        <!-- Local Development: Enable the following to override the Snippet -->
+        <!-- <script src="node_modules/%40mparticle/web-sdk/dist/mparticle.js"></script>
+        <script src="src/events.fns.js"></script>
+        <script src="src/sideloadedKits.js"></script>
+        <script>
+            setTimeout(function () {
+                console.log('init mParticle', window.mParticle.config);
+                window.mParticle.init(
+                    'REPLACE WITH API KEY',
+                    window.mParticle.config
+                );
+            }, 100);
+        </script> -->
+    </body>
+</html>
