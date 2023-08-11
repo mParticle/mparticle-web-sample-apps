@@ -21,7 +21,7 @@
         "sideloaded-kit-example": "file:../../kit-samples/sideloaded-kit-example",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-router-dom": "^6.9.0",
+        "react-router-dom": "^6.15.0",
         "react-scripts": "^5.0.1",
         "typescript": "^4.9.5",
         "web-vitals": "^3.3.0"
