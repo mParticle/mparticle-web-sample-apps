@@ -41,7 +41,12 @@ const products: Product[] = [
         brand: 'Rocket Surgery Coffee',
         price: 8.0,
         variants: {
-            color: ['Dark Grey Heather'],
+            color: [
+                `
+                'Laos',
+                'Saigon'
+                `,
+            ],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
@@ -83,7 +88,7 @@ const products: Product[] = [
         category: 'Coffee',
         brand: 'Rocket Surgery Coffee',
         variants: {
-            color: ['Black'],
+            color: ['Kingston'],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
@@ -102,7 +107,7 @@ const products: Product[] = [
         A tribute to the ancient Mayan civilization, this blend offers a harmonious mix of chocolate with a touch of citrus zest, reminiscent of Guatemala's rich history and culture.
         `,
         variants: {
-            color: ['Deep Black'],
+            color: ['Quetzaltenango'],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
     },
@@ -116,15 +121,10 @@ const products: Product[] = [
         brand: 'Rocket Surgery Coffee',
         variants: {
             color: [
-                'Black Heather',
-                'Dark Grey',
-                'Storm',
-                'True Royal',
-                'Mustard',
-                'Military Green',
-                'Navy',
-                'Orchid',
-                'Dusty Blue',
+                `
+                'Abidjan',
+                'Yamoussoukro',
+                `,
             ],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
@@ -143,16 +143,16 @@ const products: Product[] = [
         price: 9.0,
         variants: {
             color: [
-                'Black Heather',
-                'Dark Grey',
-                'Storm',
-                'True Royal',
-                'Athletic Heather',
-                'Sand Dune',
-                'Military Green',
-                'Navy',
-                'Orchid',
-                'Dusty Blue',
+                'Addis Ababa',
+                'Dire Dawa',
+                'Mekelle',
+                'Adama',
+                'Awassa',
+                'Bahir Dar',
+                'Gonder',
+                'Dessie',
+                'Jimma',
+                'Jijiga',
             ],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
@@ -169,7 +169,7 @@ const products: Product[] = [
         category: 'Coffee',
         brand: 'Rocket Surgery Coffee',
         variants: {
-            color: ['Black'],
+            color: ['Dar Es Salaam'],
             size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
