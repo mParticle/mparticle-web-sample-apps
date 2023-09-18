@@ -8,7 +8,7 @@
         "@fontsource/lato": "^4.5.10",
         "@mparticle/web-sdk": "^2.20.0",
         "@mui/icons-material": "^5.11.11",
-        "@mui/material": "^5.11.13",
+        "@mui/material": "^5.14.10",
         "@testing-library/dom": "^9.0.1",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.5",
