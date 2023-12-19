@@ -2264,10 +2264,10 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-3.0.1.tgz#5f8f2bca0a5863cb69bc0b0acd88c96cb1d4ae10"
   integrity sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==
 
-"@types/mparticle__web-sdk@^2.20.0":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.20.0.tgz#e090c1f341034a18532e98b58aeb7a928d9e901d"
-  integrity sha512-8nCMF+QN1nlYvu1DLmutJUZWuWJEsv/YQkjcv8bNJF1erA2FMW2ojm4OsFLFzqoal26+49ErYaieHh6Va3nZDQ==
+"@types/mparticle__web-sdk@^2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@types/mparticle__web-sdk/-/mparticle__web-sdk-2.20.3.tgz#6cb8db94bcf0d8fb4fe902e915fb524fbb48181f"
+  integrity sha512-27aH8MHmwg4HjxXzglS7h05jLCnWyRGBJ0WlUSpRudQLUNwgkmsMI1b6ja1Pq+WQOTcUUJ5JhkYB0j0qaIOahA==
   dependencies:
     "@mparticle/event-models" "^1.1.3"
 
