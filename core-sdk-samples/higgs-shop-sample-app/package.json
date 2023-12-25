@@ -17,7 +17,7 @@
         "@types/node": "^18.15.3",
         "@types/react": "^17.0.43",
         "@types/react-dom": "^17.0.0",
-        "gh-pages": "^5.0.0",
+        "gh-pages": "^6.1.1",
         "sideloaded-kit-example": "file:../../kit-samples/sideloaded-kit-example",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
