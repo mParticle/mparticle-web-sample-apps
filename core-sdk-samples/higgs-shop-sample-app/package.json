@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "homepage": "https://mparticle.github.io/mparticle-web-sample-apps/higgs-shop/",
     "dependencies": {
-        "@emotion/react": "^11.10.6",
+        "@emotion/react": "^11.11.3",
         "@emotion/styled": "^11.10.6",
         "@fontsource/lato": "^4.5.10",
         "@mparticle/web-sdk": "^2.20.0",
