@@ -1,252 +1,215 @@
 const products: Product[] = [
     {
         id: '128113',
-        label: 'Gamer Sticker',
+        label: 'Brazil Blend',
         imageUrl: '/products/128113.png',
-        altText: 'Gamer Sticker',
+        altText: 'Brazil Blend',
         price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2.3" W x 2.25" H',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `
+        Dance to the beats of the Samba with this Brazilian blend. 
+        With a nutty sweetness and hints of Amazonian chocolate, it embodies the spirit of Rios Carnival.`,
     },
     {
         id: '128115',
-        label: 'Mug Sticker',
+        label: 'Colombia Blend',
         imageUrl: '/products/128115.png',
-        altText: 'Mug Sticker',
+        altText: 'Colombia Blend',
         price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2.25" W x 2.1" H',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `
+        Journey through the Andes with this Colombian treasure. A well-balanced cup, it brims with the sweetness of caramel and the warmth of Andean nuts.`,
     },
     {
         id: '128114',
-        label: 'Glasses Sticker',
+        label: 'Burundi Blend',
         imageUrl: '/products/128114.png',
-        altText: 'Glasses Sticker',
+        altText: 'Burundi Blend',
         price: 1.0,
-        category: 'Stickers',
-        brand: 'Higgs',
-        description: '2" W x 2.25" H',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `Like the rhythmic drumbeats of Burundi, this coffee sings with flavors of red fruit, sweet spice, and a tea-like lightness.`,
     },
     {
         id: '128747',
-        label: 'Unisex Higgs Tee',
+        label: 'Vietnam Blend',
         imageUrl: '/products/128747.png',
-        altText: 'Unisex Tee',
-        category: 'Apparel',
-        brand: 'mParticle',
+        altText: 'Vietnam Blend',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         price: 8.0,
         variants: {
-            color: ['Dark Grey Heather'],
-            size: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
+            color: [
+                `
+                'Laos',
+                'Saigon'
+                `,
+            ],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
-        Comfortable cotton tees you'll be proud to wear!
-
-- 4.2-ounce, 100% Airlume combed and ring spun cotton
-- Retail fit
-- Tear-away label
-- Side seamed
-- Shoulder taping
+        As captivating as the terraced fields of Sapa, this robusta-rich blend stands strong with flavors of dark chocolate and caramel, mirroring Vietnam's resilience and beauty.
 `,
     },
     {
         id: '128742',
-        label: 'Pride Sticker',
+        label: 'Kenya Blend',
         imageUrl: '/products/128742.png',
-        altText: 'Pride Sticker',
+        altText: 'Kenya Blend',
         price: 2.0,
-        category: 'Stickers',
-        brand: 'mParticle',
-        description: '3" W x 3" H',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `
+        Evoke the grandeur of the African savannah. 
+        
+        This Kenyan blend shines with bright acidity, full-bodied flavor, and notes that hint at the vast landscapes of the Maasai Mara.
+        `,
     },
     {
         id: '128741',
-        label: 'Pride Decal',
+        label: 'Japan Blend',
         imageUrl: '/products/128741.png',
-        altText: 'Pride Decal',
+        altText: 'Japan Blend',
         price: 3.0,
-        category: 'Stickers',
-        brand: 'mParticle',
-        description: '',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `
+        Reflecting the serenity of Japanese tea gardens, this blend, though not native to Japan, offers a clean, light, and delicate flavor, reminiscent of a Kyoto morning.
+        `,
     },
     {
         id: '128740',
-        label: 'mP Icon Full Zip',
+        label: 'Jamaica Blend',
         imageUrl: '/products/128740.png',
-        altText: 'mP Icon Full Zip',
+        altText: 'Jamaica Blend',
         price: 110.0,
-        category: 'Apparel',
-        brand: 'mParticle',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         variants: {
-            color: ['Black'],
-            size: ['S', 'M', 'L', 'XL', '2XL'],
+            color: ['Kingston'],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
-        Really comfortable? Check. Extra soft? Check. Fits great? Check. All the things you'd expect from an hoodie, plus a lining for extra warmth!
-
-- Relaxed fit
-- 80% Cotton, 20% Poly
-- Extra peaching for softness
-- Wash cold, dry low
-- Made abroad, by adults
+        Transport yourself to the rhythmic beats of reggae with this Jamaican blend. Mild, slightly sweet, with undertones of island nuts and cocoa.
         `,
     },
     {
         id: '128744',
-        label: 'Unisex Fleece Pullover',
+        label: 'Guatemala Blend',
         imageUrl: '/products/128744.png',
-        altText: 'Unisex Fleece Pullover',
+        altText: 'Guatemala Blend',
         price: 50.0,
-        category: 'Apparel',
-        brand: 'mParticle',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         description: `
-        Nubby, high-pile fleece makes this trendy pullover the perfect layering option—whether you’re outfitting an outdoor adventure or cozying up next to a fireplace.
-
-        - 15.3-ounce, 100% polyester fleece
-        - 100% nylon woven inner collar, placket and pocket
-        - 4-snap woven placket
-        - Secure-snap left chest pocket
-        - Brushed tricot-lined open hand pockets
-        - Binding at cuffs and hem
+        A tribute to the ancient Mayan civilization, this blend offers a harmonious mix of chocolate with a touch of citrus zest, reminiscent of Guatemala's rich history and culture.
         `,
         variants: {
-            color: ['Deep Black'],
-            size: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+            color: ['Quetzaltenango'],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
     },
     {
         id: '128745',
-        label: 'Unisex Full Logo Tee',
+        label: 'Ivory Coast Blend',
         imageUrl: '/products/128745.png',
-        altText: 'Unisex Full Logo Tee',
+        altText: 'Ivory Coast Blend',
         price: 9.0,
-        category: 'Apparel',
-        brand: 'mParticle',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         variants: {
             color: [
-                'Black Heather',
-                'Dark Grey',
-                'Storm',
-                'True Royal',
-                'Mustard',
-                'Military Green',
-                'Navy',
-                'Orchid',
-                'Dusty Blue',
+                `
+                'Abidjan',
+                'Yamoussoukro',
+                `,
             ],
-            size: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
-        Comfortable cotton tees you'll be proud to wear!
-
-- 4.2-ounce, 100% Airlume combed and ring spun cotton
-- Retail fit
-- Tear-away label
-- Side seamed
-- Shoulder taping
+        Sip the exotic beauty of the Ivory Coast's lush rainforests in this blend. 
+        Earthy richness is interlaced with hints of cocoa, reminiscent of the nation's famed cacao produce.
 `,
     },
     {
         id: '128272',
-        label: "Women's Full Logo Tee",
+        label: 'Ethiopia Blend',
         imageUrl: '/products/128272.png',
-        altText: "Women's Full Logo Tee",
-        category: 'Apparel',
-        brand: 'mParticle',
+        altText: 'Ethiopia Blend',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         price: 9.0,
         variants: {
             color: [
-                'Black Heather',
-                'Dark Grey',
-                'Storm',
-                'True Royal',
-                'Athletic Heather',
-                'Sand Dune',
-                'Military Green',
-                'Navy',
-                'Orchid',
-                'Dusty Blue',
+                'Addis Ababa',
+                'Dire Dawa',
+                'Mekelle',
+                'Adama',
+                'Awassa',
+                'Bahir Dar',
+                'Gonder',
+                'Dessie',
+                'Jimma',
+                'Jijiga',
             ],
-            size: ['S', 'M', 'L', 'XL', '2XL'],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
-        This Tee provides comfort and style with a timeless look. It's sure to become a fast favorite!
-
-        • 4.2 oz., 100% combed and ringspun cotton, 30 singles. Athletic Heather is 90/10 combed and ringspun cotton/polyester. Alternate Heathers are 52/48 combed and ringspun cotton/polyester. Triblends are 3.8 oz., 50/25/25 polyester/combed and ringspun cotton/rayon, 40 singles. Mineral Wash is 4.4 oz., 100% combed and ringspun cotton, 30 singles
-        • Side seams, relaxed fit
-        • Due to the unique Mineral Wash process, color will vary from garment to garment
+        Traversing the highlands of Ethiopia, the birthplace of coffee, this blend boasts a floral aroma with hints of the wild berries found in its vast landscapes.
 `,
     },
     {
         id: '128746',
-        label: 'Unisex Pride Tee',
+        label: 'Tanzania Blend',
         imageUrl: '/products/128746.png',
-        altText: 'Unisex Pride Tee',
+        altText: 'Tanzania Blend',
         price: 14.0,
-        category: 'Apparel',
-        brand: 'mParticle',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         variants: {
-            color: ['Black'],
-            size: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+            color: ['Dar Es Salaam'],
+            size: ['250g', '500g', '1kg', '2kg', '5kg', '10kg'],
         },
         description: `
-        Comfortable cotton tees you'll be proud to wear!
-
-- 4.2-ounce, 100% Airlume combed and ring spun cotton
-- Retail fit
-- Tear-away label
-- Side seamed
-- Shoulder taping
+        Inspired by the majestic Serengeti, this vibrant blend captures Tanzania's essence with notes of dark chocolate and wild black currants.
 `,
     },
     {
         id: '128737',
-        label: 'Absobu Dog Bowl',
+        label: 'Greek Blend',
         imageUrl: '/products/128737.png',
-        altText: 'Absobu Dog Bowl',
+        altText: 'Greek Blend',
         price: 28.0,
-        category: 'Swag',
-        brand: 'Absobu',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         description: `
-        The Asobu Dog bowl water bottle is equipped with a detachable stainless steel and plastic bowl which discreetly twists off the base of the bottle when it is time to re-hydrate your dog.
-
-        - Made of 100% BPA free, double wall vacuum insulated, copper lines stainless steel
-        - Easy grip handle makes it convenient to carry even on long walks with your dog
-        - Anti-slip base makes it very easy for your pets to drink from it, and the large capacity ensures your dog is sufficiently hydrated
+        Echoing the tales from ancient Greek mythology, this blend is strong and bold, with a touch of Mediterranean spice.
         `,
     },
     {
         id: '128738',
-        label: 'Field & Co Sherpa Blanket',
+        label: 'Indonesia Blend',
         imageUrl: '/products/128738.png',
-        altText: 'Field & Co Sherpa Blanket',
+        altText: 'Indonesia Blend',
         price: 41.0,
-        category: 'Bedding',
-        brand: 'Field & Co',
-        description: `Field & Co Sherpa Blanket
-        $41.00
-        About this product
-        This sturdy blanket is so comfortable you'll love having it every winter!
-        
-        - Cotton/Polyester Blend
-        - 50 x60
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
+        description: `Dive deep into Indonesia's mystical islands. This blend offers an earthy touch with deep, complex flavors, like a journey through Bali's dense jungles and ancient temples.
 `,
     },
 
     {
         id: '128743',
-        label: 'Tennis Ball',
+        label: 'Turkey Blend',
         imageUrl: '/products/128743.png',
-        altText: 'Tennis Ball',
+        altText: 'Turkey Blend',
         price: 2.0,
-        category: 'Toys',
-        brand: 'mParticle',
+        category: 'Coffee',
+        brand: 'Rocket Surgery Coffee',
         description: `
-        Specially made for pets, this low bounce, fetch tennis ball is a fun way to spend time with your furry friend!
-
-        - Printed with child and pet safe inks
+        A homage to the bustling bazaars of Istanbul, this blend is strong and full-bodied, resembling the rich tapestry of Turkish tradition.
 `,
     },
 ];
