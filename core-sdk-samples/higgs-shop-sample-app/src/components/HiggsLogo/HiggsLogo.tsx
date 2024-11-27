@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import logo from '../../assets/images/Dev-Higgs.svg';
+import logo from '../../assets/images/Dev-higgs.svg';
 
 const HiggsLogo = () => (
     <Box

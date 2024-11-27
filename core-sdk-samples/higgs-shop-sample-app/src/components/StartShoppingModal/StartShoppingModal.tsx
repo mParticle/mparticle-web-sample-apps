@@ -82,7 +82,7 @@ const StartShoppingModal: React.FC = () => {
                             letterSpacing: '2px',
                         }}
                     >
-                        Your 1-Stop Higgs Shop
+                        Rocket Surgery Cafe
                     </Typography>
                 </Box>
             </Grid>
