@@ -12,4 +12,5 @@
 .env.productio
 .env.staging
 
-./core-sdk-samples/react-web-sample-app/client/node_modules
+./core-sdk-samples/mparticle-react-web-sample-app/client/node_modules
+./core-sdk-samples/mparticle-react-web-sample-app/node_modules
