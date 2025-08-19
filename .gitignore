@@ -1,2 +1,15 @@
 # Hide OSX Files from git
 .DS_Store
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging.local
+.env.development
+.env.test
+.env.productio
+.env.staging
+
+./core-sdk-samples/react-web-sample-app/client/node_modules
