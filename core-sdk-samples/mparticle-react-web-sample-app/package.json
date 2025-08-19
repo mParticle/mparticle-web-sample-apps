@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "concurrently -n client,server -c auto \"npm --workspace client run dev\" \"npm --workspace server run dev\"",
     "build": "npm --workspace client run build",
-    "start": "npm --workspace server run start"
+    "start": "npm --workspace server run start",
+    "setup-local-sdk": "node scripts/setup-local-sdk.mjs"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"

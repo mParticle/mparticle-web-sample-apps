@@ -79,11 +79,34 @@ This repo includes a local mock backend and a simple UI to exercise key mParticl
 ### How to use with your local SDK build
 
 1. Build the SDK from the mParticle Web SDK repo: [mParticle Web SDK on GitHub](https://github.com/mParticle/mparticle-web-sdk/)
-2. Replace the stub with your build:
-   - Put your bundle at `client/public/mparticle.js` (the app loads it from `/mparticle.js`).
+2. Point the app at your local SDK bundle (recommended):
+   - Run all commands from this folder: `core-sdk-samples/mparticle-react-web-sample-app`
+   - One-time setup inside this app directory:
+
+     a) Preferred: set the exact file path in `.env.local`:
+
+     ```bash
+     # path to the actual bundle file
+     echo "LOCAL_MPARTICLE_SDK_PATH=/absolute/path/to/mparticle-web-sdk/dist/mparticle.js" > .env.local
+     ```
+
+     Or fallback: set the SDK repo path (script will use dist if present, else auto-bundle from src):
+
+     ```bash
+     echo "LOCAL_MPARTICLE_SDK_REPO=/absolute/path/to/mparticle-web-sdk" > .env.local
+     ```
+
+     b) Run the setup script (writes `client/.env.local` with either `VITE_MPARTICLE_SDK_PATH` or `VITE_MPARTICLE_SDK_SOURCE_ENTRY`):
+
+     ```bash
+     npm run setup-local-sdk
+     ```
+     This writes `client/.env.local` for the dev server. No `client/public/mparticle.js` is needed.
+
+   - Alternative: place the bundle at `client/public/mparticle.js` and it will be served as `/mparticle.js`.
 3. Set your API key in the UI:
    - Edit `client/src/App.jsx` and set `API_KEY` near the top (any string works for local testing).
-4. Start both client and server from the repo root:
+4. Start both client and server from this app directory:
 
    ```bash
    npm install
@@ -94,7 +117,8 @@ This repo includes a local mock backend and a simple UI to exercise key mParticl
 
 Notes:
 - If you previously opened the app, your browser may cache `/mparticle.js`. Do a hard refresh.
-- The app intentionally loads the SDK from `client/public/mparticle.js` so you can drop in a locally built bundle without publishing to npm.
+- `.env.local` files are git-ignored and safe to keep local-only.
+- If `client/.env.local` is not present, the app falls back to serving `client/public/mparticle.js` if present.
 
 ### Notes
 
@@ -105,6 +129,8 @@ Notes:
 
 ### Troubleshooting
 
-- "Failed to load mParticle SDK script": ensure your bundle is at `client/public/mparticle.js` and refresh without cache.
+- "Failed to load mParticle SDK script":
+- If using `.env.local`, verify `client/.env.local` contains a valid absolute path and the file exists.
+- Otherwise, ensure your bundle is at `client/public/mparticle.js` and refresh without cache.
 -   404 or network error: ensure the server is running on port 4000 (`npm run dev` from the repo root starts both).
 - Audiences show empty: make sure you've clicked Identify/Login first so an MPID is available before fetching.
