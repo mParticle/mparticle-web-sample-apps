@@ -1,0 +1,128 @@
+.app-root {
+    font-family: sans-serif;
+    padding: 16px;
+  }
+  
+  .app-root {
+    /* Rokt brand theme variables (update hex values to match official brand guide) */
+    --rokt-primary: #C20075;
+    --rokt-primary-hover: #480029;
+    --rokt-text: #000000;
+    --rokt-bg: #ffffff;
+    --rokt-muted-bg: #f7f7f7;
+    --rokt-border: #e5e7eb;
+  }
+  
+  .app-root h1 {
+    color: var(--rokt-primary);
+  }
+  
+  .output-log {
+    margin-top: 16px;
+    background: var(--rokt-muted-bg);
+    padding: 12px;
+    min-height: 200px;
+    max-height: 320px;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Collapsible feature section */
+  .feature-section {
+    border: 1px solid var(--rokt-border);
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 16px;
+  }
+  
+  .feature-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rokt-border);
+  }
+  
+  .feature-section__title {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .feature-section__toggle {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--rokt-primary);
+    background: var(--rokt-primary);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .feature-section__content {
+    padding: 12px;
+  }
+  
+  
+  /* Base button styling to align with Rokt branding */
+  .app-root button {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--rokt-primary);
+    background: var(--rokt-primary);
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  }
+  
+  .app-root button:hover:not(:disabled) {
+    background: var(--rokt-primary-hover);
+    border-color: var(--rokt-primary-hover);
+  }
+  
+  .app-root button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .app-root button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 80, 0.35);
+  }
+  
+  .feature-row {
+    display: grid;
+    grid-template-columns: minmax(240px, 360px) 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 16px;
+  }
+  
+  .feature-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .feature-output {
+    width: 100%;
+    min-width: 0; /* allow content to shrink within grid to avoid overflow */
+  }
+  
+  .feature-output .output-log {
+    width: 100%;
+  }
+  
+  @media (max-width: 640px) {
+    .feature-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  
+  
+  
